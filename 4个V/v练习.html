@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width:500px;
+				height:500px;
+				background:yellow;
+				position: relative;
+			}
+			#box div{
+				width:100px;
+				height: 100px;
+				background: pink;
+				position: absolute;
+				font-size: 50px;
+				color: yellow;
+				line-height: 100px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">变换</button>
+		<div id="box">
+			<!--<div style="left: 0px;top:0px">1</div>
+			<div style="left: 100px;top:100px">2</div>
+			<div style="left: 200px;top:200px">3</div>
+			<div style="left: 300px;top:100px">4</div>
+			<div style="left: 400px;top:0px">5</div>-->
+		</div>
+		<script>
+			var btn = document.getElementById('btn')
+			var boxs = document.getElementById('box')
+			var str = '';
+			var l = 0;
+			var t = 0;
+			var n = 5;
+			var ok =-1;
+			btn.onclick = function(){
+				ok++;
+				if(ok%4 == 0){
+					//向下↓
+					for (var i = 0; i < n; i++) {
+						l = i*100;
+						if(i<3){
+							t = i*100
+						}else{
+							t = 400-i*100
+						}
+						str +='<div style="left: '+l+'px;top:'+t+'px">'+i+'</div>'
+					}
+					boxs.innerHTML  = str;
+				}else if(ok%4 ==1){
+					//向右→
+					for (var i = 0; i < 5; i++) {
+						t = i*100
+						if(i<3){
+							l = (i*100)
+						}else{
+							l = (400-i*100)
+						}
+						str +='<div style="left: '+l+'px;top:'+t+'px">'+i+'</div>'
+					}
+					boxs.innerHTML = str;
+				}else if(ok%4 ==2){
+					//向上↑
+					for (var i = 0; i < 5; i++) {
+						l = i*100;
+						if(i<3){
+							t = 400-i*100
+						}else{
+							t = i*100
+						}
+						str +='<div style="left: '+l+'px;top:'+t+'px">'+i+'</div>'
+					}
+					boxs.innerHTML  = str;
+				}else if(ok%4 ==3){
+					//向左←
+					for (var i = 0; i < 5; i++) {
+						t =i*100
+						if(i<3){
+							l = 400-i*100
+						}else{
+							l = i*100
+						}
+						str +='<div style="left: '+l+'px;top:'+t+'px">'+i+'</div>'
+					}
+					boxs.innerHTML = str;
+				}
+				str = '';
+			}	
+			/*向下↓
+				for (var i = 0; i < n; i++) {
+					l = i*100;
+					if(i<3){
+						t = i*100
+					}else{
+						t = 400-i*100
+					}
+					str +='<div style="left: '+l+'px;top:'+t+'px">'+i+'</div>'
+				}
+				boxs.innerHTML  = str;*/
+				/*向右→
+				for (var i = 0; i < 5; i++) {
+					t = i*100
+					if(i<3){
+						l = (i*100)
+					}else{
+						l = (400-i*100)
+					}
+					str +='<div style="left: '+l+'px;top:'+t+'px">'+i+'</div>'
+				}
+				boxs.innerHTML = str; */
+				/*向下↓
+				for (var i = 0; i < 5; i++) {
+					l = i*100;
+					if(i<3){
+						t = i*100
+					}else{
+						t = 400-i*100
+					}
+					str +='<div style="left: '+l+'px;top:'+t+'px">'+i+'</div>'
+				}
+				boxs.innerHTML  = str;*/
+				/*向左←
+				for (var i = 0; i < 5; i++) {
+					t =i*100
+					if(i<3){
+						l = 400-i*100
+					}else{
+						l = i*100
+					}
+					str +='<div style="left: '+l+'px;top:'+t+'px">'+i+'</div>'
+				}
+				boxs.innerHTML = str;*/
+		</script>
+	</body>
+</html>

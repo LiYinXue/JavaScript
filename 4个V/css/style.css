@@ -1,0 +1,62 @@
+body{
+	background: papayawhip;
+}
+.box{
+	width:600px;
+	height: 550px;
+	background: url(../images/bg.png) no-repeat;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+#wrap{
+	width:290px;
+	height: 490px;
+	margin: 0 auto;
+	background: url(../images/bg1.png) no-repeat;
+	position: relative;
+}
+#content{
+	width: 250px;
+	height: 250px;
+	position: absolute;
+	left: 20px;
+	top: 70px;
+	background: #FFD700;
+}
+#content div{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	background:rgba(0,0,0,0.3);
+	text-align: center;
+	line-height: 50px;
+	font-size: 16px;
+	color: gold;
+	font-weight: bold;
+}
+#btn{
+	width:80px;
+	height: 30px;
+	border: 1px solid yellow;
+	background: #fff;
+	color: plum;
+	border-radius:5px ;
+	position: absolute;
+	left: 110px;
+	bottom:30px;
+}
+#btn:hover{
+	background: cyan;
+	color: #fff;
+}
+#btn1{
+	width:80px;
+	height: 30px;
+	background: cyan;
+	color: #fff;
+	border-radius:5px ;
+	display: none;
+	position: absolute;
+	left: 110px;
+	bottom:30px;
+}
