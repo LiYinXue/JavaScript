@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box div{
+				width:30px;
+				height: 30px;
+				background: #00FFFF;
+				text-align: center;
+				border: 1px solid #FFD700;
+				line-height:30px;
+				position: absolute;
+				left:0;
+				top:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+			var box = document.getElementById('box');
+			for (var i = 0;i<100;i++) {
+				box.innerHTML += '<div style="left:'+(i%10)*30+'px;top:'+Math.floor(i/10)*30+'px">'+i+'</div>' 
+				//
+			}
+		</script>
+	</body>
+</html>

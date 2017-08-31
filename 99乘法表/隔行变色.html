@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box div{
+				float: left;
+				width:30px;
+				height: 30px;
+				border: 1px solid yellow;
+				line-height: 30px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+			var box = document.getElementById('box')
+			var arr = ['pink','blue']
+			for (var i = 0;i<10;i++) {
+				if(i%2 == 0){
+					box.innerHTML += '<div style="background: '+arr[0]+';">'+i+'</div>'
+				}else{
+					box.innerHTML += '<div style="background: '+arr[1]+';">'+i+'</div>'
+				}
+			}
+		</script>
+		</script>
+	</body>
+</html>
