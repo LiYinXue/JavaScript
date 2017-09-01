@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
+			.box{
+				width:420px;
+				height: 120px;
+				background: url(images/bg1.png) no-repeat;
+				margin: 100px auto;
+				border-radius:10px ;
+				padding-top: 80px;
+				padding-left: 50px;
+				position: relative;
+			}
+			span{
+				color: #fff;
+				font-size: 16px;
+			}
+			#tet{
+				width:180px;
+				height: 40px;
+				background: #fff;
+				border-radius:10px ;
+				text-indent: 1em;
+				margin-right: 10px;
+			}
+			#btn{
+				width:80px;
+				height: 40px;
+				color: #fff;
+				background: #000;
+				border-radius:5px ;
+			}
+			#p1{
+				width:180px;
+				height: 40px;
+				background: #0000FF;
+				line-height: 40px;
+				text-align: center;
+				color: yellow;
+				border-radius:10px ;
+				position: absolute;
+				right: 0px;
+				top:0px;
+				display: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span>请输入QQ号码：</span>
+			<input type="text" id="tet"/>
+			<input type="button"  value="保存" id="btn"/>
+			<p id="p1"></p>
+		</div>
+		<script>
+			var tet = document.getElementById('tet')
+			var btn = document.getElementById('btn')
+			var p1 = document.getElementById('p1')
+			btn.onfocus = function(){
+				str = tet.value
+				if(str == ''){
+					p1.style.display = 'block'
+					p1.innerHTML = '请输入内容'
+				}else if(str == 0){
+					p1.style.display = 'block'
+					p1.innerHTML = '不能以0开头'
+				}else if(isNaN(str)){
+					console.log(isNaN(str))//为true状态
+					p1.style.display = 'block'
+					p1.innerHTML = '请输入数字'
+				}else if(parseFloat(str) != parseInt(str)){
+					p1.style.display = 'block'
+					p1.innerHTML = '不能有小数'
+				}else if(str.charAt(0) == ' ' || str.charAt(str.length-1) == ' '){
+					p1.style.display = 'block'
+					p1.innerHTML = '前后不能有空格'
+				}else if(str>str.charAt(5)){
+					p1.style.display = 'block'
+					p1.innerHTML = '输入必须超过5个'
+				}else if(str<str.charAt(12)){
+					p1.style.display = 'block'
+					p1.innerHTML = '输入不能超过12个'
+				}else{
+					p1.style.display = 'none'
+				}
+				
+				
+			}
+		</script>
+	</body>
+</html>

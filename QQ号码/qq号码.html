@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				border: none;
+				background: none;
+				//outline: none;
+			}
+			.box{
+				width: 550px;
+				height: 350px;
+				background:url(images/bg.png) no-repeat;
+				margin: 50px auto;
+				padding-top: 150px;
+			}
+			.wrap{
+				width:436px;
+				height: 120px;
+				background: url(images/bg1.png) no-repeat; 
+				border-radius:10px ;
+				margin: 0 auto;
+				padding: 80px 0 0 34px;
+				position: relative;
+			}
+			.wrap span{
+				font-size: 16px;
+				color: #fff;
+				line-height: 40px;
+			}
+			#message{
+				height: 40px;
+				width: 180px;
+				background: greenyellow;
+				border-radius:5px ;
+				text-indent: 1em;
+				margin-right: 10px;
+			} 
+			#btn{
+				width: 70px;
+				height: 40px;
+				color: #FFF;
+				font-size: 16px;
+				background: deeppink;
+				border-radius:5px ;
+			}
+			#div1{
+				width:180px;
+				height: 40px;
+				background: cyan;
+				position: absolute;
+				left: 162px;
+				top: 130px;
+				border-radius:10px ;
+				display: none;
+				font-size: 14px;
+				line-height: 40px;
+				color: #FFFF00;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="wrap">
+				<span>请输入QQ号码：</span>
+				<input type="text"  id="message"/>
+				<input type="button" value="保存" id="btn"/>
+				<div id="div1"></div>
+			</div>
+		</div>
+		<script>
+			var Ospan = document.querySelector('.wrap span')
+			var Omessage = document.getElementById('message')
+			var Obtn = document.getElementById('btn')
+			var div1 = document.getElementById('div1')
+			var str = ''
+			Obtn.onclick =function(){
+				str = Omessage.value
+				//text里的value不能为空
+				if(str == ''){
+					div1.style.display = 'block'
+					div1.innerHTML = '请输入内容'
+				}else if(str.charAt(0) == ' '||str.charAt(str.length-1) == ' '){
+					div1.style.display = 'block'
+					div1.innerHTML = '前后不能有空格'
+				}else if(isNaN(str)){
+					div1.style.display = 'block'
+					div1.innerHTML = '请输入数字'
+				}else if(isNaN(str.charAt(0))){
+					div1.innerHTML = '请输入纯数字'
+				}else if(str == 0){
+					div1.style.display = 'block'
+					div1.innerHTML = '不能有0在前面'
+				}else if(parseFloat(str) != parseInt(str)){
+					div1.style.display = 'block'
+					div1.innerHTML = '不能是小数'
+				}else if(str>str.charAt(5)){
+					div1.style.display = 'block'
+					div1.innerHTML = '最少输入5位数字'
+				}else if(str<str.charAt(12)){
+					div1.style.display = 'block'
+					div1.innerHTML = '最多不能输入12位数字'
+				}else{
+					div1.style.display = 'none'
+				
+				}
+			}
+			
+		</script>
+	</body>
+</html>
