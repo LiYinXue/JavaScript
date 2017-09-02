@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<style>
+			#box{
+				width: 500px;
+				height: 450px;
+				background: url(images/bg.png) no-repeat;
+				padding-top: 150px;
+				margin: 20px auto;
+			}
+			#message{
+				width: 218px;
+				height: 34px;
+				border: 1px solid #fd635e;
+				border-radius:22px ;
+				background:#fff url(images/1.png) no-repeat 10px 6px;
+				line-height: 34px;
+				color: #000000;
+				padding-left:50px ;
+				font-size: 16px;
+			}
+			#send{
+				width: 60px;
+				height: 36px;
+				background:#fd635e ;
+				color: #fff;
+				border-radius:22px ;
+				font-size: 18px;
+				margin-left: 5px;
+				line-height: 36px;
+				text-align: center;
+			}
+			#warp{
+				width: 340px;
+				background: #fffaea;
+				margin: 0 auto;
+				border: 1px solid #fd635e;
+				border-radius:20px ;
+				padding-top: 5px;
+				padding-left: 6px;
+				padding-bottom: 6px;
+				overflow: hidden;
+			}
+			#bottom{
+				width: 340px;
+				height: 180px;
+				margin: 0 auto;
+				font-size:14px ;
+				color: #fff;
+				border-radius:20px ;
+				font-weight: bold;
+				clear: both;
+				display: none;
+				padding-top: 10px;
+			}
+			#bottom li{
+				height: 30px;
+				line-height: 30px;
+				width: 240px;
+				padding-left: 15px;
+				margin-bottom: 6px;
+				text-indent: 1em;
+				//background: yellow;
+				border-radius:20px ;
+			}
+			#box .col{
+				background: pink;
+			}
+			.col1{
+				background: #fff;
+				color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" class="clearfix">
+			<div id="warp" class="clearfix">
+				<p id="message" class="fl"></p>
+				<span id="send" class="fl">GO</span>
+				<ul id="bottom" class="clearfix">
+					<li>第七个读者</li>
+					<li>心理罪 画像</li>
+					<li>心理罪 教化场</li>
+					<li>心里罪 城市之光</li>
+					<li>地球往事</li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			var message = document.getElementById('message')
+			var bottom = document.getElementById('bottom')
+			var warp = document.getElementById('warp')
+			message.onclick = function(){
+				warp.className = 'col'
+				message.style.background = "yellow url(images/2.png) no-repeat 10px 6px"
+				bottom.style.display = 'block'
+			}
+			var lis = document.querySelectorAll('li')
+			for (var i = 0; i < lis.length; i++) {
+				lis[i].index = i
+				lis[i].onmouseover = function(){
+					for (var i = 0; i < lis.length; i++) {
+						lis[i].className = ''
+					}
+					this.className = 'col1'
+				}
+				lis[i].onmouseout = function(){
+					this.className = ''
+				}
+				lis[i].onclick = function(){
+					  message.innerHTML=this.innerHTML
+					  bottom.style.display = 'none'
+					  message.style.background = "#fff url(images/1.png) no-repeat 10px 6px"
+				}
+			}
+		</script>
+	</body>
+</html>
