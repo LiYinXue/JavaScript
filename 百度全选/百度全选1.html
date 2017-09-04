@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css">
+	<style>
+			.box{
+				width:600px;
+				height: 450px;
+				background: url(images/bg.png) no-repeat;
+				margin: 20px auto;
+				padding-top: 150px;
+			}
+			.logo{
+				width: 480px;
+				height: 300px;
+				background: #fff ;
+				margin: 0 auto;
+				position: relative;
+			}
+			.logo1{
+				width: 480px;
+				height: 253px;
+				background:url(images/logo.png) no-repeat 140px 35px;
+				opacity: 0.1;
+			}
+			.wrap{
+				width: 480px;
+				padding-top: 20px;
+				height: 233px;
+				position: absolute;
+				left: 0;
+				top:0
+			}
+			.wrap li{
+				height: 36px;
+				padding: 0 33px 0 30px;
+				line-height: 36px;
+				opacity: 1;
+			}
+			input{
+				margin-top: 12px;
+				float: left;
+				margin-right: 13px;
+			}
+			.foot{
+				width:450px;
+				height: 47px;
+				background: #e15671;
+				padding-left: 30px;
+				color: #fff;
+				line-height: 47px;
+			}
+			.foot .span1{
+				line-height: 36px;
+			}
+			.foot span{
+				float: left;	
+			}
+			.foot b{
+				width: 24px;
+				height: 20px;
+				background: url(images/1.png) no-repeat left top;
+				float: left;
+				margin: 15px 10px 0 86px;
+			}
+			.foot em{
+				width: 24px;
+				height: 24px;
+				background: url(images/1.png) no-repeat left -21px;
+				float: left;
+				margin: 12px 10px 0 40px;
+			}
+			.foot strong{
+				width: 24px;
+				height: 24px;
+				background: url(images/1.png) no-repeat left -46px;
+				float: left;
+				margin: 12px 10px 0 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box clearfix">
+			<div class="logo clearfix">
+				<p class="logo1"></p>
+				<ul class="wrap clearfix">
+					<li class="clearfix">
+						<input type="checkbox" />
+						<span>私奔</span><b class="fr">梁博</b>
+					</li>
+					<li class="clearfix">
+						<input type="checkbox" />
+						<span>北京北京</span>
+						<b class="fr">梁博 黄勇</b>
+					</li>
+					<li class="clearfix">
+						<input type="checkbox" />
+						<span>我爱你中国</span>
+						<b class="fr">梁博</b>
+					</li>
+					<li class="clearfix">
+						<input type="checkbox" />
+						<span>花火</span>
+						<b class="fr">梁博</b>	
+					</li>
+					<li class="clearfix">
+						<input type="checkbox" />
+						<span>回来</span>
+						<b class="fr">梁博</b>
+					</li>
+					<li class="clearfix">
+						<input type="checkbox" />
+						<span>爱要有你才完美</span>
+						<b class="fr">梁博 那英</b>
+					</li>
+				</ul>
+				<div class="foot clearfix">
+					<input type="checkbox" id="checkboxAll"/>
+					<span class="span1">全选</span>
+					<b></b>
+					<span>收藏</span>
+					<em></em>
+					<span>添加</span>
+					<strong></strong>
+					<span>删除</span>
+				</div>
+		</div>
+	</div>	
+	<script>
+		var lis = document.querySelectorAll('.wrap li')
+		var inputs = document.querySelectorAll('.wrap input')
+		var checkboxAll = document.getElementById('checkboxAll')
+		for (var i = 0; i < lis.length; i++) {
+			if(i%2 ==0){
+				lis[i].style.background = 'yellow'
+			}else{
+				lis[i].style.background = 'blue'
+			}
+		}
+		for (var i = 0; i < lis.length; i++) {
+			lis[i].index = i//定义li下标
+			//鼠标移入事件
+			lis[i].onmouseover = function(){
+				this.style.background = 'red'
+			}
+			//鼠标移出事件
+			lis[i].onmouseout = function(){
+				/*
+				 * 当移出的时候偶数行变为蓝色，奇数行变为黄色
+				 * 先找到当点击的li里的input
+				 * 如果input 的选中状态为li点击的状态
+				 */
+				var inputCheckbox = this.querySelector('input')//点击时的li里的input
+					if(inputCheckbox.checked){
+						this.style.background = 'red'
+					}else{
+						if(this.index%2 == 0){
+							this.style.background = 'yellow'
+						}else{
+							this.style.background = 'blue'
+						}
+					}	
+			}
+			checkboxAll.onclick = function(){
+				for (var i = 0; i < inputs.length; i++) {
+					inputs[i].checked = this.checked
+					if(this.checked){
+						lis[i].style.background = 'red'
+					}else{
+						if(lis[i].index%2 ==0 ){
+							lis[i].style.background = 'yellow'
+						}else{
+							lis[i].style.background = 'blue'
+						}
+					}
+				}	
+			}
+		}
+		for (var j = 0;j<inputs.length;j++) {
+				inputs[j].onclick = function(){
+					if(this.checked){
+						var n = 0
+						for (var i = 0; i < inputs.length; i++) {
+							if(inputs[i].checked){
+								n++;
+							}
+						}
+						if(n == inputs.length){
+							checkboxAll.checked = true
+						}
+					}else{
+						checkboxAll.checked = false
+						
+					}
+				}
+			}
+	</script>
+	</body>
+</html>
+		
