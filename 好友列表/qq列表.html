@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<style>
+			.box{
+				width:350px;
+				height: 500px;
+				border: 1px solid red;
+				border-radius:30px ;
+				margin: 50px auto;
+				padding-bottom: 30px;
+				background: url(images/bg1.png) no-repeat;
+				background-size:100% 100% ;
+				padding-top: 50px;
+			}
+			h2{
+				height: 40px;
+				width: 280px;
+				background: greenyellow;
+				color: #fff;
+				margin: 0 auto;
+				margin-bottom: 20px;
+				line-height: 40px;
+				font-size: 20px;
+				padding-left: 20px;
+				border-radius:10px ;
+			}
+			ul{
+				width: 298px;
+				margin: 0 auto;
+				line-height: 40px;
+				display: none;
+				border: 1px solid #0000FF;
+				border-radius:10px ;
+				padding-bottom: 30px;
+			}
+			ul li{
+				line-height: 40px;
+				background: yellow;
+				padding-left: 20px;
+				border-radius:10px ;
+				margin-bottom: 10px;
+				font-size: 18px;
+			}
+			.col{
+				background: plum;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h2>< (*^__^*) ……未来</h2>
+			<ul>
+				<li>哈哈哈哈哈哈哈</li>
+				<li>嘿嘿嘿嘿嘿嘿嘿</li>
+				<li>呵呵呵呵呵呵呵</li>
+			</ul>	
+			<h2>< (*^__^*) ……流年</h2>
+			<ul>
+				<li>哈哈哈哈哈哈哈</li>
+				<li>嘿嘿嘿嘿嘿嘿嘿</li>
+				<li>呵呵呵呵呵呵呵</li>
+			</ul>
+			<h2>< (*^__^*) ……温瞳</h2>
+			<ul>
+				<li>哈哈哈哈哈哈哈</li>
+				<li>嘿嘿嘿嘿嘿嘿嘿</li>
+				<li>呵呵呵呵呵呵呵</li>
+			</ul>
+		</div>
+		<script>
+			var h2s = document.querySelectorAll('.box h2')
+			var uls = document.querySelectorAll('.box ul')
+			var lis = document.querySelectorAll('ul li')
+			var flag = 0 //用来记录H2的下标
+			var isClick = false;//没点击状态
+			var flagIndex = 0//记录被点击时li的下标
+			for (var i = 0; i < h2s.length; i++) {
+				h2s[i].index = i //设置h2的下标
+				h2s[i].onclick = function(){
+					if(flag != this.index  ){
+						//当前这个h2不等于h2的下标时 清空所有
+						uls[flag].style.display = 'none';
+						h2s[flag].className = '';
+					}
+					//如果当当前的ul的状态为显示时 清空上面的元素
+					if(uls[this.index].style.display =='block'){
+						this.className = ''
+						uls[this.index].style.display = 'none'//设为当前状态为none 就走else里的代码
+					}else{
+						//加颜色及ul的状态
+						this.className = 'col'
+						uls[this.index].style.display = 'block'
+					}	
+					flag = this.index//h2的下标等于当前下标
+					for(var w = 0; w < lis.length; w++){
+						lis[w].isClick = false;
+						lis[w].style.background = ''
+						lis[w].style.color = ''
+					}
+				}
+			}
+			//li进行循环
+			for (var i = 0; i < lis.length; i++) {
+				lis[i].index = i //记录li的下标
+				lis[i].isClick = false;//li默认状态是未点击
+				//移入状态
+				lis[i].onmouseover = function(){
+//					for (var j = 0;j<lis.length;j++) {
+//						lis[j].style.background = 'yellow'
+//						lis[j].style.color = '#000'
+//					}
+//					this.style.background = 'red'
+//					this.style.color = '#fff'
+					//如果当前的li不是点击状态 就进行移入状态
+					if(!this.isClick){
+						this.style.background = 'red'
+						this.style.color = '#fff'
+					}
+				}
+				//移出状态
+				//如果当前状态是未点击 ，就进行鼠标移出状态
+				lis[i].onmouseout = function(){
+					if( ! this.isClick){
+						this.style.background = 'yellow'
+						this.style.color = '#000'
+					}
+				}
+				//点击状态
+				lis[i].onclick = function(){
+					//先回到未改变任何状态的时候
+					for (var j = 0;j<lis.length;j++) {
+						lis[j].style.background = 'yellow'
+						lis[j].style.color = '#000'
+					}
+					//如果被点击的li的下标不等于这个正点击的下标，就恢复到初始的样子，并状态为未点击
+					if(flagIndex != this.index){
+						//如果当前点击的下标不等于点击的下标时 就恢复原来的样子，并改变
+						lis[flagIndex].style.background = 'yellow';
+						lis[flagIndex].isClick = false;
+					}
+					//判定之后，点击时状态为true 进行点击状态 并当时li下标等于被点击的下标
+					this.isClick = true;//为点击状态
+					this.style.background = 'blue';		
+					flagIndex = this.index
+				}
+			}
+		</script>
+	</body>
+</html>

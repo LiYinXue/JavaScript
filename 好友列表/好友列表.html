@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/public.css">
+		<link rel="stylesheet" href="css/reset.css">
+		<style>
+			.box{
+				width:800px;
+				height: 750px;
+				background: url(images/bg.png) no-repeat;
+				margin: 25px auto;
+				padding-top: 50px;
+			}
+			.wrap{
+				width:330px;
+				height: 635px;
+				margin: 0 auto;
+				background: url(images/bg1.png) no-repeat;
+				padding-left: 50px;
+				padding-top: 65px;
+			}
+			.wrap div{
+				width:280px;
+				background: #fff;
+				margin-bottom: 10px;
+			}
+			.wrap span{
+				font-weight: bold;
+				line-height: 46px;
+				color: #dd5570;
+				font-size: 18px;
+				float: left;
+				margin: 0 15px 0 13px;
+			}
+			i{
+				line-height: 46px;
+				color: #dd5570;
+				float: left;
+				font-size: 18px;
+			}
+			
+			ul{
+				width:280px;
+				background: #DD5570;
+				display: none;
+				color: #fff;
+				position: relative;
+				left: 0;
+				top:0;
+				line-height: 36px;
+				padding-top: 4px;
+				padding-bottom: 6px;
+			}
+			ul li{
+				text-indent: 2em;
+			}
+			p{
+				height: 46px;
+			}
+			.wrap .active{
+				background: #DD5570;
+			}
+			.wrap .active1{
+				background: #FFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="wrap">
+				<div>
+					<p class="clearfix"><span>></span><i>我的好友</i></p>
+					<ul>
+						<li>美丽俏佳人LOVE</li>
+						<li>从来就是这么任性～～</li>
+						<li>风雨无阻</li>
+						<li>LEO</li>
+					</ul>
+				</div>
+				<div>
+					<p class="clearfix"><span>></span><i>企业好友</i></p>
+					<ul>
+						<li>美丽俏佳人LOVE</li>
+						<li>从来就是这么任性～～</li>
+						<li>风雨无阻</li>
+						<li>LEO</li>
+					</ul>
+				</div>
+				<div>
+					<p class="clearfix"><span>></span><i>黑名单</i></p>
+					<ul>
+						<li>美丽俏佳人LOVE</li>
+						<li>从来就是这么任性～～</li>
+						<li>风雨无阻</li>
+						<li>LEO</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script>
+			var divs = document.querySelectorAll('.wrap div')
+			var uls = document.querySelectorAll('ul')
+			var spans = document.querySelectorAll('span')
+			var is = document.querySelectorAll('i')
+			var ps = document.querySelectorAll('p')
+			var lis =document.querySelectorAll('li')
+			var prevIndex = 0
+			var prevIndex2 = 0
+			var n = 0;
+			for (var i = 0; i < ps.length; i++) {
+				ps[i].index = i//被点击的下标
+				ps[i].index1 = true //没点击状态
+				ps[i].onclick = function(){
+					for (var j = 0;j<divs.length;j++) {
+						//点击改变的样式
+						divs[j].className = 'active1'
+						uls[j].style.display = 'none'
+						is[j].style.color = '#DD5570'
+						spans[j].style.color = '#DD5570'
+						ps[j].style.background = ''
+					}
+					for(var w = 0; w < lis.length; w++){
+						lis[w].isClick = false;
+						lis[w].style.background = ''
+						lis[w].style.color = ''
+					}
+					if(this.index1){
+						//当前状态 被清空
+						ps[prevIndex2].className = 'active1';
+						lis[prevIndex].style.background = ''
+						is[prevIndex2].style.color = '#DD5570'
+						spans[prevIndex2].style.color = '#DD5570'
+						uls[prevIndex2].style.display = 'none'
+						ps[prevIndex2].style.background = ''
+						ps[prevIndex2].index1 = true
+						
+						//恢复之前的状态
+						divs[this.index].className = 'active'
+						is[this.index].style.color = '#fff'
+						spans[this.index].style.color = '#fff'
+						uls[this.index].style.display = 'block'
+						this.style.background = 'rgba(0,0,0,0.3)'
+						this.index1 = false
+						console.log(this)
+						prevIndex2 = this.index;
+					}else{
+						//当当前状态为未点击状态，执行这里的代码
+						this.className = 'active1';
+						is[this.index].style.color = '#DD5570'
+						spans[this.index].style.color = '#DD5570'
+						uls[this.index].style.display = 'none'
+						ps[this.index].style.background = ''
+						this.index1 = true
+						console.log(this)
+					}
+				}
+			}
+			for (var k = 0;k<lis.length;k++) {
+				lis[k].indexk = k;//获取每个li的下标
+				//鼠标移入
+				lis[k].onmouseover = function(){
+					//如果被点击了走if 没被点击就走else
+					if(this.isClick ){
+						this.style.background = '#fff'
+						this.style.color = '#dd5570'
+					}else{
+						this.style.background = 'rgba(243,241,11,0.3)'	
+					}
+				}
+				//鼠标移出
+				lis[k].onmouseout = function(){
+					//如果为点击状态执行if里的代码，没被点击就清空所有
+					if(this.isClick ){
+						this.style.background = '#fff'
+						this.style.color = '#dd5570'
+					}else{
+						
+						console.log(this)
+						this.style.background = ''
+						this.style.color = ''
+					}
+				}
+				//鼠标点击时
+				lis[k].onclick = function(){
+					lis[prevIndex].isClick = false;//清空所有状态
+					lis[prevIndex].style.background = '#DD5570';//所有的li背景颜色为#DD5570
+					lis[prevIndex].style.color = '#fff';//所有的li字的颜色为#DD5570
+					this.style.background = '#fff' //点击时的颜色
+					this.style.color = '#dd5570'
+					this.isClick = true;//被点击状态
+					prevIndex = this.indexk // 上一次的状态
+					
+				}
+			}
+
+		</script>
+	</body>
+</html>
