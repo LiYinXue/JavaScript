@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>win10日历</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+    .calendar {
+      width: 460px;
+      margin: 0 auto;
+     // background: rgba(0, 0, 0, 0.5);
+      background: url(images/img7.gif) no-repeat;
+      background-size: 100% 100%;
+      background-size:100% 100% ;
+      padding-bottom: 20px;
+    }
+    .date-month {
+      width: 100%;
+      height: 66px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 0 32px;
+    }
+    .cur-month {
+      height: 100%;
+      color: #ccc;
+      font: 16px/66px Arial;
+    }
+    .set-month a, .cur-month {
+      cursor: default;
+      -webkit-user-select: none;
+    }
+    .set-month a:hover, .cur-month:hover {
+      color: #fff;
+    }
+    .set-month {
+      width: 88px;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .set-month a {
+      color: #ccc;
+      font-size: 24px;
+    }
+    .prev {
+      transform: rotate(90deg);
+    }
+    .next {
+      transform: rotate(-90deg);
+    }
+    .date-days, .date-nums{
+      width: 100%;
+      height: 55px;
+      display: flex;
+   //   justify-content: center;
+   		padding-left: 6px;
+      align-items: center;
+    }
+    .date-nums {
+      height: auto;
+      flex-wrap: wrap;
+    }
+    .date-dates .date-days span{
+    	color: blue;
+    }
+    .date-days span, .date-nums span{
+      width: 60px;
+      height: 55px;
+      border: 2px solid rgba(0,0,0,0);
+      text-align: center;
+      color: #fff;
+      border-radius:20px ;
+      line-height: 55px;
+      cursor: default;
+    }
+    .date-days span:hover, .date-nums span:hover {
+      border-color: #ccc;
+      color: blue;
+    }
+    .current-day {
+      background: rgb(141, 214, 237);
+    }
+    .date-nums span.other-month-date {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+	<select id="nian">
+		
+  </select>
+   <select id="yue">
+  </select>
+  <select id="ri"></select>
+  <div class="calendar">
+    <div class="date-month">
+      <div class="cur-month">xxxx年x月</div>
+      <div class="set-month">
+        <a href="javascript:;" class="prev"><</a>
+        <a href="javascript:;" class="next"><</a>
+      </div>
+    </div>
+    <div class="date-dates">
+      <div class="date-days">
+        <span>一</span>
+        <span>二</span>
+        <span>三</span>
+        <span>四</span>
+        <span>五</span>
+        <span>六</span>
+        <span>日</span>
+      </div>
+      <div class="date-nums">
+      <!--<span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+         <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>-->
+      </div>
+    </div>
+  </div>
+  <script>
+  	//获取元素
+  	
+  	var curMonth = document.querySelector('.cur-month')
+  	var dateNums = document.querySelector('.date-nums')
+  	var spans = dateNums.getElementsByTagName('span');
+  	var prev = document.querySelector('.prev')
+  	var next = document.querySelector('.next')
+  	var n = 0
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	//当前月份
+  	next.onclick = function(){
+  		n++;
+  		show(n)
+  	}
+  	prev.onclick = function(){
+  		n--;
+  		show(n)
+  	}
+  	show(n);
+  	function show(n){
+		var d = new Date() //现在的时间
+     	var year = d.getFullYear()//获取现在的年
+	 	var month = d.getMonth()//获取当前的月份
+		var date = d.getDate() //当天的日期 
+  		//var myDate = d.toLocaleDateString() //当天的日期
+  		//console.log(d.toLocaleDateString())
+	 	var d1 = new Date() //
+		month = month+n
+		//month2 = month-n
+		d1.setMonth(month) //目的是找到现在的月份 
+		var year1 = d1.getFullYear()
+		  	
+		var month1 = d1.getMonth()
+	 	curMonth.innerHTML = year1+'年'+(month1+1)+'月'
+		  	
+		var d2 = new Date()	
+		d1.setDate(1) //上一个月的1日
+		var firstDateWeek = d1.getDay() //上一个月的1日是周几
+		  	
+		var prevSpanNum = firstDateWeek ===0 ? 6 : firstDateWeek-1; //为什么要减1呢？
+		d1.setMonth(month+1)//下一个月份
+		d2.setMonth(month)//本月份
+		d2.setDate(0) //为0就是上一个月的天数
+		var lastdays = d2.getDate() //删一个月的天数
+		//console.log(lastdays)
+		d1.setDate(0)//上一个月的最后一天
+		var days = d1.getDate()//上一月的天数
+		
+		//var daysWeek = d1.getDay()//上一个月最后一天是周几
+		
+		//console.log(daysWeek)
+		var str = ''
+		for (var i = 0; i < prevSpanNum; i++) {
+			str = '<span style="color:orange;">' + (lastdays -i) + '</span>' + str;
+		}
+		for (var i = 0; i < days; i++) {
+			str += '<span>'+(i+1)+'</span>'
+		}
+		console.log(days,prevSpanNum)
+		for (var i = 0; i < 42-(days+prevSpanNum); i++) {
+			str += '<span style="color:orange;">'+(i+1)+'</span>'
+		}
+		dateNums.innerHTML = str;
+		if(d.getMonth() == month){
+			spans[date+prevSpanNum-1].style.background = 'greenyellow';
+			spans[date+prevSpanNum-1].style.color = 'hotpink';
+		} 	
+		  //	console.log(spans[date+prevSpanNum-1])
+		}
+  	
+//		//年月日
+	  	var nian = document.getElementById('nian')
+	  	var my = new Date()
+	  	for (var i = 1990; i <=2020; i++) {
+	  		nian.options.add(new Option(i+'年'))
+	  	}
+	  	var yue = document.getElementById('yue')
+	  	var ri = document.getElementById('ri')
+	  	//var my = new Date()
+	  	for (var i = 1; i <=12; i++) {
+	  		yue.options.add(new Option(i+'月'))
+	  	}
+	  	for (var i = 1; i <=31; i++) {
+	  		ri.options.add(new Option(i+'日'))
+	  	}
+  </script>
+	</body>
+</html>
