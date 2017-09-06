@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#list{
+				margin: 0;
+				padding: 0;
+				margin-top: 10px;
+			}
+			#list li{
+				border: 1px solid #ADFF2F;
+				padding: 5px;
+				list-style: none;
+				width: 300px;
+				word-break: break-all;/*自动换行*/
+				line-height: 20px;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="message" />
+		<input type="button" value="提交" id="send" />
+		<ul id="list">
+			<!--<li>这是一个留言</li>-->
+		</ul>
+		<script>
+			var send = document.getElementById('send');
+			var message = document.getElementById('message');
+			var list = document.getElementById('list');
+			send.onclick=function(){
+				//获取文本框的值 value
+				//需要把value值放在动态拼写的结构中
+				
+				//list.innerHTML = '<li>message.value</li>'
+				var prevHTML = list.innerHTML;
+				list.innerHTML = '<li>'+message.value+'</li>'+prevHTML;
+				//list.innerHTML = '<li>'+message.value+'</li>'+list.innerHTML;第二种写法
+				message.value = '';
+			}
+		</script>
+	</body>
+</html>

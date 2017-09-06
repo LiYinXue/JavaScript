@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#list li{
+				width:200px;
+				border: 1px solid #ADFF2F;
+				list-style: none;
+			}
+		</style>
+		<script>
+			console.log(window)
+			window.onload=function(){
+				var send = document.getElementById('send')
+				var message = document.getElementById('message')
+				var list = document.getElementById('list')
+				send.onclick = function(){
+					list.innerHTML = '<li><span>'+message.value+'</span></li>'+list.innerHTML
+					message.value = ''
+				}	
+			}
+		</script>
+	</head>
+	<body>
+		<input id="message" />
+		<input type="button" value="提交" id="send" />
+		<ul id="list">
+			<!--<li>
+				<span>这是一个留言</span>
+			</li>-->
+		</ul>
+		<!--<script>
+			var send = document.getElementById('send')
+			var message = document.getElementById('message')
+			var list = document.getElementById('list')
+			send.onclick = function(){
+				list.innerHTML = '<li><span>'+message.value+'</span></li>'+list.innerHTML
+				message.value = ''
+			}	
+		</script>-->
+	</body>
+</html>
