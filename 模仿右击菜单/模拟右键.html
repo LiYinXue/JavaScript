@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<style>
+			body{
+				background: url(images/bg.png);
+			}
+			#box{
+				width: 180px;
+				height: 200px;
+				background: #fff;
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: none;
+			}
+			#box li{
+				line-height: 50px;
+				font-size: 16px;
+				color: #f79c98;
+			}
+			#box li img{
+				margin-left: 20px;
+				margin-top: 16px;
+				margin-right: 20px;
+			}
+			#box .col{
+				background:rgba(0,0,0,0.4);
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="box">
+			<li><img src="images/1.png">下载</li>
+			<li><img src="images/2.png">删除</li>
+			<li><img src="images/3.png">移动到...</li>
+			<li><img src="images/4.png">重命名</li>
+		</ul>
+		<script>
+			var box = document.getElementById('box')
+			document.oncontextmenu = function(ev){
+				box.style.display = 'block'
+				box.style.left = ev.pageX+"px"
+				box.style.top = ev.pageY+"px"
+				if(ev.pageX+box.offsetWidth>=document.documentElement.clientWidth){
+					box.style.left = ev.pageX-box.offsetWidth+"px"
+				}
+				if(ev.pageY+box.offsetHeight>=document.documentElement.clientHeight){
+					box.style.top = ev.pageY-box.offsetHeight+"px"
+				}
+				return false
+			}
+			var lis = document.querySelectorAll('li')
+			for (var i = 0; i < lis.length; i++) {
+				lis[i].index = i
+				lis[i].onmouseover = function(){
+					for (var i = 0; i < lis.length; i++) {
+						lis[i].className = ''
+					}
+					this.className = 'col'
+					return false
+				}
+				lis[i].onmouseout = function(){
+					this.className = ''
+				}
+				lis[i].onclick = function(){
+					box.style.display = 'none'
+				}
+				
+			}
+			document.onclick = function(){
+				box.style.display = 'none'
+			}
+		</script>
+	</body>
+</html>
