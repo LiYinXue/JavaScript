@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box div{
+				width: 50px;
+				height: 50px;
+				background: pink;
+				float: left;
+				text-align: center;
+				line-height: 50px;
+				font-size: 30px;
+				color: yellow;
+				position: absolute;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script src="utils.js"></script>
+		<script>
+			var box = $('#box')
+			//自动生成20个div
+			var str = ''
+			for (var i = 0; i < 20; i++) {
+				str +='<div>'+i+'</div>'
+			}
+			box.innerHTML = str;
+			//获取页面上的div
+			var divs = $('div',box)
+			//div的长度
+			var len = divs.length
+			//设置div的left值
+			for (var j = 0;j < len; j++) {
+				divs[j].style.left = 60*j+'px'
+			}
+			var timer = null;// 定时器最开始的状态
+			var state = true;//点击状态
+//			document.onclick = function(){
+//				if(timer){
+//					return;
+//				}
+//				if(state){
+//					abc(500)
+//				}else{
+//					abc(0)
+//				}
+//			}
+//			function abc(target){
+//				var n = -1
+//				timer = setInterval(function(){
+//					n++;
+//					mTween( divs[n],'top',target,150,'linear',function(){
+//						if( n == len-1 ){
+//							clearInterval( timer );
+//							state = !state;
+//							timer = null;
+//						}
+//					} );
+//				},30);
+//			}
+			var n = -1
+			var mord = 1
+			function abc(){
+				n++;
+				if(mord == 1){
+					mTween(divs[n],"top",500,200,"linear",null);
+				}else{
+					mTween(divs[n],"top",0,200,"linear",null);
+				}
+				if(n == len-1){
+					if(mord == 1){
+						mord= 2
+					}else{
+						mord = 1
+					}
+					n = -1
+				}
+			}
+			setInterval(abc,100)
+		</script>
+	</body>
+</html>
