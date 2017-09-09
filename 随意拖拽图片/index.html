@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body>
+		<div class="box">
+			<div id="wrap">
+				<div id="leftList">
+					<button id="btn">随机</button>
+				</div>
+				<ul id="rightList">
+					<!--<li><img src="images/1.jpg"></li>-->
+				</ul>
+			</div>
+		</div>
+		<script src="js/data.js"></script>
+		<script src="js/utils.js"></script>
+		<script>
+			//获取元素
+			var btn = document.getElementById('btn')
+			var rightList = document.getElementById('rightList')
+			//生成结构
+			function createBoxHtml(data){
+				var html = data.map(function(item,i){
+					return `<li data-index="${i}"style="background:url(${item.imgUrl});background-size:100px 100px ;"></li>`
+				}).join("");
+				return html;
+			}
+			var newHtml = createBoxHtml(data);
+			rightList.innerHTML = newHtml;
+			var lis = rightList.children//获取所有的li
+			var arr = [];
+			for (var i = 0; i <lis.length; i++) {
+				arr.push([lis[i].offsetTop,lis[i].offsetLeft])
+			}
+			
+			for (var i = 0; i < arr.length; i++) {
+				lis[i].style.margin = 0 //清空所有的margin值
+				lis[i].style.position = 'absolute'//让每一个li绝对定位
+				lis[i].style.top = arr[i][0]+"px" 
+				lis[i].style.left = arr[i][1]+"px" 
+			}
+			
+			//随机打乱
+			btn.onclick = function(){
+				arr.sort(function(){
+					return Math.random() - 0.5;
+				})
+				console.log(arr)
+				arr.forEach(function(item,index){
+					mTween(lis[index],{top:item[0],left:item[1]},200,"linear")
+				})
+//				arr.forEach(function(item,index){
+//		            mTween(lis[index],{left:item[0],top:item[1]},500)
+//		        })
+			}
+			//拖拽图片切换
+			for (var i = 0; i < lis.length; i++) {
+				//lis[i].index = i
+				lis[i].onmousedown = function(ev){
+					var oLi 
+					var disX = ev.clientX-this.offsetLeft
+					var disY = ev.clientY-this.offsetTop
+					var maxW = rightList.clientWidth-this.offsetWidth
+					var maxH = rightList.clientHeight-this.offsetHeight
+					var arr1 = [];
+					var arr3=[];
+					arr1.push(this.offsetLeft,this.offsetTop,this.dataset.index);
+					this.onmousemove = function(ev){
+						var l = ev.clientX-disX
+						var t = ev.clientY-disY
+						if(l>maxW){
+							l=maxW
+						}
+						if(l<0){
+							l = 0
+						}
+						if(t>maxH){
+							t=maxH
+						}
+						if(t<0){
+							t = 0
+						}
+						this.style.left =l +"px"
+						this.style.top = t+"px"
+						this.style.zIndex = "100"
+						var arr2 = []//定义一个新数组
+						for (var j = 0; j < lis.length; j++) {
+							lis[j].index =i
+							//lis[j].style.border = 'none'
+							lis[j].style.boxShadow='';
+							if(collision.call(this,this,lis[j])){
+								if(lis[j] !==this){
+									arr2.push(lis[j]);
+								}
+							}
+						}
+						//x轴
+						var liX = this.offsetLeft + this.offsetWidth/2; 
+						//y轴
+						var liY = this.offsetTop + this.offsetHeight/2;
+						var min = 999999999;
+						for( var i = 0; i < arr2.length; i++ ){
+							// 找碰上的元素的中心点坐标
+							var x = arr2[i].offsetLeft + arr2[i].offsetWidth/2;
+							var y = arr2[i].offsetTop + arr2[i].offsetHeight/2;
+	
+							var chaX = x - liX;
+							var chaY = y - liY;
+	
+							var xiebian = chaX * chaX + chaY*chaY;
+	
+							if(min>=xiebian){
+								min = xiebian;
+								oLi = arr2[i]
+							}
+							
+						}
+						 arr3=[];
+						if(oLi){
+		                    arr3.push(oLi.offsetLeft,oLi.offsetTop,oLi.dataset.index);
+		                   oLi.style.boxShadow='2px 3px 12px red';
+		               }
+					}
+					this.onmouseup = function(){
+						mTween(oLi,{left:arr1[0],top:arr1[1]},200);
+						oLi.dataset.index=arr1[2];
+		                mTween(this,{left:arr3[0],top:arr3[1]},200);
+		                this.dataset.index=arr3[2];
+						this.onmousemove = null
+						for (var i = 0; i < lis.length; i++) {
+							lis[i].style.boxShadow='';
+                   			 lis[i].style.zIndex=''
+						}
+					}
+					ev.preventDefault()
+				}
+			}
+		</script>
+	</body>
+</html>

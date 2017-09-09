@@ -1,0 +1,48 @@
+.box{
+	width: 990px;
+	height: 610px;
+	background: url(../images/bg.png) no-repeat;
+	margin: 0 auto;
+	padding-top: 190px;
+	padding-left: 210px;
+}
+#wrap{
+	width: 730px;
+	height: 482px;
+	background: url(../images/bg1.png) no-repeat;
+	padding-top: 40px;
+}
+#leftList{
+	width: 220px;
+	height: 522px;
+	float: left;
+	position: relative;
+}
+#btn{
+	width:96px;
+	height:38px;
+	border: 2px solid #fff;
+	background: none;
+	border-radius:5px ;
+	color: #fff;
+	font-size: 20px;
+	position: absolute;
+	left: 96px;
+	top: 184px;
+}
+#rightList{
+	float: left;
+	width: 480px;
+	height: 340px;
+	overflow: hidden;
+	-background: yellow;
+	position: relative;
+}
+#rightList li{
+	width: 100px;
+	height: 100px;
+	margin-left:10px ;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	float: left;
+}
