@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			img{
+				width: 600px;
+				height: 400px;
+				position: absolute;
+				left: 0;
+				top: -400px;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="images/girl1.png">
+		<script src="utils.js"></script>
+		<script>
+			var img = $('img')[0]
+			var time = setInterval(function(){
+				var t = img.offsetTop+3
+				if(t>20){
+					t = 20
+					clearInterval(time)
+					setTimeout(function(){
+						var time1 = setInterval(function(){
+							var t = img.offsetTop-3
+							if(t<-400){
+								t = -400
+								clearInterval(time1)
+							}
+							img.style.top = t+'px'
+						},6)
+					},2000)
+					
+				}
+				img.style.top = t+'px'
+			},6)
+		</script>
+	</body>
+</html>
