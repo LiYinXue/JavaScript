@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/public.css">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="box">
+			<div class="wrap">
+				<div class="top"><img src="images/logo.jpg"><b>丨</b><em>总体评价</em></div>
+				<div class="center">
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<button>极差</button>
+					<button>一般</button>
+					<button>不错</button>
+					<button>推荐</button>
+					<button>力推</button>
+				</div>
+				<div class="bottom"><i>!</i><strong>小提示：点击星星就能打分</strong></div>
+			</div>
+		</div>
+		<script>
+			var P1 = document.querySelectorAll('.center p')
+			var buttons = document.querySelectorAll('.center button')
+			var m =0
+			var state = false//点击过的状态
+//			for( var i = 0; i < P1.length; i++ ){
+//					P1[i].index = i;
+//					P1[i].onmouseover = function (){
+//						// 每一个元素和鼠标移入的元素进行对比
+//						//alert(1)
+//						for( var j = 0; j < P1.length; j++ ){
+//							if( P1[j].index <= this.index ){
+//								//console.log("左边");
+//								if( this.index <= 1 ){
+//									P1[j].style.background= 'url(images/star2.png)'
+//								}else{
+//									P1[j].style.background = 'url(images/star1.png)'
+//								}
+//							}else{
+//								console.log("右边");
+//								P1[j].style.background = ''
+//							}
+//						}
+//					};
+//				}
+			for( var i = 0; i < P1.length; i++ ){
+					P1[i].index = i;
+					P1[i].onmouseover = function (){
+						// 每一个元素和鼠标移入的元素进行对比
+						//alert(1)
+						for( var j = 0; j < P1.length; j++ ){
+							buttons[j].style.display = 'none'
+							if( P1[j].index <= this.index ){
+								//console.log("左边");
+								if( this.index <= 1 ){
+									P1[j].style.background= 'url(images/star2.png)'
+								}else{
+									P1[j].style.background = 'url(images/star1.png)'
+								}
+							}else{
+								console.log("右边");
+								P1[j].style.background = ''
+							}
+						}
+						buttons[this.index].style.display = 'block'
+					}
+					
+					
+					
+					P1[i].onmouseout = function (){
+						if(state){
+							buttons[this.index].style.display = 'block'
+							for (var j =0;j<P1.length;j++) {
+								if(P1[j].index <= m){
+									if(m<=1){
+										P1[j].style.background= 'url(images/star2.png)'
+									}else{
+										P1[j].style.background = 'url(images/star1.png)'
+									}
+								}else{
+									P1[j].style.background = '';
+								}
+							}
+						}else{
+							for (var k =0;k<P1.length;k++) {
+								P1[k].style.background = ''
+								buttons[this.index].style.display = 'none'
+							}
+						}
+						
+					}
+					
+					
+
+					//当点击的时候保留点击及之前的星星
+					
+					P1[i].onclick = function (){
+						// 每一个元素和鼠标移入的元素进行对比
+						//alert(1)
+						state = true
+						for( var j = 0; j < P1.length; j++ ){
+							buttons[j].style.display = 'none'
+							if( P1[j].index <= this.index ){
+								//console.log("左边");
+								if( this.index <= 1 ){
+									P1[j].style.background= 'url(images/star2.png)'
+								}else{
+									P1[j].style.background = 'url(images/star1.png)'
+								}
+							}else{
+								console.log("右边");
+								P1[j].style.background = ''
+							}
+						}
+						buttons[this.index].style.display = 'block'
+						m = this.index 
+					}
+				}
+		</script>
+	</body>
+</html>

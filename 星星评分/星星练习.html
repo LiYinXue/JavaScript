@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width:360px;
+				height: 70px;
+				border: 1px solid #000;
+				margin: 100px auto;
+				border-radius:20px ;
+				padding-left: 40px;
+				padding-top: 30px;
+				position: relative;
+			}
+			.box p{
+				width:30px;
+				height: 30px;
+				background: url(images/star.png) no-repeat;
+				float: left;
+				margin-right: 10px;
+			}
+			button{
+				position: absolute;
+				right:10px;
+				top:32px;
+				width: 100px;
+				height: 30px;
+				border-radius:10px ;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<button>极差</button>
+			<button>一般</button>
+			<button>好</button>
+			<button>很好</button>
+			<button>极好</button>
+			<button>力推</button>
+		</div>
+		<script>
+			var ps = document.querySelectorAll('.box p')
+			var buttons = document.querySelectorAll('.box button')
+			var isClick = 0;
+			var n = 0//用来记录点击的元素的下标
+			for (var i = 0; i < ps.length; i++) {
+				ps[i].index = i//每个p对应每一个元素   记录 获取下标
+				/*
+				 * 当移入每一个p的时候，来一个for循环，进行判断 进行判断之前先让buttons消失
+				 * 如果星星的下标，小于等于当前被移入的星星就进行再次判断：
+				 * 		如果当当前的星星小于等于2（即第三颗星星）的时候，移入的时候就是ps[j].style.background= 'url(images/star2.png)'	
+				 * 		大于2就移入ps[j].style.background= 'url(images/star1.png)'	
+				 * 否则就清空所有背景 
+				 * 让移入每个星星的时候与其对应每一个buttons（block)
+				*/
+				ps[i].onmouseover = function(){
+					//buttons[this.index].style.display = 'block' 
+					for (var j = 0; j < ps.length; j++) {
+						buttons[j].style.display = 'none' 
+						if(ps[j].index <=this.index ){
+							if(this.index <=2){
+								ps[j].style.background= 'url(images/star2.png)'	
+							}else{
+								ps[j].style.background= 'url(images/star1.png)'	
+							}
+						}else{
+							ps[j].style.background= ''	
+						}
+					}
+					buttons[this.index].style.display = 'block' 
+				}
+				
+				
+				
+				ps[i].onmouseout = function(){//默认为没有点击
+					if(isClick == 0){
+						for (var i = 0; i < ps.length; i++) {
+							ps[i].style.background = ''
+							buttons[i].style.display = 'none' 
+						}
+					}else{
+						//点击
+						for (var j = 0; j < ps.length; j++) {
+							buttons[j].style.display = 'none' 
+							if(ps[j].index <=n ){
+								
+								if(n <=2){
+									ps[j].style.background= 'url(images/star2.png)'	
+								}else{
+									ps[j].style.background= 'url(images/star1.png)'	
+								}
+							}else{
+								ps[j].style.background= ''	
+								
+							}
+						}
+						buttons[n].style.display = 'block' 
+					}
+				}
+				
+				
+				
+				ps[i].onclick = function(){
+					isClick = 2
+					n = this.index
+//					for (var j = 0; j < ps.length; j++) {
+//						buttons[j].style.display = 'none' 
+//						if(ps[j].index <=this.index ){
+//							if(this.index <=2){
+//								ps[j].style.background= 'url(images/star2.png)'	
+//							}else{
+//								ps[j].style.background= 'url(images/star1.png)'	
+//							}
+//						}else{
+//							ps[j].style.background= ''	
+//						}
+//					}
+					buttons[this.index].style.display = 'block' 
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			}
+			/*
+			 * 定义变量的目的，在哪用
+			 */
+		</script>
+	</body>
+</html>
