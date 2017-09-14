@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/public.css">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/zhaopian.css">
+	</head>
+	<body>
+		<div class="box">
+			<div class="wrap ">
+				<div class="left"></div>
+				<div class="center">
+					<div class="centerT">
+						<input type="button" value="循环切换" id="btn" />
+						<input type="button" value="顺序切换" id="btn1" />
+					</div>
+					<p id="btnMea">图片可从最后一张跳转到第一张循环切换</p>
+					<p id="btnMea1">图片只能到最后一张或只能到第一张切换</p>
+					<div class="centerB">
+						<img src="images/1.png" id="imgT">
+						<strong id="str">1/4</strong>
+						<span id="spa">哇哦，好厉害的样子！</span>
+						<button id="ton"><img src="images/fuhao.png"></button>
+						<button id="ton1"><img src="images/fuhao1.png"></button>
+					</div>
+				</div>
+				<div class="right"><img src="images/miaov1.png"></div>
+			</div>
+			<div id="tanBox">
+           		 <em></em>
+           	 	<span  id="close"><img src="images/close.png"/></span>
+            	<p>JavaScript提醒</p>
+            	<strong>'(づ￣3￣)づ╭❤～亲 ，没照片了哦！'～</strong>
+           		 <a href="javascript:void(0);" id="ok">确定</a>
+       		</div>
+		</div>
+		<script>
+			var btn = document.getElementById('btn');
+			var str = document.getElementById('str');
+			var btn1 = document.getElementById('btn1');
+			var ton = document.getElementById('ton');
+			var ton1 = document.getElementById('ton1');
+			var btnMea = document.getElementById('btnMea');
+			var btnMea1 = document.getElementById('btnMea1');
+			var imgT = document.getElementById('imgT');
+			var state = true
+			var tanBox = document.getElementById("tanBox");
+			var close = document.getElementById('close');
+			var ok = document.getElementById('ok');
+			btn1.onclick = function(){
+				btn1.style.cssText =  'background: #fff;width: 130px;height: 34px;color: #000;';
+				btn.style.cssText = 'color: #fff;background: transparent;';
+				btnMea1.style.display = 'block'
+				btnMea.style.display = 'none'
+				state = false;//顺序切换
+				
+			}
+			btn.onclick = function(){
+				btn.style.cssText = 'color: #000;background: #FFFFFF;';
+				btnMea1.style.display = 'none'
+				btnMea.style.display = 'block'
+				btn1.style.cssText = 'color: #fff;background: transparent;';
+				state = true;//循环切换
+					
+				
+			}
+			ton.onmousemove = function(){
+				ton.style.background = '#000'
+			}
+			ton1.onmousemove = function(){
+				ton1.style.background = '#000'
+			}
+			ton.onmouseout = function(){
+				ton.style.background = 'transparent'
+			}
+			ton1.onmouseout = function(){
+				ton1.style.background = 'transparent'
+			}
+			var n = 1
+			var arr = ['哇哦，好厉害的样子！','我是机器人','爱啦啦啦！','噢噢噢噢'];
+			//ton1属于右键
+			ton1.onclick = function(){
+				//点击右键如果是循环切换就执行if
+				if(state){
+					n = n+1
+					if(n>4){
+					n = 1
+					}
+					
+					imgT.src = "./images/"+n+".png"
+					str.innerHTML = n+'/'+4
+					spa.innerHTML =arr[n-1]
+				}
+				//点击右键如果不是循环切换是顺序切换，就执行else
+				else{
+					n = n+1;
+					if(n>4){
+						 tanBox.style.display = 'block';
+						n = 4;
+					}else{
+						
+						imgT.src = "./images/"+n+".png"
+						str.innerHTML = n+'/'+4
+						spa.innerHTML =arr[n-1]
+					}
+				}
+				
+			}
+			//ton属于左键
+			ton.onclick = function(){
+				//点击左键如果是循环切换就执行if里的代码
+				if(state){
+					if(n<2){
+					n = 5
+				}	
+					n = n-1
+					imgT.src = "./images/"+n+".png"
+					str.innerHTML = n+'/'+4
+					console.log('ton')	
+					spa.innerHTML =arr[n-1]
+				}
+				//点击右键如果不是循环切换是顺序切换就执行else里的代码
+				else{
+					n = n-1;
+					if(n<1){
+					//alert('(づ￣3￣)づ╭❤～亲 ，没照片了哦！')
+					 tanBox.style.display = 'block';
+					n = 1
+					}else{
+					
+						imgT.src = "./images/"+n+".png"
+						str.innerHTML = n+'/'+4
+						spa.innerHTML =arr[n-1]
+					}
+				}
+				
+			}
+			//循环切换左键
+//			ton.onclick = function(){
+//				if(n<2){
+//					n = 5
+//				}	
+//				n = n-1
+//				imgT.src = "./images/"+n+".png"
+//				console.log('ton')	
+//			}
+//			循环切换右键
+//				ton.onclick = function(){
+//				n = n+1
+//					if(n>4){
+//					n = 1
+//				}
+//			
+//			imgT.src = "./images/"+n+".png"
+//		str.innerHTML = n+'/'+4
+//			}
+//			顺序切换右键
+//				ton1.onclick = function(){
+//				n = n+1;
+//				if(n>4){
+//					alert('(づ￣3￣)づ╭❤～亲 ，没照片了哦！')
+//					n = 4;
+//				}else{
+//					
+//					imgT.src = "./images/"+n+".png"
+//				}
+//			}
+//			顺序切换左键
+//				ton.onclick = function(){
+//					n = n-1;
+//				if(n<1){
+//					alert('(づ￣3￣)づ╭❤～亲 ，没照片了哦！')
+//					n = 1
+//				}else{
+//					
+//					imgT.src = "./images/"+n+".png"
+//				}
+//			}
+		ok.onclick = closeTanBox
+        close.onclick = closeTanBox;
+
+        function closeTanBox(){
+            alert("我被调用了");
+            tanBox.style.display = 'none';     
+        }
+		</script>
+	</body>
+</html>
+		

@@ -1,0 +1,125 @@
+
+.box{
+	border: 1px solid #8584B3;
+	width: 1000px;
+	height: 800px;
+	margin: 100px auto;
+	background:#ffd800 url(../images/beijing2.png) no-repeat 0 255px;
+}
+.wrap{
+	width:700px;
+	height: 500px;
+	background: url(../images/beijing3.png) no-repeat;
+	margin: 104px 0 0 120px;
+	box-shadow:0 0 20px #000;
+	position: relative;
+}
+.img1{
+	margin-top: 120px;
+	margin-left: 52px;
+	margin-right: 40px;
+	float: left;
+}
+.wrapZ{
+	width:530px;
+	height:350px ;
+	background: #000000;
+	float: left;
+	margin-top: 65px;
+	padding: 3px;
+	position: relative;
+}
+#ton{
+	background: transparent;
+	outline: none;
+	border: none;
+	width:35px;
+	height: 50px;
+	position: absolute;
+	left: 5px;
+	top:155px;
+	opacity: 0.3;
+}
+#ton1{
+	background: transparent;
+	outline: none;
+	border: none;
+	width:35px;
+	height: 50px;
+	position: absolute;
+	right: 5px;
+	top:155px;
+	opacity: 0.3;
+}
+.bottom{
+	height: 40px;
+	width: 100%;
+	background: #fff;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding-top: 30px;
+}
+.bottom .yuanB1{
+	width:16px;
+	height: 16px;
+	border-radius:8px ;
+	background: #6cd2eb;
+	float: left;
+	margin-left: 348px;
+	margin-right: 18px;
+}
+.yuanB{
+	width:16px;
+	height: 16px;
+	border-radius:8px ;
+	background: #c9c9c9;
+	float: left;
+	margin-right: 18px;
+}
+#tanBox{
+	width:350px;
+	height: 200px;
+	position: absolute;
+	left: 230px;
+	top:150px;
+	position: relative;
+	display: none;
+}
+#tanBox em{
+	width:350px;
+	height: 200px;
+	background: #000;
+	display: block;
+	opacity: 0.5;
+}
+#close{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+#tanBox p{
+	position: absolute;
+	left:100px;
+	font-size: 20px;
+	color: deeppink;
+	top:40px;
+}
+#tanBox strong{
+	position: absolute;
+	left:40px;
+	font-size: 14px;
+	color: springgreen;
+	top:100px;
+}
+#sum{
+	width:80px;
+	height: 30px;
+	font-size: 18px;
+	border: 2px solid darkorange;
+	border-radius:10px ;
+	color: dodgerblue;
+	position: absolute;
+	left: 140px;
+	top:150px;
+}

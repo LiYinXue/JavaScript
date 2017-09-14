@@ -1,0 +1,191 @@
+.box{
+	width:1000px;
+	height: 648px;
+	background: url(../images/beijing.png) no-repeat;
+	margin: 20px auto;
+	padding-top: 152px;
+	position: relative;
+}
+.wrap{
+	width:636px;
+	height: 459px;
+	background: #FFF;
+	border-radius:20px ;
+	margin: 0 auto;
+	position: relative;
+	border: 1px solid #9F9FA5;
+	padding: 47px 0 0 44px ;
+	box-shadow: 8px 6px 8px #b47ed4;
+}
+.left{
+	width:6px;
+	height: 60px;
+	border: 1px solid #9F9FA5;
+	border-radius:4px ;
+	position: absolute;
+	left: 20px;
+	top:222px;
+}
+.right{
+	width:46px;
+	height: 57px;
+	position: absolute;
+	right: 15px;
+	top: 228px;
+}
+.center{
+	width: 560px;
+	height: 395px;
+	border: 2px solid #9F9FA5;
+	background: #000000;
+	padding-top:15px ;
+}
+.centerT{
+	width:258px;
+	height: 34px;
+	border: 1px solid #9FA0A5;
+	border-radius:2px ;
+	margin: 0 auto;
+}
+#btn{
+	width:128px;
+	height: 34px;
+	background: #FFFFFF;
+	border-right: 1px solid #9FA0A5 ;
+}
+#btn1{
+	color: #fff;
+	width:130px;
+	height: 34px;
+	margin-left: -6px;
+}
+#btnMea{
+	font-size: 14px;
+	color: blue;
+	line-height: 38px;
+	text-align: center;
+}
+#btnMea1{
+	font-size: 14px;
+	color: blue;
+	line-height: 38px;
+	text-align: center;
+	display: none;
+}
+.centerB{
+	text-align: center;
+	padding-top:6px ;
+	position: relative;
+}
+#ton{
+	background: transparent;
+	outline: none;
+	border: none;
+	width:35px;
+	height: 50px;
+	border-radius:0 4px 4px 0 ;
+	opacity: 0.4;
+	position: absolute;
+	left: 0;
+	top:130px;
+}
+#ton1{
+	background: transparent;
+	outline: none;
+	border: none;
+	width:35px;
+	height: 50px;
+	border-radius:4px 0 0 4px  ;
+	opacity: 0.4;
+	position: absolute;
+	right: 0;
+	top:130px;
+}
+#str{
+	font-size: 18px;
+	color: #fff;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	top: 5px;
+	left: 0;
+	background: #000000;
+	opacity: 0.3;
+}
+#spa{
+	font-size: 16px;
+	color: cyan;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #000000;
+	opacity: 0.4;
+}
+ #tanBox {
+        position: absolute;
+        width: 298px;
+        height: 148px;
+        left: 50%;
+        top: 50%;
+        margin-left: -149px;
+        margin-top: -74px;
+        border: 1px solid #93908d;
+        display: none;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
+    }
+    
+    #tanBox span {
+        position: absolute;
+        right: 14px;
+        top: 14px;
+        cursor: pointer;
+    }
+    
+    #tanBox em {
+        background: #000;
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #tanBox p {
+        font-size: 18px;
+        color: #fff;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 31px;
+        line-height: 27px;
+    }
+    
+    #tanBox strong {
+        position: absolute;
+        width: 100%;
+        height: 44px;
+        font-size: 14px;
+        color: #93908d;
+        top: 58px;
+        text-align: center;
+        line-height: 44px;
+    }
+    
+    #tanBox a {
+        width: 80px;
+        height: 25px;
+        border: 1px solid #fff;
+        border-radius: 2px;
+        line-height: 25px;
+        text-align: center;
+        bottom: 19px;
+        left: 106px;
+        position: absolute;
+        font-size: 14px;
+        color: #fff;
+    }

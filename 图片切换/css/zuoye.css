@@ -1,0 +1,106 @@
+.box{
+	width:1000px;
+	height: 734px;
+	background: url(../images/beijing.png) no-repeat;
+	margin:0 auto;
+	padding-top: 66px;
+}
+.wrap{
+	width: 386px;
+	height: 686px;
+	border-radius:20px ;
+	background: #e8e7f0;
+	padding-top: 22px;
+	margin:0 auto;
+	box-shadow:5px 5px 8px 4px #8584b3;
+	position: relative;
+}
+.top{
+	width: 58px;
+	height: 4px;
+	background: #9f9ea5;
+	margin: 0 auto;
+	border-radius:4px ;
+	margin-bottom: 20px;
+}
+.center{
+	width: 318px;
+	height: 498px;
+	padding-bottom: 60px;
+	border: 2px solid #bfbfbf;
+	background-color: #fff;
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 18px;
+	overflow: hidden;
+}
+.bottom{
+		text-align: center;		
+}
+.shuru{
+	height: 40px;
+	padding: 11px 0 9px 16px;
+	width: 302px;
+	background: #e5e5e5;
+	position: absolute;
+	left: 0;
+	bottom:0;
+}
+#message{
+	width: 190px;
+	height: 40px;
+	background: #fff;
+	border-radius: 5px;
+	margin: 0 9px 0 15px;
+	text-indent: 15px;
+}
+#send{
+	background: none;
+	line-height: 40px;
+	color: #e15671;
+	font-size: 16px;
+}
+#list li{
+	padding-top: 20px;
+}
+.imgpng{
+	width: 68px;
+	text-align: center;
+	float: right;
+}
+.imgpng1{
+	width: 68px;
+	text-align: center;
+	float: left;
+}
+.message1{
+	width: 200px;
+	border-radius: 5px;
+	padding: 10px 15px;
+	line-height: 20px;
+	position: relative;
+}
+.cor1{
+	background: #bab3ce;
+	float: right;
+	color: #fff;
+}
+.cor2{
+	background: #e5e5e5;
+	float: left;
+}
+.sanjiao{
+	position: absolute;
+	top: 16px;
+	border: 5px solid transparent;
+}
+.sj1{
+	right: -5px;
+	border-right: none;
+	border-left-color: #bab3ce;
+}
+.sj2{
+	left: -5px;
+	border-left: none;
+	border-right-color: #e5e5e5;
+}
