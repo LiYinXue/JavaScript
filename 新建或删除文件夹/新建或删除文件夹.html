@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/public.css">
+		<style>
+			.box{
+				width: 700px;
+				height: 300px;
+				background: url(images/bg.png) no-repeat;
+				padding-top: 200px;
+				margin: 0 auto;
+				position: relative;
+			}
+			#list{
+				width: 420px;
+				//background: red;
+				margin: 0 auto;
+			}
+			#list li{
+				float: left;
+				width: 116px;
+				height: 29px;
+				text-align: center;
+				background: url(images/1.png) no-repeat center 28px;
+				margin-right: 20px;
+				font-size: 16px;
+				color: #fff;
+				position: relative;
+				padding-top: 97px;
+				margin-bottom: 10px;
+			}
+			#list li span{
+				position: absolute;
+				left:4px;
+				top:4px;
+				width: 16px;
+				height: 16px;
+				border: 1px solid #fff;
+				border-radius:2px ;
+				text-align: center;
+				background: #948aa1;
+			}
+			#list li .col{
+				background: dodgerblue;
+				color: #fff;
+			}
+			#list li p{
+				line-height: 30px;
+			}
+			.box button{
+				width:116px ;
+				height: 31px;
+				position: absolute;
+				left: 288px;
+				font-size: 16px;
+			}
+			.change{
+				width: 116px;
+				height: 88px;
+				border: 2px solid #b4a3c3;
+				//background:rgba(0,0,0,0.4 )url(images/1.png) no-repeat center 28px;
+				border-radius:8px ;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul id="list" class="clearfix">
+				<!--<li class="">
+					<span>√</span>
+					<img src="images/1.png">
+					<p>新建文件夹</p>
+				</li>
+				<li class="">
+					<span>√</span>
+					<img src="images/1.png">
+					<p>新建文件夹</p>
+				</li>
+				<li class="">
+					<span>√</span>
+					<img src="images/1.png">
+					<p>新建文件夹</p>
+				</li>-->
+			</ul>
+			<button style="color: #fff; top: 362px;border: 2px solid #f7f2f5;border-radius:8px ;">新建文件夹</button>
+			<button style="top: 420px;border: 2px solid #f8f3f5; background: #e2b7b9;border-radius:8px ;">删除文件夹</button>
+		</div>
+		<script>
+			var buttons = document.querySelectorAll('button')
+			var isClick = false //li的点击状态
+			buttons[0].onclick = function(){
+				//或许元素
+				var newLi = document.createElement('li')
+				var newSpan = document.createElement('span')
+				var newP = document.createElement('P')
+				list.appendChild(newLi) //添加给list
+				//li鼠标移入
+				newLi.onmouseover = function(){
+					newLi.className = 'change' //添加样式
+					newLi.style.background = 'rgba(0,0,0,0.4 )url(images/1.png) no-repeat center 28px'
+					newLi.appendChild(newSpan) //在li里加上span
+					newSpan.style.display = 'block' //让span显示
+				}
+				//span点击状态
+				newSpan.onclick = function(){
+					// 取反 点击时状态变为未点击
+					newLi.isClick = !newLi.isClick;
+					if(newLi.isClick){
+						//如果点击 添加样式
+						newSpan.innerHTML = "√"
+						newSpan.className = 'col'
+					}else{
+						//不成立就是未点击
+						newSpan.innerHTML = ""
+						newSpan.className = ''
+					}
+		
+				}
+				//移出状态
+				newLi.onmouseout = function(){
+					var newSpan1 = newLi.querySelector('span')
+					//如果不是点击状态，就清空样式
+					if(!newLi.isClick){
+						newLi.className = ''
+						newSpan.style.display = 'none'
+						newLi.style.background = ''
+					}
+				}
+				newP.innerHTML = '新建文件夹'
+				newLi.appendChild(newP)
+			}	
+			//删除
+			buttons[1].onclick = function(){
+				var newLi = document.getElementsByTagName('li')
+				var newSpan = document.getElementsByTagName('span')
+				var length = newLi.length; //自定义
+				
+				for ( i = length-1; i>=0 ; i--) {
+					if(newLi[i].isClick){
+						newLi[i].remove(); //删除点击的那一项
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
