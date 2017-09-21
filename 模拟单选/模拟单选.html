@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box em{
+				float: left;
+				font-size: 20px;
+				color: deepskyblue;
+				line-height: 30px;
+			}
+			#box span{
+				float: left;
+				width:30px;
+				height: 30px;
+				border-radius:15px ;
+				font-size: 12px;
+				line-height: 30px;
+				text-align: center;
+				border: 1px solid #00BFFF;
+				margin-left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<em>请选择：</em>
+			<span>男</span>
+			<span>女</span>
+			<span>保密</span>
+		</div>
+		<script>
+			var box = document.getElementById('box')
+			var allSpan = box.getElementsByTagName('span')//#box里的所有span
+			for (var i = 0; i < allSpan.length; i++) {
+				//allSpan[i]:指其中一个span
+				allSpan[i].onclick = function(){
+					for(var j = 0;j<allSpan.length;j++){
+						//清空每一个span之前的样式
+						allSpan[j].style.background = ''
+					}
+					this.style.background = 'yellow'//每一次变量的span
+				}
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			/*for (var i = 0; i < allSpan.length; i++) {
+				allSpan[i].onclick = function(){
+					//allSpan[i] span里的其中一个
+					for (var j =0;j< allSpan.length;j++) {
+						allSpan[j].style.backgroundColor = '';//清空span里的其中每一个span的背景颜色
+					}
+					this.style.background = 'yellow'//this指每一次变量的值
+				}
+			}*/
+		</script>
+	</body>
+</html>
