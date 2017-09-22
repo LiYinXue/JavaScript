@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style>
+			#box em{
+				float: left;
+				font-size: 20px;
+				color: deepskyblue;
+				line-height: 30px;
+			}
+			#box span{
+				float: left;
+				width:30px;
+				height: 30px;
+				border-radius:15px ;
+				font-size: 12px;
+				line-height: 30px;
+				text-align: center;
+				border: 1px solid #00BFFF;
+				margin-left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<em>请选择：</em>
+			<span>男</span>
+			<span>女</span>
+			<span>保密</span>
+		</div>
+		<script>
+			var box = document.getElementById('box')
+			var allSpan = box.getElementsByTagName('span')//#box里的所有span
+			var close = false//没有背景颜色的状态就是即没被选中
+			for (var i = 0; i < allSpan.length; i++) {
+				allSpan[i].onclick = function(){
+					if(close){
+						this.style.background = ''//每一次变量的span
+						close = false
+					}else{
+						this.style.background = 'yellow'//每一次变量的span
+						close = true
+					}
+				}
+			}
+			/*
+			  if(close){
+					this.style.background = ''//每一次变量的span
+					close = false
+					//如果当当前变量没被选中时，即背景颜色为空
+				}else{
+					this.style.background = 'yellow'//每一次变量的span
+					close = true
+					//如果当当前变量被选中时，即执行颜色为黄色
+				}
+			 */
+			
+			
+			
+		</script>
+	</body>
+</html>

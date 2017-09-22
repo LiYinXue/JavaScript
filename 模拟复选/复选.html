@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style>
+			#box p{
+				font-size: 20px;
+				color: #0000FF;
+				float: left;
+			}
+			#box span{
+				float: left;
+				width: 50px;
+				height: 50px;
+				border: 1px solid #000000;
+				font-size: 20px;
+				line-height: 50px;
+				text-align: center;
+				margin-left: 10px;
+				border-radius:25px ;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<p>请选择：</p>
+			<span>男</span>
+			<span>女</span>
+			<span>保密</span>
+		</div>
+		<script>
+			var box = document.getElementById('box');
+			var allSpan = document.getElementsByTagName('span')
+			var close = false
+			for (var i = 0; i < allSpan.length; i++) {
+				allSpan[i].onclick = function(){
+//					for (var j = 0;j<allSpan.length;j++) {
+//						allSpan[j].style.background = 'pink'
+//					}
+					if(close){
+						this.style.background = ''
+						close = false
+					}else{
+						this.style.background = 'pink'
+						close = true
+					}
+				}
+			}
+		</script>
+		
+	</body>
+</html>
