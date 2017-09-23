@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<style>
+			.box{
+				width:1002px;
+				height: 502px;
+				border: 6px solid #f3f3f3;
+				margin: 20px auto;
+			}
+			.left{
+				width: 125px;
+			}
+			.left li{
+				width: 125px;
+				height: 125px;
+				background: #000;
+				color: #fff;
+				font-size: 18px;
+				text-align: center;
+				line-height: 125px;
+				border-bottom: 1px solid #eff0eb;
+			}
+			.right{
+				width: 877px;
+				height: 502px;
+				background: yellow;
+				display: none;
+				position: relative;
+			}
+			.left .col{
+				background: #fe0000;
+				color: #000000;
+			}
+			.bottom1 li ,.bottom2 li,.bottom3 li ,.bottom4 li{
+				width: 877px;
+				height: 502px;
+				display: none;
+			}
+			.bottom1 li img ,.bottom2 li img,.bottom3 li img ,.bottom4 li img{
+				width: 100%;
+				height: 100%;
+			}
+			.qiehuan1 ,.qiehuan2,.qiehuan3 ,.qiehuan4{
+				height: 37px;
+				width: 877px;
+				background: rgba(0,0,0,0.5);
+				color: #fff;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+			.qiehuan1 span,.qiehuan2 span,.qiehuan3 span,.qiehuan4 span{
+				float: left;
+				line-height: 36px;
+				font-size: 18px;
+				text-align: center;
+			}
+			.col1{
+				background: rgba(239,251,39,0.5);
+				color: deeppink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box clearfix">
+			<div class="wrap">
+				<ul class="left fl">
+					<li class="col">暖色调</li>
+					<li>金色夕阳</li>
+					<li>灰色格调</li>
+					<li>baby</li>
+				</ul>
+				<div class="right fl" style="display: block;">
+					<ul class=" bottom1">
+						<li style="display: block;"><img src="images/img1.gif"></li>
+						<li><img src="images/img2.gif"></li>
+						<li><img src="images/img3.gif"></li>
+						<li><img src="images/img4.gif"></li>
+					</ul>
+					<p class="qiehuan1">
+						<span style="width: 218px; border-right:1px solid #1E90FF ;"class="col1">暖色键盘</span>
+						<span style="width: 218px; border-right:1px solid #1E90FF ;">惬意时光</span>
+						<span style="width: 218px; border-right:1px solid #1E90FF ;">午后</span>
+						<span style="width: 218px;">一杯苦咖啡</span>
+					</p>
+				</div>
+				<div class="right fl">
+					<ul class=" bottom2">
+						<li style="display: block;"><img src="images/img5.gif"></li>
+						<li><img src="images/img6.gif"></li>
+					</ul>
+					<p class=" qiehuan2">
+						<span style="width: 437px; border-right:1px solid #1E90FF ;"class="col1">街边夕阳</span>
+						<span style="width: 437px;">金色稻草</span>
+					</p>
+				</div>
+				<div class="right fl">
+					<ul class=" bottom3">
+						<li style="display: block;"><img src="images/img7.gif"></li>
+						<li><img src="images/img8.gif"></li>
+						<li><img src="images/img9.gif"></li>
+						<li><img src="images/img10.gif"></li>
+					</ul>
+					<p class=" qiehuan3">
+						<span style="width: 218px; border-right:1px solid #1E90FF ;"class="col1">灰色通讯</span>
+						<span style="width: 218px; border-right:1px solid #1E90FF ;">咖啡配饼干</span>
+						<span style="width: 218px; border-right:1px solid #1E90FF ;">孤单键盘</span>
+						<span style="width: 218px;">枯树</span>
+					</p>
+				</div>
+				<div class="right fl">
+					<ul class=" bottom4">
+						<li style="display: block;"><img src="images/img11.gif"></li>
+						<li><img src="images/img12.gif"></li>
+					</ul>
+					<p class=" qiehuan4">
+						<span style="width: 437px; border-right:1px solid #1E90FF ;"class="col1">baby一</span>
+						<span style="width: 437px;">baby二</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<script>			
+			var lis = document.querySelectorAll('.left li')	
+			var lis1 = document.querySelectorAll('.bottom1 li')
+			var lis2 = document.querySelectorAll('.bottom2 li')
+			
+			var lis3 = document.querySelectorAll('.bottom3 li')
+			var lis4 = document.querySelectorAll('.bottom4 li')
+			var Orights = document.querySelectorAll('.right')
+			var spans = document.querySelectorAll('.qiehuan1 span')
+			var spans1 = document.querySelectorAll('.qiehuan2 span')
+			var spans2 = document.querySelectorAll('.qiehuan3 span')
+			var spans3 = document.querySelectorAll('.qiehuan4 span')			
+			for (var i = 0; i < lis.length; i++) {
+				lis[i].index = i
+				lis[i].onclick = function(){
+					for (var i = 0; i < lis.length; i++) {
+						lis[i].className = ''
+						Orights[i].style.display = 'none'
+						spans[i].className = ''
+						spans[0].className = 'col1'
+						spans1[1].className = ''
+						spans1[0].className = 'col1'
+						spans2[i].className = ''
+						spans2[0].className = 'col1'
+						spans3[1].className = ''
+						spans3[0].className = 'col1'
+					}
+					this.className = 'col'
+					Orights[this.index].style.display = 'block'
+				}
+			}
+
+			//第一个
+			for (var j = 0; j < spans.length; j++) {
+				spans[j].index1 = j
+				spans[j].onclick = function(){
+					for (var j = 0; j < spans.length; j++) {
+						spans[j].className = ''
+						lis1[j].style.display = 'none'
+					}
+					this.className = 'col1'
+					lis1[this.index1].style.display = 'block'
+					
+					
+				}
+			}
+			//第二个
+			for (var j = 0; j < spans1.length; j++) {
+				spans1[j].index1 = j
+				spans1[j].onclick = function(){
+					for (var j = 0; j < spans1.length; j++) {
+						spans1[j].className = ''
+						lis2[j].style.display = 'none'
+					}
+					this.className = 'col1'
+					lis2[this.index1].style.display = 'block'
+				}
+			}
+			//第三个
+			for (var j = 0; j < spans2.length; j++) {
+				spans2[j].index1 = j
+				spans2[j].onclick = function(){
+					for (var j = 0; j < spans2.length; j++) {
+						spans2[j].className = ''
+						lis3[j].style.display = 'none'
+					}
+					this.className = 'col1'
+					lis3[this.index1].style.display = 'block'
+				}
+			}
+			//第四个
+			for (var j = 0; j < spans3.length; j++) {
+				spans3[j].index1 = j
+				spans3[j].onclick = function(){
+					for (var j = 0; j < spans3.length; j++) {
+						spans3[j].className = ''
+						lis4[j].style.display = 'none'
+					}
+					this.className = 'col1'
+					lis4[this.index1].style.display = 'block'
+				}
+			}
+		</script>
+	</body>
+</html>

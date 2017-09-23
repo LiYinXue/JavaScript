@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<style>
+			.box{
+				width:1002px;
+				height: 502px;
+				border: 6px solid #f3f3f3;
+				margin: 20px auto;
+			}
+			.left{
+				width: 125px;
+			}
+			.left li{
+				width: 125px;
+				height: 125px;
+				background: #000;
+				color: #fff;
+				font-size: 18px;
+				text-align: center;
+				line-height: 125px;
+				border-bottom: 1px solid #eff0eb;
+			}
+			.right{
+				width: 877px;
+				height: 502px;
+				background: yellow;
+				display: none;
+				position: relative;
+			}
+			.left .col{
+				background: #fe0000;
+				color: #000000;
+			}
+			.bottom li{
+				width: 877px;
+				height: 502px;
+				display: none;
+			}
+			.bottom img {
+				width: 100%;
+				height: 100%;
+			}
+			.qiehuan1 ,.qiehuan2,.qiehuan3 ,.qiehuan4{
+				height: 37px;
+				width: 877px;
+				background: rgba(0,0,0,0.5);
+				color: #fff;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+			.qiehuan1 span,.qiehuan2 span,.qiehuan3 span,.qiehuan4 span{
+				float: left;
+				line-height: 36px;
+				font-size: 18px;
+				text-align: center;
+			}
+			.col1{
+				background: rgba(239,251,39,0.5);
+				color: deeppink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box clearfix">
+			<div class="wrap">
+				<ul class="left fl">
+					<li class="col">暖色调</li>
+					<li>金色夕阳</li>
+					<li>灰色格调</li>
+					<li>baby</li>
+				</ul>
+				<div class="right fl" style="display: block;">
+					<ul class=" bottom bottom1">
+						<li style="display: block;"><img src="images/img1.gif"></li>
+						<li><img src="images/img2.gif"></li>
+						<li><img src="images/img3.gif"></li>
+						<li><img src="images/img4.gif"></li>
+					</ul>
+					<p class="qiehuan1">
+						<span style="width: 218px; border-right:1px solid #1E90FF ;"class="col1">暖色键盘</span>
+						<span style="width: 218px; border-right:1px solid #1E90FF ;">惬意时光</span>
+						<span style="width: 218px; border-right:1px solid #1E90FF ;">午后</span>
+						<span style="width: 218px;">一杯苦咖啡</span>
+					</p>
+				</div>
+				<div class="right fl">
+					<ul class="bottom bottom2">
+						<li style="display: block;"><img src="images/img5.gif"></li>
+						<li><img src="images/img6.gif"></li>
+					</ul>
+					<p class=" qiehuan2">
+						<span style="width: 437px; border-right:1px solid #1E90FF ;"class="col1">街边夕阳</span>
+						<span style="width: 437px;">金色稻草</span>
+					</p>
+				</div>
+				<div class="right fl">
+					<ul class=" bottom bottom3">
+						<li style="display: block;"><img src="images/img7.gif"></li>
+						<li><img src="images/img8.gif"></li>
+						<li><img src="images/img9.gif"></li>
+						<li><img src="images/img10.gif"></li>
+					</ul>
+					<p class=" qiehuan3">
+						<span style="width: 218px; border-right:1px solid #1E90FF ;"class="col1">灰色通讯</span>
+						<span style="width: 218px; border-right:1px solid #1E90FF ;">咖啡配饼干</span>
+						<span style="width: 218px; border-right:1px solid #1E90FF ;">孤单键盘</span>
+						<span style="width: 218px;">枯树</span>
+					</p>
+				</div>
+				<div class="right fl">
+					<ul class="bottom bottom4">
+						<li style="display: block;"><img src="images/img11.gif"></li>
+						<li><img src="images/img12.gif"></li>
+					</ul>
+					<p class=" qiehuan4">
+						<span style="width: 437px; border-right:1px solid #1E90FF ;"class="col1">baby一</span>
+						<span style="width: 437px;">baby二</span>
+					</p>
+				</div>
+			</div>
+	</div>
+	<script>
+		var box = document.querySelector('.box')
+		//var box = document.querySelector('.box')
+		abc(box)
+		function abc(parent){
+			var li1 = parent.querySelectorAll('.left li')
+			var rights = parent.querySelectorAll('.right')
+			var li2 = parent.querySelectorAll('.bottom li')
+			var spans = parent.querySelectorAll('span')
+			for (var i = 0; i < li1.length; i++) {
+				li1[i].index = i
+				li1[i].onclick = function(){
+					for (var i = 0; i < li1.length; i++) {
+						rights[i].style.display = 'none'
+						li1[i].className = ''
+					}	
+					this.className = 'col'
+					rights[this.index].style.display = 'block'
+				}
+				
+			}
+			for (var i = 0; i < spans.length; i++) {
+				spans[i].index = i
+				spans[i].onclick = function(){
+					for (var i = 0; i < spans.length; i++) {
+						spans[i].className = ''
+						li2[i].style.display = 'none'
+					}
+					this.className = 'col1'
+					li2[this.index].style.display = 'block'
+				}
+			}
+		}
+	</script>
+	</body>
+</html>
