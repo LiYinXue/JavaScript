@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<link rel="stylesheet" href="css/public.css">
+		<link rel="stylesheet" href="css/reset.css">
+		<style>
+			#box{
+				width: 1024px;
+				height: 300px;
+				background: url(images/bg.png) no-repeat;
+				margin: 0 auto;
+				padding-top: 300px;
+			}
+			#wrap{
+				width: 770px;
+				height: 180px;
+				border: 2px solid #000;
+				background: #ea203e url(images/sec1.png) no-repeat 10px ;
+				background-size: 100px 100px;
+				border-radius:30px ;
+				margin: 0 auto;
+				padding:40px 0 0 130px ;
+			}
+			#wrap li{
+				width:85px ;
+				height: 140px;
+				float: left;
+				overflow:hidden;
+				margin-right:10px ;
+				position: relative;
+			}
+			#wrap p{
+				/*width: 85px;
+				height: 1540px;*/
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#wrap img{
+				width: 85px;
+				height: 140px;
+				margin-right: 10px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul id="wrap">
+				<li>
+					<p>
+						<img src="images/0.png" />
+						<img src="images/0.png" />
+					</p>
+				</li>
+				<li>
+					<p>
+						<img src="images/0.png" />
+						<img src="images/0.png" />
+					</p>
+				</li>
+				<li>
+					<div class="dian">
+						<img src="images/dian.png" / class="zhaopian">
+					</div>
+				</li>
+				<li>
+					<p>
+						<img src="images/0.png" />
+						<img src="images/0.png" />
+					</p>
+				</li>
+				<li>
+					<p>
+						<img src="images/0.png" />
+						<img src="images/0.png" />
+					</p>
+				</li>
+				<li>
+					<div class="dian">
+						<img src="images/dian.png" / class="zhaopian">
+					</div>
+				</li>
+				<li>
+					<p>
+						<img src="images/0.png" />
+						<img src="images/0.png" />
+					</p>
+				</li>
+				<li>
+					<p>
+						<img src="images/0.png" />
+						<img src="images/0.png" />
+					</p>
+				</li>
+			</ul>
+		</div>
+		<script src="utils.js"></script>
+		<script>
+			var dian = $('.dian')
+			var zhaopian = document.querySelectorAll('.dian img')
+			
+			//先获取时间
+			showtime();
+		    //每秒走一次
+		    setInterval(function(){
+		        showtime();
+		    },1000);
+			
+			function time(){
+				//获取当前本机时间
+				var d = new Date()
+				//获取时分秒
+				var Oh = d.getHours()
+				var Om = d.getMinutes()
+				var Os = d.getSeconds()
+				//补0
+				Oh = Oh<10?'0'+Oh:Oh;//如果当小时小于10的时候就在前面加上0，否则就是当前的小时数
+		        Om = Om<10?'0'+Om:Om;//如果当分钟小于10的时候就在前面加上0，否则就是当前的分钟数
+		        Os = Os<10?'0'+Os:Os;//如果当秒小于10的时候就在前面加上0，否则就是当前的秒数
+		        return ''+Oh+Om+Os;//返回值为当前的本机的时间
+			}
+			
+			//显示时间
+			function showtime(){
+				var Ops = $('p')//获取所有放时间图片的元素
+				var t = time() //自定义属性 上面的函数time（）赋值给t
+				for(var i=0;i<Ops.length;i++){
+					animForTime( Ops[i],t.charAt(i));
+		        }
+			}
+			//动画
+			function animForTime(parent,num){
+				if(!parent.time) parent.time = num;
+				var imgs = parent.getElementsByTagName('img');
+				imgs[0].src = 'images/'+parent.time+'.png';
+       			imgs[1].src = 'images/'+num+'.png';
+       			 if(parent.time!=num){
+		            mTween(parent,'top',-140,500,'linear',function(){
+		                imgs[0].src = 'images/'+num+'.png';
+		                parent.style.top = 0;
+		                zhaopian[1].src='images/dian.png'
+		                zhaopian[0].src='images/dian.png'
+		                setTimeout(function(){
+		                zhaopian[1].src='images/kong.png'
+		                zhaopian[0].src='images/kong.png'
+		                	
+		                },500)
+		                
+		            })
+		        }
+		        parent.time = num;
+			}
+		</script>
+	</body>
+</html>
