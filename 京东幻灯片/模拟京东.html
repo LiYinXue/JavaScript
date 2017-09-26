@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 600px;
+				height: 90px;
+				background: yellow;
+				margin: 30px auto;
+				text-align: center;
+				padding-top: 410px;
+				position: relative;
+			}
+			.navs{
+				height: 65px;
+				width: 100%-140px;
+				background: hotpink;
+				padding: 25px 0 0 140px;
+			}
+			.box img {
+				opacity: 0;
+				margin: 0 auto;
+				position: absolute;
+				top:50px;
+				left:35px;
+				transition: 3s;
+			}
+			.navs span{
+				float: left;
+				width:40px;
+				height: 40px;
+				background: #fff;
+				border-radius:20px ;
+				margin-left: 15px;
+			}
+			.navs .col{
+				background: greenyellow;
+			}
+			#up{
+				width:30px;
+				height: 35px;
+				font-size: 30px;
+				color: yellow;
+				line-height: 30px;
+				background: #000;
+				opacity: 0.3;
+				position: absolute;
+				top:200px;
+				left:35px ;
+				z-index: 100;
+			}
+			#down{
+				width:30px;
+				height: 35px;
+				font-size: 30px;
+				line-height: 30px;
+				color: yellow;
+				background: #000;
+				opacity: 0.3;
+				position: absolute;
+				top:200px;
+				right:35px ;
+				z-index: 100;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<button id="up"><</button>
+			<button id="down">></button>
+			<img src="images/boy1.png" style="opacity: 1;">
+			<img src="images/boy2.png" />
+			<img src="images/girl1.png">
+			<img src="images/girl.png" />
+			<img src="images/licheng.png">
+			<div class="navs">
+				<span class="col"></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<script>
+			var imgs = document.querySelectorAll('.box img')
+			var spans = document.querySelectorAll('.navs span')
+			var Oup = document.getElementById('up')
+			var Odown = document.getElementById('down')
+			var len = spans.length;
+			var n = 0;
+			Odown.onclick = function(){
+				n++;
+				if(n>imgs.length-1){
+					n = 0
+				}
+				for( var i = 0; i < imgs.length; i++ ){
+	    			imgs[i].style.opacity = 0;
+	    			spans[i].className = ''
+    		}
+    				imgs[n].style.opacity = '1';	
+    				spans[n].className = 'col'
+			}
+			Oup.onclick = function(){
+				n--;
+				if(n<0){
+					n = imgs.length-1
+				}
+				for( var i = 0; i < imgs.length; i++ ){
+	    			imgs[i].style.opacity = 0;
+	    			spans[i].className = ''
+    		}
+    				imgs[n].style.opacity = '1';	
+    				spans[n].className = 'col'
+			}
+			for (var i = 0; i < len; i++) {
+				spans[i].index = i
+				spans[i].onclick = function(){
+					alert(1)
+					for (var j = 0;j<len;j++) {
+						spans[j].className = '';
+						imgs[j].style.opacity = '0';
+					}
+					imgs[this.index].style.opacity = '1';
+					this.className = 'col';
+					n = this.index;
+				}
+			}
+		</script>
+	</body>
+</html>
