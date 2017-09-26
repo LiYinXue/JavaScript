@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				font-style: normal;
+				background: none;
+				border: none;
+			}
+			.box{
+				width:650px;
+				height: 450px;
+				background: url(images/bg.png) no-repeat;
+				margin: 20px auto;
+				padding-top: 50px;
+			}
+			.wrap{
+				width:600px;
+				height: 372px;
+				background: url(images/bg2.png);
+				background-size: 100% 100%;
+				margin: 0 auto;
+				padding-top: 28px;
+			//	text-align: center;
+			}
+			.wrap1{
+				width:456px;
+				height: 300px;
+				//background: url(images/bg.png)) no-repeat;
+				background: #000;
+				//opacity: 0.3;
+				background-size:100% 100% ;
+				margin: 0 auto;
+				margin-bottom: 8px;
+				padding-top: 20px;
+			}
+			img{
+				opacity: 0.5;
+				margin-left: 260px;
+				width: 97px;
+			}
+			.biankuang{
+				width:390px;
+				height: 130px;
+				border: 1px solid plum;
+				margin: 0 auto;
+				border-radius:10px ;
+				font-size: 16px;
+				padding: 10px 20px;
+				line-height: 26px;
+				color: greenyellow
+			}
+			.list{
+				padding-top: 20px;
+				padding-right:15px ;
+			}
+			.list p{
+				font-size: 12px;
+				padding: 2px 0 2px 0;
+				float: left;
+				width: 380px;
+				height: 26px;
+			}
+			.list b{
+				width:16px;
+				height: 16px;
+				background: blue;
+				display: inline-block;
+				border-radius:8px ;
+				line-height: 16px;
+				text-align: center;
+				color: #000000;
+				margin-right: 5px;
+			}
+			button{
+				width:60px;
+				height: 25px;
+				color: #fff;
+				border-radius:5px ;
+				border: 1px solid #fff;
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="wrap">
+				<div class="wrap1">
+					<div class="biankuang">
+						var arr = 
+						<span>'100px',</span>
+						<span>'abc' - 6,</span>
+						<span>[],</span>
+						<span style="color: deeppink;">-98765,</span>
+						<span style="color: deeppink;">34,</span>
+						<span style="color: deeppink;">0,</span>
+						<span>'300',</span>
+						<span> function() {alert(1);},</span>
+						<span>null,</span>
+						<span>document,</span>
+						<span>true,</span>
+						<span>'200px' - 30,</span>
+						<span>'23.45元',</span>
+						<span style="color: deeppink;"> 5,</span>
+						<span>Number('abc'),</span>
+						<span> function() {alert(3);},</span>
+						<span>'xyz' - 90,</span>
+					</div>
+					<div class="list">
+						<p><b>1</b> <i>找到arr里所有的数字：</i></p>
+						<button>开始查找</button>
+						<p><b>2</b> <i>找到可以转成数字的：</i></p>
+						<button>开始查找</button>
+						<p><b>3</b> <i>把转成数字以后，最大值判断出来：</i></p>
+						<button>开始查找</button>
+						<p><b>4</b> <i>把NaN所在的位置找出来：</i></p>
+						<button>开始查找</button>	
+					</div>
+				</div>
+				<img src="images/logo.png"/>
+			</div>
+		</div>
+		<script>
+			var Op = document.querySelectorAll('.list p')
+			var spans = document.querySelectorAll('.biankuang span')
+			var buttons = document.querySelectorAll('.list button')
+			var Ob = document.querySelectorAll('.list b')
+			var Oi = document.querySelectorAll('.list i')
+			Op[0].style.color = 'yellow'
+			Op[1].style.color = 'blue'
+			Op[2].style.color = 'deeppink'
+			Op[3].style.color = 'orange'
+			Ob[0].style.background = 'yellow'
+			Ob[1].style.background = 'blue'
+			Ob[2].style.background = 'deeppink'
+			Ob[3].style.background = 'orange'
+			var prevIndex = 0
+			var state = true
+		    var arr = ['100px','abc'- 6, [], -98765, 34, -2, 0, '300', function() {alert(1);}, null, document, true, '200px' - 30, '23.45元', 5, Number('abc'), function() {alert(3);}, 'xyz' - 90];
+			console.log(arr)
+			//找到arr里所有的数字
+			buttons[0].onclick = function(){
+				if(this.state){
+					this.style.background = '#fff'
+					this.style.color = '#000'
+					for (var i = 0; i < arr.length; i++) {
+						if(typeof arr[i] == 'number' && !isNaN(arr[i])){
+							Oi[0].innerHTML += arr[i]+' '+','
+						}
+					}	
+					this.state = false
+				}else{
+					Oi[0].innerHTML = '找到arr里所有的数字：'
+					this.state = true
+					this.style.background = ''
+					this.style.color = '#fff'
+				}
+				
+			}
+//			//找到可以转成数字的
+//			buttons[1].onclick = function(){
+//				if(this.state){
+//					this.style.background = '#fff'
+//					this.style.color = '#000'
+//					for (var i = 0; i < arr.length; i++) {
+//						if(typeof parseInt(arr[i]) && parseFloat(arr[i])){
+//							Oi[1].innerHTML += arr[i] +','
+//						}
+//					}
+//					this.state = false
+//				}else{
+//					Oi[1].innerHTML = '找到可以转成数字的：'
+//					this.state = true
+//					this.style.background = ''
+//					this.style.color = '#fff'
+//				}
+//				
+//			}
+			//找到可以转成数字的
+			buttons[1].onclick = function(){
+				if(this.state){
+					this.style.background = '#fff'
+					this.style.color = '#000'
+					for (var i = 0; i < arr.length; i++) {
+						if(!isNaN(parseFloat(arr[i])) || !isNaN(Number(arr[i])) ){
+							Oi[1].innerHTML += arr[i] +','
+						}
+					}
+					this.state = false
+				}else{
+					Oi[1].innerHTML = '找到可以转成数字的：'
+					this.state = true
+					this.style.background = ''
+					this.style.color = '#fff'
+				}
+				
+			}
+			
+			//把转成数字以后，最大值判断出来
+			buttons[2].onclick = function(){
+				if(this.state){
+					var n = -10000
+					this.style.background = '#fff'
+					this.style.color = '#000'
+					for (var i = 0; i < arr.length; i++) {
+						if( parseInt(arr[i])>n){
+							n = parseInt(arr[i])
+						}
+						console.log(parseInt(arr[7]))
+					}
+					Oi[2].innerHTML += n+','
+					this.state = false
+				}else{
+					Oi[2].innerHTML = '把转成数字以后，最大值判断出来：'
+					this.state = true
+					this.style.background = ''
+					this.style.color = '#fff'
+				}
+				
+				
+				
+			}
+			//把NaN所在的位置找出来
+			buttons[3].onclick = function(){
+				if(this.state){
+					this.style.background = '#fff'
+					this.style.color = '#000'
+					for (var i = 0; i < arr.length; i++) {
+						if(arr[i]!=arr[i] ){
+							Oi[3].innerHTML += i+','
+						}
+					}
+					this.state = false
+				}else{
+					Oi[3].innerHTML = '把NaN所在的位置找出来:'
+					this.state = true
+					this.style.background = ''
+					this.style.color = '#fff'
+				}
+			}
+			for (var i = 0; i < buttons.length; i++) {
+				buttons[i].state = true
+			}
+		</script>
+	</body>
+</html>
