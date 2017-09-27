@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/public.css">
+		<style>
+			.box{
+				width: 500px;
+				height: 370px;
+				background: url(images/bg.png) no-repeat;
+				margin: 30px auto;
+				padding-top: 130px;
+			}
+			.wrap{
+				width:440px;
+				height: 240px;
+				background: #371e23;
+				margin: 0 auto;
+				border-radius:5px ;
+				box-shadow: 5px 5px 5px #9eb3c1;
+			}
+			.top{
+				width:440px;
+				height: 53px;
+				background: #fff;
+				border-radius:5px ;
+				text-align: center;
+				color: #e57387;
+				font-size: 18px;
+				padding-top: 23px;
+				line-height: 32px;
+			}
+			.center{
+				border-bottom: 1px dashed yellow;
+				padding: 24px 0 26px 19px;
+			}
+			.center1{
+				color: #fff;
+				font-size: 16px;
+				width: 253px;
+				height: 34px;
+				text-indent: 1em;
+				line-height: 24px;
+			}
+			.center1 img{
+				margin-left: 20px;
+				float: left;
+				margin-top: 5px;
+			}
+			.center2{
+				display: none;
+			}
+			.bottom2{
+				display: none;
+			}
+			.bottom1{
+				color: #fff;
+				font-size: 16px;
+				width: 253px;
+				height: 34px;
+				text-indent: 1em;
+				line-height: 24px;
+			}
+			.bottom1 img{
+				margin-left: 20px;
+				float: left;
+				margin-top: 5px;
+			}
+			.bottom{
+				padding: 24px 0 26px 19px;
+			}
+			#text{
+				color: #fff;
+				font-size: 16px;
+				width: 253px;
+				height: 34px;
+				border: 1px solid #e15671;
+				text-indent: 1em;
+			}
+			#text1{
+				color: #fff;
+				font-size: 16px;
+				width:200px ;
+				height: 34px;
+				text-indent: 1em;
+				float: left;
+			}
+			#smt{
+				width: 60px;
+				height: 36px;
+				background: #e15671;
+				color: #FFF;
+				font-size: 16px;
+				border-radius:5px ;
+				margin: 0 10px;
+			}
+			#ret{
+				width: 58px;
+				height: 34px;
+				border: 1px solid #e15671;
+				color: #FFF;
+				font-size: 16px;
+				border-radius:5px ;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="wrap">
+				<div class="top">
+					<img src="images/logo.png">
+					<i>课程分类</i>
+				</div>
+				<div class="center">
+					<p class="center1"><input type="text" value="妙味课堂最新开班" id="text1"></input><span><img src="images/gaibian.png"></span></p>
+					<div class="center2"><input type="text" value="妙味课堂最新开班" id="text"/><input type="submit" value="保存" id="smt"><input type="reset" value="取消" id="ret"></div>
+				</div>
+				<div class="bottom">
+					<p class="center1"><input type="text" value="妙味课堂最新开班" id="text1"><span><img src="images/gaibian.png"></span></p>
+					<div class="center2"><input type="text" value="妙味课堂最新开班" id="text"/><input type="submit" value="保存" id="smt"><input type="reset" value="取消" id="ret"></div>
+				</div>
+				<!--<div class="kkkkk">
+					<p class="center1"><input type="text" value="妙味课堂最新开班" id="text1"><span><img src="images/gaibian.png"></span></p>
+					<div class="center2"><input type="text" value="妙味课堂最新开班" id="text"/><input type="submit" value="保存" id="smt"><input type="reset" value="取消" id="ret"></div>
+				</div>-->
+			</div>
+		</div>
+		<script>
+			var center = document.querySelector('.center')//获取父盒子center
+			
+			/*var center1 = center.querySelector('.center1')
+			var center1 = center.querySelector('.center2')
+			var centerSpan = center.querySelector('span')
+			var centerInput = center.querySelector('input')*/
+			
+			var bottom = document.querySelector('.bottom')//获取父盒子center
+			
+			//var kkk = document.querySelector('.kkkkk')
+			
+			/*var center2 = bottom.querySelector('.center1')
+			var center2 = bottom.querySelector('.center2')
+			var centerSpan2 = bottom.querySelector('span')
+			var centerInput2 = bottom.querySelector('input')*/
+			
+			function abc(parent){
+				//parent 传参两次记录下来
+				var center1 = parent.querySelector('.center1')//通过传参找到center和bottom 里的center1
+				var center2 = parent.querySelector('.center2')//通过传参找到center和bottom 里的center2
+				var spans = parent.querySelectorAll('span')	//	通过传参找到center和bottom 里的所有span
+				var inputs = parent.querySelectorAll('input')//	通过传参找到center和bottom 里的所有input
+				
+				//当点击第一个span的时候 
+				spans[0].onclick = function(){
+					center1.style.display = 'none'
+					center2.style.display = 'block'
+					inputs[1].select();//点击按钮选中value值
+				}
+				//当点击保存时 候的状态
+				inputs[2].onclick = function(){
+					center1.style.display = 'block'
+					center2.style.display = 'none'
+					inputs[0].value = inputs[1].value //输入的值就赋给第一个input的值
+				}
+				//当点击取消时的状态
+				inputs[3].onclick = function(){
+					center1.style.display = 'block'
+					center2.style.display = 'none'
+					inputs[0].value = inputs[0].value //点取消的时候就赋值给自己
+					inputs[1].value  = inputs[0].value //新输入的value值赋给(替换)之前的value值
+				}
+				
+				
+			}
+			//传参两次
+			abc(center)//函数名
+			abc(bottom)//函数名
+			//abc(kkk)
+			
+			
+			
+		</script>
+	</body>
+</html>
