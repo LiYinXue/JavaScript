@@ -1,0 +1,22 @@
+1. 是一个隔行变色的
+2.  鼠标移入时候为红色
+3. 鼠标移开
+	在鼠标移开的时候，如果这个元素中的checkbox为true，
+		没必要隔行变色了
+	如果这个元素中的checkbox为false
+		鼠标移开还原到之前隔行变色的颜色
+		思路：鼠标移开时候判断移开的这个元素的是奇数行还是偶数行
+				用下标
+
+	
+
+4. 全选
+	全选的checkbox为true，所有的checkbox都为true
+
+5. 单选
+	只有所有的都选中了，全选的checkbox为true
+	只要有一个没选中，全选的checkbox为false
+
+	计数的方式
+		只要选中一个checkbox为true，就让n+1
+		当这个n的值等于了所有checkbox的个数的时候，说明都选中了，全选的checkbox为true
