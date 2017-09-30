@@ -1,0 +1,49 @@
+.box{
+				width: 768px;
+				height: 362px;
+				background: url(images/bg2.png) no-repeat;
+				margin: 20px auto;
+				padding-left: 132px;
+				padding-top: 138px;
+				position: relative;
+			}
+			#warp{
+				width: 338px;
+				height: 279px;
+				background: url(images/bg1.png) no-repeat;
+				padding: 17px 15px;
+			}
+			#smallImg{
+				position: relative;
+				width: 338px;
+				background: url(images/bg.png) no-repeat;
+				height: 190px;
+			}
+			#smallImg img{
+				width: 338px;
+				height: 190px;
+			}
+			#yuan{
+				width: 100px;
+				height: 100px;
+				background: url(images/yuan.png) no-repeat;
+				background-size:100px 100px;
+				opacity: 0.4;
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: none;
+			}
+			#big{
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				border-radius:100px ;
+				position: absolute;
+				right:122px ;
+				top: 150px;
+				display: none;
+			}
+			#big img{
+				position: absolute;
+			}

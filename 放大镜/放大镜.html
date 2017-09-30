@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css"/>
+		<style>
+			.box{
+				width: 768px;
+				height: 362px;
+				background: url(images/bg2.png) no-repeat;
+				margin: 20px auto;
+				padding-left: 132px;
+				padding-top: 138px;
+				position: relative;
+			}
+			#warp{
+				width: 338px;
+				height: 279px;
+				background: url(images/bg1.png) no-repeat;
+				padding: 17px 15px;
+			}
+			#smallImg{
+				position: relative;
+				width: 338px;
+				background: url(images/bg.png) no-repeat;
+				height: 190px;
+			}
+			#smallImg img{
+				width: 338px;
+				height: 190px;
+			}
+			#yuan{
+				width: 100px;
+				height: 100px;
+				background: url(images/yuan.png) no-repeat;
+				background-size:100px 100px;
+				opacity: 0.4;
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: none;
+			}
+			#big{
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				border-radius:100px ;
+				position: absolute;
+				right:122px ;
+				top: 150px;
+				display: none;
+			}
+			#big img{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div id="warp">
+				<div id="smallImg">
+					<div id="yuan"></div>
+				</div>
+			</div>
+			<div id="big"><img src="images/bg.png" id="bigImg"></div>
+		</div>
+		<script src="utils.js"></script>
+		<script>
+			var smallImg = $('#smallImg')
+			var yuan = $('#yuan')
+			var wrap = $('#warp')
+			var big = $('#big')
+			var bigImg = $('#bigImg')
+			//点击小图片圆圈显示
+			smallImg.onmouseover = function(){
+				yuan.style.display = 'block'
+				big.style.display = 'block'
+				//生成大图片
+				//宽的比例
+				var scallX = yuan.offsetWidth/smallImg.offsetWidth 
+				//高的比例
+				var scallY = yuan.offsetHeight/smallImg.offsetHeight 
+				//大图的宽
+				bigImg.style.width = big.offsetWidth/scallX +"px"	
+				//大图的高
+				bigImg.style.height = big.offsetHeight/scallY+"px"	
+			}
+			//鼠标只要点到图片外的父盒子就消失
+			wrap.onmouseout = function(){
+				yuan.style.display = 'none'
+				big.style.display = 'none'
+			}
+			//圆的鼠标事件
+			//yuan.onmousedown = function(ev){
+				//移动
+				smallImg.onmousemove = function(ev){
+					//圆的left值
+					var l=ev.clientX-smallImg.getBoundingClientRect().left-yuan.offsetWidth/2;
+					//圆的top值
+           			var t=ev.clientY-smallImg.getBoundingClientRect().top-yuan.offsetHeight/2;
+           			var maxX = smallImg.clientWidth-yuan.offsetWidth //最大left值
+           			var maxY = smallImg.clientHeight-yuan.offsetHeight//最大top值
+           			if(l<=0){
+           				l = 0
+           			}
+           			if(l>maxX){
+           				l = maxX
+           			}
+           			if(t<=0){
+           				t=0
+           			}
+           			if(t>maxY){
+           				t = maxY
+           			}
+           			//小图可移动的left比例
+           			var scallL = l/maxX
+           			//小图可移动的top比例
+           			var scallT = t/maxY
+           			//大图可移动的left
+           			var bigX = bigImg.clientWidth-big.offsetWidth
+           			//大图可移动的top
+           			var bigY = bigImg.clientHeight-big.offsetHeight
+           			//大图移动的比例
+           			var bigL = scallL*bigX
+           			//小图移动的比例
+           			var bigT = scallT*bigY
+           			bigImg.style.left=(-bigL)+'px'; //大图片的left值
+		            bigImg.style.top=(-bigT)+'px'; //大图片的top值
+		
+		            yuan.style.left=l+'px';
+		            yuan.style.top=t+'px';
+				}
+//				yuan.onmouseup = function(){
+//					smallImg.onmousemove = null
+////					yuan.style.display = 'none'
+////					big.style.display = 'none'
+//				}
+			//}
+		</script>
+	</body>
+</html>
