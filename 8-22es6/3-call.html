@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+			"use strict"
+
+			fn.call(null);  // 指向的null
+
+			// 非严格模式
+
+			function fn(){
+				console.log(this);
+			}
+			// 直接会把函数调用，call的第一个参数就是函数this的指向
+			fn.call([1,2,3]);
+			fn.call({a:1});
+			fn.call(null);
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

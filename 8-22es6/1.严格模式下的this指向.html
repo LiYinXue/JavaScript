@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			"use strict"
+			function fn(){
+				console.log(this)
+			}
+			fn()
+			//严格模式下直接调用函数，函数中的this不在指向windows 而是undefined
+		</script>
+	</body>
+</html>

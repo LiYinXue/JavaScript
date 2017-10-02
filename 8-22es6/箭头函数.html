@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>改变</button>
+		<button>改变</button>
+		<button>改变</button>
+		<script>
+			let buttons = document.querySelectorAll('button')
+			for (var i = 0; i < buttons.length; i++) {
+				buttons[i].onclick = function(){
+					setTimeout(()=>{
+						this.style.background = 'red'
+						//this指向<button style = 'background :red;>改变</button>
+					},1000)
+				}
+			}
+			//箭头函数 想相乘
+			let multiply = (a,b)=>a*b
+			console.log(multiply(4,5))
+//			var a = 10
+//			var obj = {
+//				a:1,
+//				fn:function(){
+//					console.log(this.a);//返回值是1
+//				}
+//			}
+//			obj.fn() //函数是被obj调用的，this就指向obj
+//			var a = 10
+//			var obj = {
+//				a:1,
+//				fn:function(){
+//					console.log(this.a);//返回值是1 和10
+//				}
+//			}
+//			//obj.fn() //函数是被obj调用的，this就指向obj
+//			var f= obj.fn;//相当于将obj.fn这个函数赋值给变量f f就相当于这个函数 
+//			f()//this指的windows
+			var a = 10
+			var obj = {
+				a:1,
+				fn:()=>{
+					console.log(this)//箭头函数拥有包含这个箭头函数的作用域this指向Windows
+					console.log(this.a);//返回值是10
+				}
+			}
+			obj.fn() //10
+			var f= obj.fn;//相当于将obj.fn这个函数赋值给变量f f就相当于这个函数 
+			f()//this指的windows 10
+		</script>
+	</body>
+</html>

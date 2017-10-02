@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="list">
+			<li>123</li>
+			<li>456</li>
+			<li>789</li>
+			<li>907</li>
+		</ul>
+		<script>
+			var lis = document.querySelectorAll('li')
+//			for (var i = 0; i < lis.length; i++) {
+//				lis[i].onclick = function(){
+//					console.log(i)
+//				}
+//			}
+			for (let i = 0; i < lis.length; i++) {
+				lis[i].onclick = function(){
+					console.log(i)
+				}
+			}
+		</script>
+	</body>
+</html>

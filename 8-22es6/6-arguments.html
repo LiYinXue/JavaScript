@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+			"use strict"
+
+
+			// 非严格模式
+
+			function fn(a){
+
+				a = 10000;
+				// 当形参发生变化时候，arguments会追踪变化
+				// 当开启严格模式之后，arguments就不在追踪形参变化了
+				// arguments是实参的集合（类数组）
+				console.log(arguments);
+			}
+
+			fn(1,2,3,4,5,6)
+			fn(1,2)
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>
