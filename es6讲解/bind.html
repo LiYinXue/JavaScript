@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//改变this指向 但不先调用函数
+			function fn(){
+				console.log(this)
+			}
+			//fn()
+			let f = fn.bind({a:1})
+			f() //这个时候this指向{a:1}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				font-size: 200px;
+				color: #fff;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		我想睡觉
+		<script>
+			//点击document一秒之后打印出当前的this指向 document
+			document.onclick = function(){
+				function fn(){
+					console.log(this)
+					console.log('我被执行了')
+					document.body.style.background = 'blue'
+				};
+				let f = fn.bind(this)//bind改变this指向 并获得一个新的函数
+				setTimeout(f,1000)
+			}
+		</script>
+	</body>
+</html>
