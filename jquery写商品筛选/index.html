@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body {
+			font-size: 14px;
+			font-family: "Lantinghei SC Extralight",Arial;
+		}
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+		}
+		img {
+			vertical-align: top;
+		}
+		#wrap {
+			width: 760px;
+			height: 260px;
+			margin: 100px auto;
+			padding: 145px 120px 95px;
+			background: url(img/bg.jpg) no-repeat 0 0;
+		}
+		#section {
+			width: 760px;
+			height: 260px;
+			-moz-box-shadow: 0px 0px 4px rgba(0,0,0,.2); 
+			box-shadow: 0px 0px 4px rgba(0,0,0,.2);
+		}
+		#choose {
+			width: 760px;
+			height: 50px;
+			margin: 0 auto;
+			background: url(img/nav_bg.png) no-repeat 0 0;
+			line-height: 50px;
+			text-indent: 21px;
+		}
+		#type {
+			width: 100%;
+			height: 210px;
+			background: url(img/type_bg.png) no-repeat 0 0;
+			padding: 17px 0 16px 28px;
+		}
+		#type li {
+			height: 44px;
+			color: #8a8a8a;
+			line-height: 44px;
+		}
+		#type a {
+			margin: 0 12px 0 11px;
+			color: #000;
+		}
+		#choose mark {
+			position: relative;
+			display: inline-block;
+			height: 24px;
+			line-height: 24px;
+			border: 1px solid #28a5c4;
+			color: #28a5c4;
+			margin: 12px 5px 0;
+			background: none;
+			padding: 0 30px 0 6px;
+			text-indent: 0;
+		}
+		#choose mark a {
+			position: absolute;
+			top: 3px;
+			right: 2px;
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			background: #28a5c4;
+			color: #fff;
+			line-height: 18px;
+			font-size: 16px;
+			text-align: center;
+		}
+		#type .active{
+			color:blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<section id="section">
+			<nav id="choose">
+			你的选择:
+				<!-- <mark><span></span><a href="javascript:;">x</a></mark> -->
+			</nav>
+			<ul id="type">
+				<li>
+					品牌：
+					<a href="javascript:;">苹果</a>
+					<a href="javascript:;">小米</a>
+					<a href="javascript:;">锤子</a>
+					<a href="javascript:;">魅族</a>
+					<a href="javascript:;">华为</a>
+					<a href="javascript:;">三星</a>
+					<a href="javascript:;">OPPO</a>
+					<a href="javascript:;">vivo</a>
+					<a href="javascript:;">乐视</a>
+					<a href="javascript:;">360</a>
+					<a href="javascript:;">中兴</a>
+					<a href="javascript:;">索尼</a>
+				</li>
+				<li>
+					尺寸：
+					<a href="javascript:;">3.0英寸以下</a>
+					<a href="javascript:;">3.0-3.9英寸</a>
+					<a href="javascript:;">4.0-4.5英寸</a>
+					<a href="javascript:;">4.6-4.9英寸</a>
+					<a href="javascript:;">5.0-5.5英寸</a>
+					<a href="javascript:;">6.0英寸以上</a>
+				</li>
+				<li>
+					系统：
+					<a href="javascript:;">安卓 ( Android )</a>
+					<a href="javascript:;">苹果 ( IOS )</a>
+					<a href="javascript:;">微软 ( WindowsPhone )</a>
+					<a href="javascript:;">无</a>
+					<a href="javascript:;">其他</a>
+				</li>
+				<li>
+					网络：
+					<a href="javascript:;">联通3G</a>
+					<a href="javascript:;">双卡单4G</a>
+					<a href="javascript:;">双卡双4G</a>
+					<a href="javascript:;">联通4G</a>
+					<a href="javascript:;">电信4G</a>
+					<a href="javascript:;">移动4G</a>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<script src="src/jquery-3.2.1.js"></script>
+	<script>
+		/*
+			text([val|fn])
+				概述：取得所有匹配元素的内容。结果是由所有匹配元素包含的文本内容组合起来的文本。这个方法对HTML和XML文档都有效。
+					val:用于设置元素内容的文本
+					function(index, text):此函数返回一个字符串。接受两个参数，index为元素在集合中的索引位置，text为原先的text值。
+		*/
+		//将数据存到一个对象上
+		let obj = {}
+		let choose = $("#choose")
+		//因为choose的要受限制所以数量为；li的长度
+		let len = $("li").length
+		$("#type").on('click','a',function(){
+			//点击a添加样式
+			//找到同级兄弟移出class
+			$(this).siblings('.active').removeClass('active').end().addClass('active')
+			//找到同级a的父级li的下标
+			let parent = $(this).parent()
+			let index = parent.index()
+			//console.log(index) //点击每一个a对应的父元素的下标
+			obj[index] = $(this).text()
+			//console.log(JSON.stringify(obj,null,2)) 
+			/*
+				obj[index]即为对象的key值
+				返回值：{
+						  "0": "魅族"
+						}
+
+				html([val|fn]) 
+					概述：取得第一个匹配元素的html内容。这个函数不能用于XML文档。但可以用于XHTML文档。在一个 HTML 文档中, 我们可以使用 .html() 方法来获取任意一个元素的内容。 如果选择器匹配多于一个的元素，那么只有第一个匹配元素的 HTML 内容会被获取。
+						val:用于设定HTML内容的值
+						function(index, html):此函数返回一个HTML字符串。接受两个参数，index为元素在集合中的索引位置，html为原先的HTML值。
+			*/
+			//生成结构 
+			choose.html('你的选择: ')
+			for (var i = 0; i < len; i++) {
+				console.log(obj[i]); //返回点击a的内容
+				//如果obj[i]有值走if
+				if(obj[i]){
+					let h = `<mark><span>${obj[i]}</span><a href="javascript:;" index="${i}">x</a></mark>`
+					choose.append(h)
+				}
+			};
+
+		})
+		//删除替换 利用事件委托
+		choose.on('click','a',function(){
+			$(this).parent().remove()
+			console.log($(this).parent()) //每一个删除的父元素
+			let index = $(this).attr('index') //给每一个删除的都添加下标值为obj里的key值
+			//删除与其对应的li里的a的class去掉
+			$("li").eq(index).find('.active').removeClass('active')
+			//移出obj里的数据
+			delete obj[index];
+		})
+	</script>
+</body>
+</html>
