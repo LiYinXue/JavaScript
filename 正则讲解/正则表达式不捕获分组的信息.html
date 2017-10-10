@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//没懂捕获？？？
+			var str = 'a10c1a2a20ca30ca4ca5c2aaa30c';
+			//a开始c结束，中间一个数字是12或20或30
+			//找到所有的数字
+			let re = /a(\d+)c/g;
+			console.log(str.match(re))//["a10c", "a20c", "a30c", "a4c", "a5c", "a30c"]
+			
+			//找到数字中a和c之间含有1 2 3 的字符
+			//正则有g,不捕获分组的信息
+			let re1 = /a(10|20|30)c/g 
+			console.log(str.match(re1)) //["a10c", "a20c", "a30c", "a30c"]
+			//正则没有g,捕获分组的信息
+			let re2 = /a(?:10|20|30)c/
+			console.log(str.match(re2)) //["a10c", index: 0, input: "a10c1a2a20ca30ca4ca5c2aaa30c"]
+			
+			
+			
+		</script>
+	</body>
+</html>

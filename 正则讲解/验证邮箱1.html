@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width:300px;
+				height: 100px;
+				border:2px solid yellow;
+				background: #00FFFF;
+				padding: 50px;
+				text-align: center;
+			}
+			#test1{
+				width: 250px;
+				height: 50px;
+				margin-top: 20px;
+				text-align: center;
+			}
+			#content{
+				background: yellow;
+				height: 30px;
+				line-height: 30px;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span style="font-size: 20px;font-weight: bold;color: deeppink;">验证邮箱</span>
+			<input type="text" id="test1"/>
+			<p id="content"></p>
+		</div>
+		<script>
+			var test1 = document.getElementById('test1');
+			var content = document.getElementById('content');
+			var re = /^\w+@[0-9a-z]{2,5}(\.[a-z]{2,3}){1,3}$/i;
+			test1.oninput = function(){
+				//var re = /^(\w+)@([\da-zA-Z]{2,5})((\.[a-zA-Z]{2,3}){1,3})$/g //邮箱密码限制字母，数字 下划线 个数到5-10
+				if(re.test(this.value)){
+					content.innerHTML = '输入正确'
+				}else{
+					content.innerHTML = '输入不正确，请重新输入'
+				}
+			}
+		</script>
+	</body>
+</html>

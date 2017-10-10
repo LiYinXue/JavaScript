@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<textarea id="message">
+			
+		</textarea>
+		<button id="btn">按钮</button>
+		<script>
+			let re = /<.+p?>/g;
+			btn.onclick  = function (){
+				var val = message.value;
+
+				let newStr = val.replace(re,function ($0){
+					console.log($0);
+					return ""
+				});
+
+				newStr = newStr.replace(/\n/g,"*")
+
+				contnet.innerHTML = newStr;
+
+				console.log(newStr);
+
+			};
+		</script>
+	</body>
+</html>

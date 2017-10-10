@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			\d  //代表数字
+			\D  //代表非数字
+			\s	//代表一个空格
+			\S  //代表一个非空格
+			\w //代表数字 、字母、下划线
+			\W //非数字 、非字母 和_
+			\b //单词边界
+			\B //非单词边界
+			.  代表任意字符  除了/n换行符	
+			*/
+			//去除前后空格
+			let str = '   妙 味   ';
+			//只去除前后的空格
+			let re = /^\s+|\s+$/g;
+			console.log(str.replace(re,'*'));
+			//将这种方式 封装一个函数
+			function trim(str){
+				let re = /^\s+|\s+$/g;
+				return re
+			}
+			//   \w //代表数字 、字母、下划线
+			let str1 = 'dfds4646_&*^%$#@_jh313' 
+			let re2 = /\w/;
+			//console.log(str1.match(re2));
+			console.log(str1.replace(re2,"%"));
+			//\b //单词边界 
+			let str2 = 'I am a girl&'
+			let re3 = /\b/g;
+			console.log(str2.replace(re3,"|"));
+			//  .  代表任意字符  除了/n换行符	
+			
+			let str3 = 'kasgdja^&$$^*)&62525251j——-_g'
+			let re4 = /./g;
+			console.log(str3.replace(re4,'*'))//返回*****************************
+			
+			let str4 = '哈哈哈，\n明天放假了'
+//			let re5 = /.|\n/g; 
+//			console.log(str4.replace(re5,"@"))//@@@@@@@@@@
+			let re5 = /./g; 
+			console.log(str4.replace(re5,"@"))
+			/*
+			@@@@
+			@@@@@
+			*/
+			
+			//贪婪模式
+			
+			let sr = 'a542ca4364csdasa45424chahaha'
+			let r = /a\w+c/g;
+			console.log(sr.match(r)) //["a542ca4364csdasa45424c"]
+			
+			//懒惰模式
+			let sr1 = 'a542ca4364csdasa45424chahaha'
+			let r1 = /a\w+?c/g;
+			console.log(sr1.match(r1)) // ["a542c", "a4364c", "asa45424c"]
+		</script>
+	</body>
+</html>

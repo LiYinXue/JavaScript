@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			let str = '2017-08-25';
+			let str1 = '2017---08...25';
+			let re = /\d+/g;
+			console.log(str.match(re)) //找到数字 ["2017", "08", "25"]
+			console.log(str1.match(re))//找到数字 ["2017", "08", "25"]
+			let re1 = /\D+/g
+			console.log(str.match(re1)) //找到非数字 ["-", "-"]
+			console.log(str1.match(re1))//找到非数字 ["---", "..."]
+			
+			//将上面两个字符串换成xxxx年xx月xx日
+			let re2 = /(\d+)\D+(\d+)\D+(\d+)/
+			//用 replace()
+			let newStr = str.replace(re2,($0,$1,$2,$3) =>{
+				return $1+"年"+$2+"月"+$3+"日"
+			})
+			console.log(newStr)
+			
+			
+			//例子2：
+			var a = 'a95cba6c'
+			//找到a和c之间的数字 
+			let r = /a(\d+)c/g;
+			let s = a.replace(r,(...$0)=>{
+				console.log($0)
+			})
+			
+			let id = '#btn_5';
+			let re5 = /^#(\w+)/ //以#开头 所有的字母、数字、下划线
+	
+			id.replace(re5,(...data)=>{
+				console.log(data);
+			})
+
+		</script>
+	</body>
+</html>

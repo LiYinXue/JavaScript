@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var str = 'miaov1ketang2hahahah'
+			var re = /\d/g;
+			// 加了全局匹配，匹配一次就会记录这个位置+1，下一次再调用就会从这个记录的位置再搜索
+			console.log(re.lastIndex); //下标0
+			console.log(re.test(str)) //true
+			console.log(re.lastIndex); //下标6
+			console.log(re.test(str)) //true
+			console.log(re.lastIndex);//13
+			console.log(re.test(str)) //false
+			console.log(re.lastIndex);//0
+			console.log(re.test(str)) //true
+			
+			console.log(re.test(str)) //true
+			re.lastIndex = 0;  //从设置的位置开始搜索
+			console.log(re.test(str)) //true
+			re.lastIndex = 0;  //从设置的位置开始搜索
+			console.log(re.test(str)) //true
+			re.lastIndex = 0;  //从设置的位置开始搜索
+			console.log(re.test(str)) //true
+		</script>
+	</body>
+</html>

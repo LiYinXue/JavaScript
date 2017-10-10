@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			let str = 'alert(1)'
+			//方法一：
+			//eval(str)
+			//方法二：
+			let a = new Function(str)
+			a()
+		</script>
+	</body>
+</html>

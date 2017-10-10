@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//  \d //代表数字
+			var a = 'abc12shs6'
+			var re = /\d+/g;
+			console.log(a.match(re))// ["12", "6"]
+			
+			//   \D  //代表非数字
+			var a = 'abc12shs6'
+			var re = /\D+/g;
+			console.log(a.match(re))// ["abc", "shs"]
+			
+			//  \s	//代表一个空格
+			var a = '  abc12  shs6  '
+			var re = /\s/g;
+			//将空格转为@
+			console.log(a.replace(re,"@"))// @@abc12@@shs6@@
+			//  \S  //代表一个非空格
+			var a = '  abc12  shs6  '
+			var re = /\S/g;
+			//将不是空格转为@
+			console.log(a.replace(re,"@"))//   @@@@@  @@@@  
+			//  \s例子
+			var str = '  妙味 课堂  '
+			//需求：去掉前后空格变为“*妙味 课堂*”
+			var re = /^\s+|\s+$/g;
+			console.log(str.replace(re,"*")) //*妙味 课堂*
+			
+			//  \w //代表数字 、字母、下划线
+			var a = 'hdhs#$_jh12';
+			var re = /\w/g;
+			console.log(a.replace(re,"*"))//****#$*****
+			
+			//  \W //非数字 、非字母 和_
+			var a = 'hdhs#$_jh12';
+			var re = /\W/g;
+			console.log(a.replace(re,"*"))//hdhs**_jh12
+			
+			//  \b //单词边界
+			var a = 'I am a girl^';
+			var re = /\b/g;
+			console.log(a.replace(re,"|"))//|I| |am| |a| |girl|^
+			
+			//  \B //非单词边界
+			var a = 'I am a girl^';
+			var re = /\B/g;
+			console.log(a.replace(re,"|"))//|I| |am| |a| |girl|^
+			
+			//.  代表任意字符  除了/n换行符	
+			
+			var a = 'khksa_7j2%$^'
+			var re = /./g;
+			console.log(a.replace(re,"#"))//############
+			
+			//除了\n字符
+			var a = '今天下雨了\n，心情不好'
+			var re = /./g
+			console.log(a.replace(re,"@"))   
+			/*@@@@@
+			  @@@@@
+			*/
+			
+			//贪婪模式
+			var a= 'a456ca5_ksdnkcac'
+			var re = /a\w+c/g
+			console.log(a.match(re)) //["a456ca5_ksdnkcac"]从第一个a到最后一个c中间的数字和字母都在
+			
+			//懒惰模式  
+			var a= 'a456ca5_ksdnkcac'
+			var re = /a\w+?c/g
+			console.log(a.match(re)) // ["a456c", "a5_ksdnkc"] 和正常模式一样
+			
+			//匹配任意字符
+			var a = 'ahf.dsj/1)kx(lsl'
+			var re = /\.|\(|\)|\//g;
+			console.log(a.replace(re,"$")) //ahf$dsj$1$kx$lsl
+			
+			//i不分大小写
+			var str = 'a11ca2C'
+			var re = /a(\d)c/gi;
+			str.replace(re,(...data)=>{
+				console.log(data)//["a2C", "2", 4, "a11ca2C"]
+			})
+			
+		</script>
+	</body>
+</html>
