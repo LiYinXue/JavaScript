@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Car(color,lunzi){
+				this.color = color;
+				this.lunzi = lunzi;
+				return 1 //数字
+			}
+			let a = new Car("blue",4)
+			console.log(a)//Car {color: "blue", lunzi: 4}
+			
+			function Car(color,lunzi){
+				this.color = color;
+				this.lunzi = lunzi;
+				return "a"  //字符串
+			}
+			let b = new Car("red",4)
+			console.log(b)//Car {color: "red", lunzi: 4}
+			
+			
+			function Car(color,lunzi){
+				this.color = color;
+				this.lunzi = lunzi;
+				return [1,2,3] //数组
+			}
+			let c = new Car("red",4)
+			console.log(c)// [1, 2, 3]
+			
+			function Car(color,lunzi){
+				this.color = color;
+				this.lunzi = lunzi;
+				return {a:1} //数组
+			}
+			let d = new Car("red",4)
+			console.log(d)//{a:1}
+		</script>
+	</body>
+</html>

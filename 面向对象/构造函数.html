@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			new 操作符
+			new调用函数的作用
+			步骤：
+				1.会在构造函数的内部创建一个空对象
+				2.函数内部的this指向这个空对象(this就代表了这个对象)
+				3.执行函数，添加属性
+				4.返回这个对象
+			显示的使用return 
+				return 后后面的值是一个简单类型的值，还return 的是内部创建的对象
+				return 后后面的值是一个对象类型/数组类型的值，返回return 后面的这个对象。
+			*/
+			function Car(color,lunzi){
+				this.color = color;
+				this.lunzi = lunzi;
+				console.log(this) //代表这个对象
+			}
+			var c1 = new Car('red',4)
+			console.log(c1.constructor)
+		</script>
+	</body>
+</html>

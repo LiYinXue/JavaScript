@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			Object.prototype.like = '篮球'
+			function People(name,age,sex){
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+			}
+			var a = new People("momo",18,"男")
+			console.log(a);
+			console.log(a.__proto__.__proto__ )//找a构造函数的原型 如果没有继续向上找Object.prototype为止
+		</script>
+	</body>
+</html>

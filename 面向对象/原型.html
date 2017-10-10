@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//把一类对象共享的属性和方法，放在原型上
+			//内部原型对象的值：Car.prototype = {};
+			function People(name,age,sex){
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+//				this.like =function(){
+//					console.log("我们喜欢跑步，健身")
+//				}
+			}
+			People.prototype.like = function(){
+				console.log("我们喜欢跑步，健身")
+			}
+			var a = new People('安安',26,"女")
+			var b = new People('涵涵',27,"女")
+			console.log(a.like === b.like) //true     方法相同
+		</script>
+	</body>
+</html>

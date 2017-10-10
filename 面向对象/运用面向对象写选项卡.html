@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box,#box2 {
+				margin: 0 auto;
+				width: 200px;
+				margin-bottom: 20px;
+			}
+			#box div,#box2 div{
+				width: 200px;
+				height: 200px;
+				background: red;
+				display: none;
+				line-height: 200px;
+				text-align: center;
+				font-size: 50px;
+				color: #fff;
+			}
+			.yellow {
+				background: yellow;
+			}
+			input{
+				width: 60px;
+				height: 30px;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<input class="yellow" type="button" value="按钮1" />
+			<input type="button" value="按钮2" />
+			<input type="button" value="按钮3" />
+			<div style="display: block;">一</div>
+			<div>二</div>
+			<div>三</div>
+		</div>
+		<div id="box2">
+			<input class="yellow" type="button" value="按钮1" />
+			<input type="button" value="按钮2" />
+			<input type="button" value="按钮3" />
+			<div style="display: block;">爬</div>
+			<div>上</div>
+			<div>山</div>
+		</div>
+		<script>
+			
+			//第一个需求：第一个点击切换，第二个自动切换
+			//获取元素
+			var box = document.getElementById('box')
+			var box2 = document.getElementById('box2')
+			Tab(box);
+			Tab(box2,"autoPlay")
+			//用闭包方法封装一个函数
+			function Tab(parent,isAutoPlay){
+				var inputs = parent.querySelectorAll('input')
+				var divs = parent.querySelectorAll('div')
+				var len = inputs.length
+				for (var i = 0; i < len; i++) {
+					inputs[i].index = i;
+					inputs[i].onclick = function(){
+						for (var i = 0; i < len; i++) {
+							inputs[i].className = ''
+							divs[i].style.display = 'none'
+						}
+						this.className = 'yellow'
+						divs[this.index].style.display = 'block'
+					}
+				}
+				//自动播放   
+				if(isAutoPlay==='autoPlay'){
+					var n = 0
+					setInterval(function(){
+						n++;
+						if(n>inputs.length-1){
+							n= 0
+						};
+						
+						for (var i = 0; i < len; i++) {
+							inputs[i].className = '';
+							divs[i].style.display = 'none'
+						}
+						inputs[n].className = 'yellow';
+						divs[n].style.display = 'block'
+					},1000)
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box,#box2 {
+				margin: 0 auto;
+				width: 200px;
+				margin-bottom: 20px;
+			}
+			#box div,#box2 div{
+				width: 200px;
+				height: 200px;
+				background: red;
+				display: none;
+				line-height: 200px;
+				text-align: center;
+				font-size: 50px;
+				color: #fff;
+			}
+			.yellow {
+				background: yellow;
+			}
+			input{
+				width: 60px;
+				height: 30px;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<input class="yellow" type="button" value="按钮1" />
+			<input type="button" value="按钮2" />
+			<input type="button" value="按钮3" />
+			<div style="display: block;">一</div>
+			<div>二</div>
+			<div>三</div>
+		</div>
+		<div id="box2">
+			<input class="yellow" type="button" value="按钮1" />
+			<input type="button" value="按钮2" />
+			<input type="button" value="按钮3" />
+			<div style="display: block;">爬</div>
+			<div>上</div>
+			<div>山</div>
+		</div>
+		<button id="change">点击让第一个变为自动切换</button>
+		<button id="change2">点击让第二个停止自动播放</button>
+		<script>
+			
+			//第一个需求：第一个点击切换，第二个自动切换
+			//获取元素
+			var box = document.getElementById('box')
+			var box2 = document.getElementById('box2')
+			var change = document.getElementById('change')
+			var change2 = document.getElementById('change2')
+			var t1 = new Tab(box);
+			
+			var t2 = new Tab(box2)
+			//自定义一个构造函数  this不太清除this指的是谁
+			function Tab(parent){
+				//console.log(this)//指的是这个构造函数Tab {}
+				this.inputs = parent.querySelectorAll('input'); 
+				this.divs = parent.querySelectorAll('div');
+				this.len = this.inputs.length;
+				this.timer = null;
+			//	console.log(this)//Tab {inputs: NodeList(3), divs: NodeList(3), len: 3, timer: null}
+			}
+			//初识值可以点击
+			Tab.prototype.abc = function(){
+				//console.log(this) //指的是这个构造函数Tab {}
+				var that = this;//??
+				//console.log(that)指的是这个构造函数Tab {}
+				//this.inputs[i]指的是什么值 
+				for (var i = 0; i < this.inputs.length; i++) {
+					this.inputs[i].index = i;
+					this.inputs[i].onclick = function(){
+						console.log(this)
+						for (var i = 0; i < that.inputs.length; i++) {
+							that.inputs[i].className = ''
+							that.divs[i].style.display = 'none'
+						}
+						this.className = 'yellow';	
+						that.divs[this.index].style.display = 'block';
+					}
+				}
+			}
+			//自动轮播
+			Tab.prototype.autoPlay = function(){
+				var n = 0;
+				//console.log(this)  //指的是这个构造函数Tab {}
+				this.timer = setInterval(()=>{
+					n++;
+					if(n>this.len-1){
+						n = 0;
+					}
+					for( var i = 0; i < this.len; i++ ){
+						//console.log(this)  //指的是这个构造函数Tab {}
+						this.inputs[i].className = '';
+						this.divs[i].style.display = 'none';
+					}
+					console.log(this)
+					this.inputs[n].className = 'yellow';  //指的是这个构造函数Tab {}this指的是当前播放的
+					this.divs[n].style.display = 'block';
+				},1000)
+			}
+			//停止播放
+			Tab.prototype.stopPlay = function(){
+				clearInterval(this.timer)
+			}
+			t1.abc()
+			t2.abc()
+			t2.autoPlay()
+			change.onclick = function(){
+				t1.autoPlay()
+			}
+			change2.onclick = function(){
+				t2.stopPlay()
+			}
+		</script>
+	</body>
+</html>
