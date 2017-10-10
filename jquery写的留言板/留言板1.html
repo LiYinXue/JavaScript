@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="css/clear.css">
+<script type="text/javascript" src = "js/index.js"></script>
+<script src="src/jquery-3.2.1.js"></script>
+</head>
+<body>
+<section id="wrap">
+	<div id="content">
+		<h2 class="logo"><img src="img/log.png"></h2>
+		<div class="clearfix">
+			<textarea class="message"></textarea>
+			<input type="button" value="提交" class="btn">
+		</div>
+		<ul id="mList"></ul>
+	</div>
+	<script>
+			$(".btn").click(function(){
+				 if($(".message").val().trim() === ''){
+				 	alert("请输入内容")
+				 }else{
+				 	let html = `
+						<li class="mText clearfix">
+							<span class="mIcon1 ${$("li").length%2==1?'mIcon2':''}"></span>
+							<p class="mComtent">${$(".message").val().trim()}</p>
+							<input type="button"  value="删除" class="del"/>
+						</li>
+					`	
+					$("#mList").prepend(html)
+					$(".message").val('')
+				 }
+			})
+			$("#mList").on('click','input',function(){
+				$(this).parent('li').remove()
+			})
+	</script>
+</section>
+</body>
+</html>

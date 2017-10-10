@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="css/clear.css">
+<script type="text/javascript" src = "js/index.js"></script>
+<script src="src/jquery-3.2.1.js"></script>
+</head>
+<body>
+<section id="wrap">
+	<div id="content">
+		<h2 class="logo"><img src="img/log.png"></h2>
+		<div class="clearfix">
+			<textarea class="message"></textarea>
+			<input type="button" value="提交" class="btn">
+		</div>
+		<ul id="mList">
+			<!-- <li class="mText clearfix">
+				<span class="mIcon1"></span>
+				<p class="mComtent">你好!</p>
+				<input type="button"  value="删除" />
+			</li>
+			<li class="mText clearfix">
+				<span class="mIcon1 mIcon2"></span>
+				<p class="mComtent">你好!</p>
+				<input type="button"  value="删除" />
+			</li> -->
+		</ul>
+	</div>
+	<script>
+		$(function(){
+			/*
+				val([val|fn|arr])概述:获得匹配元素的当前值。可以返回任意元素的值了。包括select。如果多选，将返回一个数组，其包含所选的值。
+					val：要设置的值
+					function(index, value)：此函数返回一个要设置的值。接受两个参数，index为元素在集合中的索引位置，text为原先的text值。
+					arr:用于 check/select 的值
+				
+				.append():
+					向每个匹配的元素添加内容
+
+
+			*/
+			$(".btn").click(function(){
+				 //console.log($(".message").val())
+				 if($(".message").val().trim() === ''){
+				 	alert("请输入内容")
+				 }else{
+				 	let html = `
+						<li class="mText clearfix">
+							<span class="mIcon1 ${$("li").length%2==1?'mIcon2':''}"></span>
+							<p class="mComtent">${$(".message").val().trim()}</p>
+							<input type="button"  value="删除" class="del"/>
+						</li>
+					`
+					//$("#mList").append(html)向后面添加内容					
+					$("#mList").prepend(html)  //向前面添加内容			
+					$(".message").val('')
+				 }
+				$(".del").click(function(){
+					$(this.parentNode).remove()
+					//console.log(this.parentNode)
+				})
+			})
+		})
+	</script>
+</section>
+</body>
+</html>
