@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background-color: #ffd800;
+			}
+			.nav .blue {
+				background-color: blue;
+			}
+			body {
+				margin: 0 auto;
+				width: 1000px;
+				height: 800px;
+				background: url(imgs/bg.png) no-repeat center center;
+				position: relative;
+				max-width: 1000px;
+			}
+			.slide {
+				width: 530px;
+				height: 350px;
+				position: absolute;
+				border: 2px solid #000;
+				left: 30%;
+				top: 170px;
+			}
+			.pic,.pic img {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				transition: 400ms;
+			}
+
+			.prev,.next {
+				width: 25px;
+				height: 46px;
+				position: absolute;
+				top: 50%;
+				margin-top: -23px;
+				z-index: 999;
+				opacity: 0.6;
+			}
+			.prev {
+				left: 2px;
+				background: url(imgs/prev.png) no-repeat center center;
+			}
+			.next {
+				right: 2px;
+				background: url(imgs/next.png) no-repeat center center;
+			}
+			.prev:hover,.next:hover {
+				opacity: 1;
+			}
+			.nav {
+				position: absolute;
+				width: 100%;
+				height: 30px;
+				text-align: center;
+				left: 0;
+				bottom: -70px;
+			}
+			.nav span {
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				background: #c9c9c9;
+				border-radius: 50%;
+				transform: scale(.5);
+				position: relative;
+			}
+			.nav span a {
+				display: block;
+				width: 100%;
+				transform: scale(5);
+				border: 1px solid #000;
+				position: absolute;
+				left: 50%;
+				margin-left: -16px;
+				top: -90px;
+				display: none;
+			}
+			.nav span a:after {
+				content: "";
+				position: absolute;
+				left: 50%;
+				margin-left: -3px;
+				bottom: -6px;
+				width: 0;
+				height: 0;
+				border: 3px dashed rgba(0,0,0,0);
+				border-top: 3px solid #000;
+			}
+			.nav span a img {
+				width: 100%;
+				display: block;
+			}
+			.nav span.active {
+				background: #6cd2eb;
+			}
+
+			.list {
+				list-style: none;
+				margin: 0px;
+				padding: 0;
+				width: 600%;
+				overflow: hidden;
+				position: absolute;
+				left: 0;
+				top:0;
+			}
+
+			.list li {
+				float: left;
+			}
+
+
+			.tagClient {
+				width: 530px;
+				height: 350px;
+				-border: 1px solid red;
+				position: relative;
+				overflow: hidden;
+			}
+
+		</style>
+		<script>
+			/*
+				当给一个元素添加样式，如没有起作用，第一反应
+
+					检查元素
+			*/
+		</script>
+	</head>
+
+	<body>
+		<div class="slide">
+			<div  class="tagClient">
+				<ul class="list">
+					<li><img src="./ads/1.png" /></li> 
+					<li><img src="./ads/2.png" /></li> 
+					<li><img src="./ads/3.png" /></li> 
+					<li><img src="./ads/4.png" /></li> 
+					<li><img src="./ads/5.png" /></li>
+					<li><img src="./ads/1.png" /></li>
+				</ul>
+			</div>
+			<div class="prev"></div>
+			<div class="next"></div>
+			<div class="nav">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<script src="src/jquery-3.2.1.js"></script>
+		<script>
+		//找到元素
+		let list = $(".list")
+		let firstLi = list.find("li").eq(0);//第一个li
+		//图片的宽度
+		let w = firstLi.width()
+		let len = $("li").length//li的个数
+		//获取小按钮
+		let spans = $(".nav span")
+		spans.eq(0).addClass('blue');
+		//设置一个变量
+		let n = 0
+		//切换上一张
+		$(".prev").click(function(){
+			//正在运动n减不了
+			if(list.is(":animated")) return
+			n--;
+			if(n<0){
+				list.css({
+					left:-w*(len-1)
+				})
+				n = len-2;
+			}
+			spans.eq(n === len - 2 ? 0 : n+1).removeClass('blue');
+			spans.eq(n).addClass('blue');
+			list.animate({
+				left:-n*w
+			},100)
+		})
+		//切换下一张
+		$(".next").click(function(){
+			//正在运动n加不了
+			if(list.is(":animated")) return
+			n++;
+			if(n>len-2){
+				list.css({
+					left:0
+				})
+				n = 0;
+			}
+			spans.eq(n === len-1 ? len-1: n-1).removeClass('blue');
+			spans.eq(n).addClass('blue')
+			list.animate({
+				left:-n*w
+			},100)
+		})
+		//点击按钮切换
+		$(".nav").on('mousemove','span',function(){
+			spans.eq(n).removeClass('blue');//将所有清空
+			$(this).addClass('blue') //当前的加上颜色
+			n=$(this).index() //将当前的下标赋值给n
+			list.stop().animate({
+				left: - n * w
+			},300)
+		})
+		</script>
+	</body>
+
+</html>
