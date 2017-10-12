@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画c测试</title>
+	<style type="text/css">
+		div{
+			width:200px;
+			height: 50px;
+			background: yellow;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<script src="src/jquery-3.2.1.js"></script>
+	<button>按钮</button>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script type="text/javascript">
+	/*
+		delay(duration,[queueName])
+			设置一个延时来推迟执行队列中之后的项目。jQuery 1.4新增。用于将队列中的函数延时执行。他既可以推迟动画队列的执行，也可以用于自定义队列。
+		animate(params,[speed],[easing],[fn])
+			用于创建自定义动画的函数。
+		has(expr|ele)
+			保留包含特定后代的元素，去掉那些不含有指定后代的元素。
+			.has()方法将会从给定的jQuery对象中重新创建一组匹配的对象。提供的选择器会一一测试原先那些对象的后代，含有匹配后代的对象将得以保留。
+		:animated
+			匹配所有正在执行动画效果的元素
+	*/
+		$("div:even").animate({
+			width:1000
+		},2000)
+		//正在运动的元素
+		// $(document).click(function(){
+		// 	$("div:animated").css("background",'plum')
+		// })
+		//没有运动的元素
+		$(document).click(function() {
+			$("div:not(:animated)").css('background','pink')
+		});
+	</script>
+</body>
+</html>

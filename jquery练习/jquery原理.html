@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery原理</title>
+</head>
+<body>
+	<script type="text/javascript">
+	/*
+		1.使用new来调用构造函数
+		2.不让开发者自己手动添加new
+		3.调用函数在内部已经new好了实例
+		4.new的时候不能自己调用自己
+		5.定义另一个函数作为构造函数init
+		6.方法都是放在jquery这个函数的原型上，所以需要把init的原型改为Jquery的原型，方便去找jquery原型上的方法
+	*/
+	(function(){
+		let Jquery = function(){
+			return new Jquery.fn.init
+		}
+		Jquery.fn = Jquery.prototype = {
+			constructor:Jquery,
+			css(){
+				console.log('css')
+			},
+			html(){
+				console.log('html')
+			}
+		}
+		let init = Jquery.fn.init = function(){
+			console.log('我是实例')
+		} 
+		init.prototype = Jquery.prototype  //将Jquery原型上的方法赋值给init的原型上
+		window.Jquery = window.$ = Jquery // 全局变量
+	})()
+	let a = $()
+	console.log(a)
+	</script>
+</body>
+</html>

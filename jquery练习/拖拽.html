@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽</title>
+	<script src="src/jquery-3.2.1.js"></script>
+	<style type="text/css">
+		div{
+			width: 150px;
+			height: 150px;
+			background: yellow;
+			position: absolute;
+		}
+		.red{
+			background: red;
+		}
+		.blue{
+			background: pink;
+		}
+		.pink{
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<script type="text/javascript">
+	/*
+		offset()
+			获取匹配元素在当前视口的相对偏移。返回的对象包含两个整型属性：top 和 left，以像素计。此方法只对可见元素有效。
+			参数：coordinates{top,left}  必需。规定以像素计的 top 和 left 坐标。
+		off()
+			概述：在选择元素上移除一个或多个事件的事件处理函数。
+		ev.pageX	
+			鼠标相对于文档的左边缘的位置。
+		ev.pageY
+			鼠标相对于文档的上边缘的位置。
+		
+	*/
+		$(function(){
+			let disX = 0;
+			let disY = 0;
+			$("div").mousedown(function(ev){
+				let disX = ev.clientX -$(this).offset().left;
+				let disY = ev.clientY - $(this).offset().top;
+				$(this).addClass('red')
+				$(document).mousemove(function(ev) {
+					$("div").addClass('blue')
+					$("div").css('left',ev.pageX-disX)
+					$("div").css('top',ev.pageY-disX)
+				});
+				$(document).mouseup(function(){
+					$("div").addClass('pink')
+					$(document).off()
+				})
+			});
+		})
+	</script>
+</body>
+</html>
