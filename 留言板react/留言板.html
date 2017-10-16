@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="./index.css">
+		<style>
+			
+		</style>
+		<script src="../src/react.development.js"></script>
+		<script src="../src/react-dom.development.js"></script>
+		<script src="../src/babel.min.js"></script>
+	</head>
+
+	<body>
+		<div id="root">	
+		</div>
+		<script type="text/babel">
+			/*评论填写区 start */
+			class Message extends React.Component{
+				constructor(props){
+					super(props)
+					this.state = {
+						val:"",
+						content : ""
+					}
+				}
+				changeContent(ev){
+					this.setState({
+						val:ev.target.value
+					})
+				}
+				changeMessage(ev){
+					this.setState({
+						content : ev.target.value
+					})
+				}
+				sendMessage(ev){
+					this.props.getChangeContent({
+						id:Date.now(),
+						val:this.state.val,
+						content:this.state.content
+					})
+					this.setState({
+						val:"",
+						content:""
+					})
+				}
+				render(){
+					return  <div className="comment-input">
+								<div className="comment-field">
+									<span className="comment-field-name">用户名：</span>
+										<div className="comment-field-input">
+												<input name="username" value={this.state.val} onChange={this.changeContent.bind(this)}/>
+										</div>
+								</div>
+								<div className="comment-field">
+									<span className="comment-field-name">评论内容：</span>
+										<div className="comment-field-input">
+												<textarea name="content" value={this.state.content} onChange={this.changeMessage.bind(this)}></textarea>
+										</div>
+								</div>
+								<div className="comment-field-button">
+										<button onClick={this.sendMessage.bind(this)}>发布</button>
+								</div>
+							</div>
+				}
+			}
+			class Apps extends React.Component{
+				constructor(props){
+					super(props)
+					this.state = {
+						list:[{
+							val:"leo",
+							content : "啊哈哈"
+						}]
+					}
+				}
+				getChangeContent(data){
+					let newList = this.state.list
+					newList.push(data)
+					this.setState({
+						list:newList
+					})
+				}
+				render(){
+					return <div className="wrapper">
+								<Message getChangeContent={this.getChangeContent.bind(this)}/>
+								<div>
+									{
+										this.state.list.map((item,index)=>{
+											return <div className="comment" key={index}>
+														<div className="comment-user">
+															<span>{item.val}</span>：
+														</div>
+														<p>{item.content}</p>
+													</div>
+										})
+									}
+									
+								</div>
+						   </div>
+				}
+			}
+			ReactDOM.render(
+				<Apps/>,
+				document.getElementById('root')
+			)
+		</script>
+	</body>
+</html>
