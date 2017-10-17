@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var obj = {
+				fn:function(){
+					//console.log(this) //指向window
+				}
+			}
+			//取出obj的fn对应的函数，赋值给了一个变量
+			var f = obj.fn
+			// 直接调用函数，this=> window
+			f() 
+			
+			
+			
+			var obj1 = {
+				fn:function(){
+					console.log(this) //指向fn
+				}
+			}
+			// 通过obj的属性fn取出函数之后直接执行了函数，函数中this指向的是obj，
+			// fn是通过obj调用的，this就指向obj
+			obj1.fn() //先调用这个obj1里的属性即fn函数 所以this指向fn
+			var f = obj1.fn
+			f() //取出obj的fn对应的函数，赋值给了一个变量直接调用函数，this=> window
+			
+			//辨别是否改变了this指向 用name(即函数名字)
+			var obj2 = {
+				fn:function(){
+					console.log(this)
+				}
+			}
+			var a = obj2.fn;
+			var b = obj2.fn.bind({data:30})
+			console.log(a.name)  //没改变this指向函数名是=>fn
+			console.log(b.name) //改变this指向函数名=>bound fn
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+				包装对象
+					String()
+					Number()
+					Boolean()
+			*/
+			var str = 'miaov'; //只是值，不是对象
+			//调用slice方法
+			str.slice(1) //当调用slice()的时候，内部会把str包装成一个对象，
+			 
+			//使用完包装对象之后，立马销毁了
+			str.abc = 10;
+			
+			console.log(str.abc)//undefined
+		</script>
+	</body>
+</html>

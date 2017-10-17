@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//父类  或者叫基类
+			function Peopel(name,age,sex){
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+			}
+			//子类   让子类及继承父类的某些属性
+			function Codor(name,age,sex,money){
+				Peopel.call(this,name,age,sex) //改变this指向，让this指向这个c对象
+				this.money = money;
+			}
+			var c = new  Codor('leo',25,'男',20000)
+			console.log(c) //Codor {name: "leo", age: 25, sex: "男", money: 20000}
+		</script>
+	</body>
+</html>

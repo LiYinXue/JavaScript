@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				background: yellow;
+				border-radius:50px ;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+			var box = document.getElementById('box')
+			//es6写法
+			class Drag {
+				init(box){
+					this.box = box
+					this.box.onmousedown = this.downFn.bind(this) //初识的this指向的是元素box,改变this指向让this   =>t
+				}
+				downFn(ev){
+					this.disX = ev.clientX - this.box.offsetLeft;
+					this.disY = ev.clientY - this.box.offsetTop;
+					document.onmousemove = this.moveFn.bind(this)  //初识的this指向的是元素box,改变this指向让this   =>t
+				} 
+				moveFn(ev){
+					this.box.style.left = ev.clientX - this.disX +"px";
+					this.box.style.top = ev.clientY- this.disY +"px";
+					document.onmouseup = this.upFn.bind(this)
+				}
+				upFn(){
+					document.onmouseup = document.onmousemove = null
+				}
+				
+			}
+			var t = new Drag();
+			t.init(box)
+		</script>
+	</body>
+</html>
