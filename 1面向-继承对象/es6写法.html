@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//需求：子类拥有父类的属性和方法
+			//父类
+			class Parent {
+				constructor(name){
+					this.name = name
+				}
+				say(){
+					console.log("我会说话")
+				}
+			}
+			//子类
+			class Child extends Parent{
+				constructor(name,like){
+					super(name)
+					this.like = like;
+				}
+				abc(){
+					"我要上学"
+				}
+			}
+			var a = new Child("momo","跳舞")
+			console.log(a)//Child {name: "momo", like: "跳舞"}
+		</script>
+	</body>
+</html>

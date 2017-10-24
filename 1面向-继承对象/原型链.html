@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//父类  或者叫基类
+			function People(name,age,sex){
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+			}
+			People.prototype.say = function(){
+				console.log('我会说话')
+			}
+			//子类   
+			//Object.assign(Coder.prototype,People.prototype)//拷贝原型继承
+			Coder.prototype = new People; //继承原型
+			function Coder(name,age,sex,money){
+				People.call(this,name,age,sex) //改变this指向，让this指向这个c对象  继承构造函数中的属性
+				this.money = money;
+			}
+			Coder.prototype.coding = function(){
+				console.log("我会敲代码");	
+			}
+			Coder.prototype.job = function(){
+				console.log("我会制作网页");	
+			}
+			var c = new  Coder('leo',25,'男',20000)
+			console.log(c.say);
+			console.log(c) //Codor {name: "leo", age: 25, sex: "男", money: 20000}
+		</script>
+	</body>
+</html>

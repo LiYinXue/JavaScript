@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//父类  或者叫基类 
+			//es6写法
+			//需求：Coder要有People的属性和方法
+			/*
+			 *子类必须在constructor方法中调用super方法，否则新建实例时会报错。这是因为子类没有自己的this对象
+			 * 而是继承父类的this对象，然后对其进行加工，如果不调用super方法，子类在constructor中摘不到this对象
+				
+			 */
+			class People {
+				constructor(name){
+					this.name = name
+				}
+				Say(){
+					"我会说话"
+				}
+			}
+			class Coder extends People{
+				constructor(name,money){
+					super(name) //获取父级的属性和原型
+					this.money = money
+				}
+				coding(){
+					"我会编程"
+				}
+			}
+			var a = new Coder("leo",10000)
+			console.log(a)
+		</script>
+	</body>
+</html>

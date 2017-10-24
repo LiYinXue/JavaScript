@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				background: #9B59B6;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+			var box = document.getElementById('box')
+			//可拖拽的构造函数
+			function Tab(box){
+				//当在多个原型上的方法，使用同一个属性的时候，通常是把这个属性放在这个对象上。
+				this.box = box ;
+				console.log(this) //Tab {box: div#box}指的是这个对象t
+			}
+			//先是初识化 开始给拖拽的元素绑定事件处理
+			Tab.prototype.Init = function(){
+				//this指向->对象t 
+				//因为要点击元素所以要改变this指向
+//				this.box.onmousedown = this.downFn //后面this指的是下面这个函数 指的是box这个元素
+				this.box.onmousedown = this.downFn.bind(this) //改变this指向，让this指向隐世对象
+			}
+			
+			//元素按下状态
+			Tab.prototype.downFn = function(ev){
+				//->t
+				//将获取的属性放在这个函数对象上
+				this.disX = ev.clientX -this.box.offsetLeft;
+				this.disY = ev.clientY - this.box.offsetTop;
+				console.log(this) //this指向元素<div id="box"></div>
+				document.onmousemove = this.moveFn.bind(this) //改变this指向
+			}
+			Tab.prototype.moveFn = function(ev){
+				console.log(this.box)
+				this.box.style.left = ev.clientX - this.disX+"px";
+				this.box.style.top = ev.clientY - this.disY+"px";
+				document.onmouseup = this.upFn.bind(this);
+			}
+			Tab.prototype.upFn = function(){
+				document.onmousemove = document.onmouseup = null
+			}
+			var t = new Tab(box)
+			t.Init()
+			/*
+			   1.	new Tab 之后，会在Tab()这个函数内部创建一个对象(yinshiObj)
+			   2.	Tab函数中this指  yinshiObj
+			   3.	把yinshiObj返回出来了
+			   4.	把yinshiObj赋值给了变量t
+			   5.	t.Init()调用，Init函数中的this指向  yinshiObj
+			*/
+		</script>
+	</body>
+</html>
