@@ -1,0 +1,621 @@
+[
+  {
+    "id": 1,
+    "name": "全部",
+    "num": 8
+  },
+  {
+    "id": 2,
+    "name": "智能手表",
+    "num": 4,
+    "classI":[
+      {
+        "ali_image": "http://localhost:8000/images/a1.png",
+        "idImg": "1_1",
+        "item_title":"Apple Watch",
+        "direct_to_cart": false,
+        "item_size":["38毫米","42毫米"],
+        "item_value":["黑色","橙色","宝蓝色","黄色","白色"],
+        "item_price" :2288,
+        "img_json": [
+          {
+            "spec_id": "110",
+            "show_name": "黑色",
+            "image_small": "http://localhost:8000/images/f1.jpg",
+            "big_img": "http://localhost:8000/images/f1.jpg"
+          },
+          {
+            "spec_id": "111",
+            "show_name": "黑色",
+            "image_small": "http://localhost:8000/images/f2.jpg",
+            "big_img": "http://localhost:8000/images/f2.jpg"
+          },
+          {
+            "spec_id": "112",
+            "show_name": "橙色",
+            "image_small": "http://localhost:8000/images/f3.jpg",
+            "big_img": "http://localhost:8000/images/f3.jpg"
+          },
+          {
+            "spec_id": "113",
+            "show_name": "宝蓝色",
+            "image_small": "http://localhost:8000/images/f4.jpg",
+            "big_img": "http://localhost:8000/images/f4.jpg"
+          },
+          {
+            "spec_id": "114",
+            "show_name": "黄色",
+            "image_small": "http://localhost:8000/images/f5.jpg",
+            "big_img": "http://localhost:8000/images/f5.jpg"
+          },
+          {
+            "spec_id": "115",
+            "show_name": "白色",
+            "image_small": "http://localhost:8000/images/f6.jpg",
+            "big_img": "http://localhost:8000/images/f6.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a2.png",
+        "idImg": "1_2",
+        "item_title":"儿童手表",
+        "direct_to_cart": false,
+        "item_price" :999,
+        "item_value":["静谧蓝","蜜桃粉"],
+        "img_json": [
+          {
+            "spec_id": "120",
+            "show_name": "静谧蓝",
+            "image_small": "http://localhost:8000/images/h1.jpg",
+            "big_img": "http://localhost:8000/images/h1.jpg"
+          },
+          {
+            "spec_id": "121",
+            "image_small": "http://localhost:8000/images/h2.jpg",
+            "big_img": "http://localhost:8000/images/h2.jpg"
+          },
+          {
+            "spec_id": "122",
+            "image_small": "http://localhost:8000/images/h3.jpg",
+            "big_img": "http://localhost:8000/images/h3.jpg"
+          },
+          {
+            "spec_id": "123",
+            "show_name": "蜜桃粉",
+            "image_small": "http://localhost:8000/images/h4.jpg",
+            "big_img": "http://localhost:8000/images/h4.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a3.png",
+        "idImg": "1_3",
+        "item_title":"公子小白",
+        "item_price" :1888,
+        "item_value":["牛奶白","金属灰","情侣款"],
+        "direct_to_cart": false,
+        "img_json": [
+          {
+            "spec_id": "130",
+            "show_name": "牛奶白",
+            "image_small": "http://localhost:8000/images/j1.jpg",
+            "big_img": "http://localhost:8000/images/j1.jpg"
+          },
+          {
+            "spec_id": "131",
+            "show_name": "金属灰",
+            "image_small": "http://localhost:8000/images/j2.jpg",
+            "big_img": "http://localhost:8000/images/j2.jpg"
+          },
+          {
+            "spec_id": "132",
+            "show_name": "情侣款",
+            "image_small": "http://localhost:8000/images/j3.jpg",
+            "big_img": "http://localhost:8000/images/j3.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a4.png",
+        "idImg": "1_4",
+        "item_title":"Gear VR",
+        "item_price" :1288,
+        "direct_to_cart": false,
+        "img_json": [
+          {
+            "spec_id": "140",
+            "image_small": "http://localhost:8000/images/d1.jpg",
+            "big_img": "http://localhost:8000/images/d1.jpg"
+          },
+          {
+            "spec_id": "141",
+            "image_small": "http://localhost:8000/images/d2.jpg",
+            "big_img": "http://localhost:8000/images/d2.jpg"
+          },
+          {
+            "spec_id": "142",
+            "image_small": "http://localhost:8000/images/d3.jpg",
+            "big_img": "http://localhost:8000/images/d3.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "智能眼镜",
+    "num": 4,
+    "classI":[
+      {
+        "ali_image": "http://localhost:8000/images/a5.png",
+        "idImg": "1_5",
+        "item_title":"Gear VR",
+        "direct_to_cart": false,
+        "item_price" :1288,
+        "img_json": [
+          {
+            "spec_id": "150",
+            "image_small": "http://localhost:8000/images/d1.jpg",
+            "big_img": "http://localhost:8000/images/d1.jpg"
+          },
+          {
+            "spec_id": "151",
+            "image_small": "http://localhost:8000/images/d2.jpg",
+            "big_img": "http://localhost:8000/images/d2.jpg"
+          },
+          {
+            "spec_id": "152",
+            "image_small": "http://localhost:8000/images/d3.jpg",
+            "big_img": "http://localhost:8000/images/d3.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a6.png",
+        "idImg": "1_6",
+        "item_title":"Apple Watch",
+        "item_price" :2288,
+        "item_size":["38毫米","42毫米"],
+        "item_value":["黑色","橙色","宝蓝色","黄色","白色"],
+        "direct_to_cart": false,
+        "img_json": [
+          {
+            "spec_id": "160",
+            "show_name": "黑色",
+            "image_small": "http://localhost:8000/images/f1.jpg",
+            "big_img": "http://localhost:8000/images/f1.jpg"
+          },
+          {
+            "spec_id": "161",
+            "show_name": "黑色",
+            "image_small": "http://localhost:8000/images/f2.jpg",
+            "big_img": "http://localhost:8000/images/f2.jpg"
+          },
+          {
+            "spec_id": "162",
+            "show_name": "橙色",
+            "image_small": "http://localhost:8000/images/f3.jpg",
+            "big_img": "http://localhost:8000/images/f3.jpg"
+          },
+          {
+            "spec_id": "163",
+            "show_name": "宝蓝色",
+            "image_small": "http://localhost:8000/images/f4.jpg",
+            "big_img": "http://localhost:8000/images/f4.jpg"
+          },
+          {
+            "spec_id": "164",
+            "show_name": "黄色",
+            "image_small": "http://localhost:8000/images/f5.jpg",
+            "big_img": "http://localhost:8000/images/f5.jpg"
+          },
+          {
+            "spec_id": "165",
+            "show_name": "白色",
+            "image_small": "http://localhost:8000/images/f6.jpg",
+            "big_img": "http://localhost:8000/images/f6.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a7.png",
+        "idImg": "1_7",
+        "item_title":"Pico Neo",
+        "item_price" :3399,
+        "direct_to_cart": false,
+        "img_json": [
+          {
+            "spec_id": "170",
+            "image_small": "http://localhost:8000/images/k1.jpg",
+            "big_img": "http://localhost:8000/images/k1.jpg"
+          },
+          {
+            "spec_id": "171",
+            "image_small": "http://localhost:8000/images/k2.jpg",
+            "big_img": "http://localhost:8000/images/k2.jpg"
+          },
+          {
+            "spec_id": "172",
+            "image_small": "http://localhost:8000/images/k3.jpg",
+            "big_img": "http://localhost:8000/images/k3.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a8.png",
+        "idImg": "1_8",
+        "item_title":"ALPHA 2",
+        "item_price" :7999,
+        "direct_to_cart": false,
+        "item_value":["蓝色","红色"],
+        "img_json": [
+          {
+            "spec_id": "180",
+            "show_name": "蓝色",
+            "image_small": "http://localhost:8000/images/l1.jpg",
+            "big_img": "http://localhost:8000/images/l1.jpg"
+          },
+          {
+            "spec_id": "181",
+            "show_name": "蓝色",
+            "image_small": "http://localhost:8000/images/l2.jpg",
+            "big_img": "http://localhost:8000/images/l2.jpg"
+          },
+          {
+            "spec_id": "122",
+            "show_name": "红色",
+            "image_small": "http://localhost:8000/images/l3.jpg",
+            "big_img": "http://localhost:8000/images/l3.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "机器人",
+    "num": 4,
+    "classI":[
+      {
+        "ali_image": "http://localhost:8000/images/a8.png",
+        "idImg": "1_8",
+        "item_title":"ALPHA 2",
+        "item_price" :7999,
+        "direct_to_cart": false,
+        "item_value":["蓝色","红色"],
+        "img_json": [
+          {
+            "spec_id": "180",
+            "show_name": "蓝色",
+            "image_small": "http://localhost:8000/images/l1.jpg",
+            "big_img": "http://localhost:8000/images/l1.jpg"
+          },
+          {
+            "spec_id": "181",
+            "show_name": "蓝色",
+            "image_small": "http://localhost:8000/images/l2.jpg",
+            "big_img": "http://localhost:8000/images/l2.jpg"
+          },
+          {
+            "spec_id": "122",
+            "show_name": "红色",
+            "image_small": "http://localhost:8000/images/l3.jpg",
+            "big_img": "http://localhost:8000/images/l3.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a5.png",
+        "idImg": "1_5",
+        "item_title":"Gear VR",
+        "item_price" :1288,
+        "direct_to_cart": false,
+        "img_json": [
+          {
+            "spec_id": "150",
+            "image_small": "http://localhost:8000/images/d1.jpg",
+            "big_img": "http://localhost:8000/images/d1.jpg"
+          },
+          {
+            "spec_id": "151",
+            "image_small": "http://localhost:8000/images/d2.jpg",
+            "big_img": "http://localhost:8000/images/d2.jpg"
+          },
+          {
+            "spec_id": "152",
+            "image_small": "http://localhost:8000/images/d3.jpg",
+            "big_img": "http://localhost:8000/images/d3.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a2.png",
+        "idImg": "1_2",
+        "item_title":"儿童手表",
+        "item_price" :999,
+        "direct_to_cart": false,
+        "item_value":["静谧蓝","蜜桃粉"],
+        "img_json": [
+          {
+            "spec_id": "120",
+            "show_name": "静谧蓝",
+            "image_small": "http://localhost:8000/images/h1.jpg",
+            "big_img": "http://localhost:8000/images/h1.jpg"
+          },
+          {
+            "spec_id": "121",
+            "image_small": "http://localhost:8000/images/h2.jpg",
+            "big_img": "http://localhost:8000/images/h2.jpg"
+          },
+          {
+            "spec_id": "122",
+            "image_small": "http://localhost:8000/images/h3.jpg",
+            "big_img": "http://localhost:8000/images/h3.jpg"
+          },
+          {
+            "spec_id": "123",
+            "show_name": "蜜桃粉",
+            "image_small": "http://localhost:8000/images/h4.jpg",
+            "big_img": "http://localhost:8000/images/h4.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a8.png",
+        "idImg": "1_8",
+        "item_title":"ALPHA 2",
+        "item_price" :7999,
+        "direct_to_cart": false,
+        "item_value":["蓝色","红色"],
+        "img_json": [
+          {
+            "spec_id": "180",
+            "show_name": "蓝色",
+            "image_small": "http://localhost:8000/img/l1.jpg",
+            "big_img": "http://localhost:8000/images/l1.jpg"
+          },
+          {
+            "spec_id": "181",
+            "show_name": "蓝色",
+            "image_small": "http://localhost:8000/img/l2.jpg",
+            "big_img": "http://localhost:8000/images/l2.jpg"
+          },
+          {
+            "spec_id": "122",
+            "show_name": "红色",
+            "image_small": "http://localhost:8000/img/l3.jpg",
+            "big_img": "http://localhost:8000/images/l3.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "体感车",
+    "num": 4,
+    "classI":[
+      {
+        "ali_image": "http://localhost:8000/images/a9.png",
+        "idImg": "1_9",
+        "item_title":"体感车",
+        "item_price" :1999,
+        "direct_to_cart": false,
+        "img_json": [
+          {
+            "spec_id": "190",
+            "image_small": "http://localhost:8000/images/c1.jpg",
+            "big_img": "http://localhost:8000/images/c1.jpg"
+          },
+          {
+            "spec_id": "191",
+            "image_small": "http://localhost:8000/images/c3.jpg",
+            "big_img": "http://localhost:8000/images/c3.jpg"
+          },
+          {
+            "spec_id": "192",
+            "image_small": "http://localhost:8000/images/c2.jpg",
+            "big_img": "http://localhost:8000/images/c2.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a3.png",
+        "idImg": "1_3",
+        "item_title":"公子小白",
+        "item_price" :1888,
+        "direct_to_cart": false,
+        "item_value":["牛奶白","金属灰","情侣款"],
+        "img_json": [
+          {
+            "spec_id": "130",
+            "show_name": "牛奶白",
+            "image_small": "http://localhost:8000/images/j1.jpg",
+            "big_img": "http://localhost:8000/images/j1.jpg"
+          },
+          {
+            "spec_id": "131",
+            "show_name": "金属灰",
+            "image_small": "http://localhost:8000/images/j2.jpg",
+            "big_img": "http://localhost:8000/images/j2.jpg"
+          },
+          {
+            "spec_id": "132",
+            "show_name": "情侣款",
+            "image_small": "http://localhost:8000/images/j3.jpg",
+            "big_img": "http://localhost:8000/images/j3.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a1.png",
+        "idImg": "1_1",
+        "item_title":"Apple Watch",
+        "item_price" :2288,
+        "item_size":["38毫米","42毫米"],
+        "direct_to_cart": false,
+        "item_value":["黑色","橙色","宝蓝色","黄色","白色"],
+        "img_json": [
+          {
+            "spec_id": "110",
+            "show_name": "黑色",
+            "image_small": "http://localhost:8000/images/f1.jpg",
+            "big_img": "http://localhost:8000/images/f1.jpg"
+          },
+          {
+            "spec_id": "111",
+            "show_name": "黑色",
+            "image_small": "http://localhost:8000/images/f2.jpg",
+            "big_img": "http://localhost:8000/images/f2.jpg"
+          },
+          {
+            "spec_id": "112",
+            "show_name": "橙色",
+            "image_small": "http://localhost:8000/images/f3.jpg",
+            "big_img": "http://localhost:8000/images/f3.jpg"
+          },
+          {
+            "spec_id": "113",
+            "show_name": "宝蓝色",
+            "image_small": "http://localhost:8000/images/f4.jpg",
+            "big_img": "http://localhost:8000/images/f4.jpg"
+          },
+          {
+            "spec_id": "114",
+            "show_name": "黄色",
+            "image_small": "http://localhost:8000/images/f5.jpg",
+            "big_img": "http://localhost:8000/images/f5.jpg"
+          },
+          {
+            "spec_id": "115",
+            "show_name": "白色",
+            "image_small": "http://localhost:8000/images/f6.jpg",
+            "big_img": "http://localhost:8000/images/f6.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a7.png",
+        "idImg": "1_7",
+        "item_title":"Pico Neo",
+        "item_price" :3399,
+        "direct_to_cart": false,
+        "img_json": [
+          {
+            "spec_id": "170",
+            "image_small": "http://localhost:8000/images/k1.jpg",
+            "big_img": "http://localhost:8000/images/k1.jpg"
+          },
+          {
+            "spec_id": "171",
+            "image_small": "http://localhost:8000/images/k2.jpg",
+            "big_img": "http://localhost:8000/images/k2.jpg"
+          },
+          {
+            "spec_id": "172",
+            "image_small": "http://localhost:8000/images/k3.jpg",
+            "big_img": "http://localhost:8000/images/k3.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "无人机",
+    "num": 4,
+    "classI":[
+      {
+        "ali_image": "http://localhost:8000/images/a10.png",
+        "idImg": "1_10",
+        "item_title":"无人机",
+        "item_price" :9999,
+        "direct_to_cart": false,
+        "img_json": [
+          {
+            "spec_id": "1100",
+            "image_small": "http://localhost:8000/images/pl.jpg",
+            "big_img": "http://localhost:8000/images/pl.jpg"
+          },
+          {
+            "spec_id": "1111",
+            "image_small": "http://localhost:8000/images/pl2.jpg",
+            "big_img": "http://localhost:8000/images/pl2.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a10.png",
+        "idImg": "1_11",
+        "item_title":"无人机",
+        "item_price" :9999,
+        "direct_to_cart": false,
+        "img_json": [
+          {
+            "spec_id": "1210",
+            "image_small": "http://localhost:8000/images/pl.jpg",
+            "big_img": "http://localhost:8000/images/pl.jpg"
+          },
+          {
+            "spec_id": "1211",
+            "image_small": "http://localhost:8000/images/pl2.jpg",
+            "big_img": "http://localhost:8000/images/pl1.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a3.png",
+        "idImg": "1_3",
+        "item_title":"公子小白",
+        "item_price" :1888,
+        "direct_to_cart": false,
+        "item_value":["牛奶白","金属灰","情侣款"],
+        "img_json": [
+          {
+            "spec_id": "130",
+            "show_name": "牛奶白",
+            "image_small": "http://localhost:8000/images/j1.jpg",
+            "big_img": "http://localhost:8000/images/j1.jpg"
+          },
+          {
+            "spec_id": "131",
+            "show_name": "金属灰",
+            "image_small": "http://localhost:8000/images/j2.jpg",
+            "big_img": "http://localhost:8000/images/j2.jpg"
+          },
+          {
+            "spec_id": "132",
+            "show_name": "情侣款",
+            "image_small": "http://localhost:8000/images/j3.jpg",
+            "big_img": "http://localhost:8000/images/j3.jpg"
+          }
+        ]
+      },
+      {
+        "ali_image": "http://localhost:8000/images/a7.png",
+        "idImg": "1_7",
+        "item_title":"Pico Neo",
+        "item_price" :3399,
+        "direct_to_cart": false,
+        "img_json": [
+          {
+            "spec_id": "170",
+            "image_small": "http://localhost:8000/images/k1.jpg",
+            "big_img": "http://localhost:8000/images/k1.jpg"
+          },
+          {
+            "spec_id": "171",
+            "image_small": "http://localhost:8000/images/k2.jpg",
+            "big_img": "http://localhost:8000/images/k2.jpg"
+          },
+          {
+            "spec_id": "172",
+            "image_small": "http://localhost:8000/images/k3.jpg",
+            "big_img": "http://localhost:8000/images/k3.jpg"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,120 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  height: 100%;
+  overflow: auto;
+  color: #111;
+  font-size: 1.2rem;
+  -background: yellow;
+}
+/*#box{
+	width:640/@rem;
+	overflow:hidden;
+}*/
+/*-------头部-----------*/
+.logo {
+  width: 32rem;
+  background: #fff;
+  padding-bottom: 0.75rem;
+}
+.logo h2 {
+  width: 12rem;
+  height: 4rem;
+  padding: 1.3rem 0 0 4.5rem;
+  background: url(../img/shuaxin.png) no-repeat 0.9rem 0.5rem;
+  background-size: 3.25rem 3.25rem;
+  float: left;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.logo .a {
+  padding-top: 1rem;
+  width: 10rem;
+  height: 100%;
+  float: right;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  text-align: center;
+  color: #337ab7;
+}
+/*--------登录框------*/
+.login-dialog {
+  width: 32rem;
+  height: 35rem;
+  background: url(../img/bigbj.jpg) no-repeat;
+  background-size: 32rem 35rem;
+  padding: 2rem 1.5rem;
+}
+.banquan {
+  font-size: 1.5rem;
+  color: #777;
+  text-align: center;
+  padding-top: 1rem;
+}
+.banquan p {
+  line-height: 3rem;
+}
+.frame {
+  width: 29rem;
+  height: 31rem;
+  background: rgba(225, 225, 225, 0.7);
+  padding: 2rem;
+  padding-top: 3rem;
+}
+.frame input {
+  width: 25rem;
+  height: 3.5rem;
+  background: #fff;
+  font-size: 1.8rem;
+  color: #777;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+.frame p {
+  font-size: 1.5rem;
+  color: #337ab7;
+  height: 2.5rem;
+  line-height: 2.5rem;
+}
+.frame button {
+  width: 25rem;
+  height: 4rem;
+  margin-top: 1.5rem;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1.8rem;
+}
+/*-------------登录----------*/
+.denglu {
+  width: 32rem;
+  background: #fff;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+.login {
+  font-size: 2rem;
+  color: #37474f;
+  font-weight: bold;
+  line-height: 5rem;
+  text-align: center;
+}
+.denglu span {
+  font-size: 2.5rem;
+  margin-left: 5rem;
+}
+.denglu .qq {
+  margin-left: 17.5rem;
+}
+.denglu img {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  top: -4.5rem;
+  left: 1rem;
+  display: none;
+}

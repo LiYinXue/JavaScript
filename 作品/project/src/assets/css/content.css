@@ -1,0 +1,255 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  height: 100%;
+  overflow: auto;
+  color: #111;
+  font-size: 1.2rem;
+}
+/*-------头部-----------*/
+.logo {
+  width: 32rem;
+  background: #fff;
+  padding-bottom: 0.75rem;
+}
+.logo h2 {
+  width: 12rem;
+  height: 4rem;
+  padding: 1.3rem 0 0 4.5rem;
+  background: url(../img/shuaxin.png) no-repeat 0.9rem 0.5rem;
+  background-size: 3.25rem 3.25rem;
+  float: left;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.logo span {
+  padding-top: 1rem;
+  width: 7rem;
+  height: 100%;
+  float: right;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.caidan {
+  padding-top: 1rem;
+  width: 7rem;
+  height: 100%;
+  float: right;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+/*---------------文章-----------*/
+.wzContent {
+  width: 32rem;
+  padding: 1rem;
+  border-top: 0.15rem solid #a7a5a5;
+  position: relative;
+}
+.wzContentHead {
+  width: 30rem;
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+  border-bottom: 0.15rem solid #a7a5a5;
+}
+.wzContentHead h5 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 3rem;
+}
+.lookWz span {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #76838f;
+  margin-right: 1rem;
+}
+.lookWz i {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #76838f;
+  margin-right: 1rem;
+}
+.lookWz b {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #76838f;
+  margin-right: 1rem;
+}
+.wzContentCenter {
+  width: 30rem;
+  padding-top: 1.5rem;
+  border-bottom: 0.15rem solid #a7a5a5;
+}
+.wzContentCenter li {
+  width: 30rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  margin-bottom: 2rem;
+}
+.wzContentCenter li img {
+  width: 30rem;
+  height: 15rem;
+}
+.wzContent button {
+  font-size: 1.7rem;
+  width: 7.5rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  border: 0.1rem solid #a7a5a5;
+  background: #fff;
+  color: #ccd5db;
+  position: absolute;
+  outline: none;
+}
+.upBtn {
+  top: 95rem;
+  left: 1.25rem;
+}
+.nextBtn {
+  top: 95rem;
+  right: 1.25rem;
+}
+.wzContent .colBtn {
+  color: #76838f;
+}
+/*---搜索-----*/
+.searchBf {
+  margin-top: 7.5rem;
+  width: 32rem;
+}
+.search {
+  width: 30rem;
+  height: 3.5rem;
+  border-radius: 1.5rem;
+  border: 0.1rem solid #a7a5a5;
+  margin: 0 auto;
+}
+.search input {
+  width: 25rem;
+  border-radius: 1.5rem 0 0 1.5rem;
+  height: 3.5rem;
+  font-size: 2rem;
+  padding-left: 1.5rem;
+  color: #ccd5db;
+  float: left;
+  outline: none;
+}
+.search .sousuo {
+  width: 4.75rem;
+  font-size: 1.8rem;
+  float: left;
+  line-height: 3.5rem;
+  text-align: center;
+}
+/*-------选项-------*/
+.options {
+  width: 32rem;
+  padding: 1rem;
+}
+.options h6 {
+  line-height: 3.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.options ul {
+  border: 0.15rem solid #ccd5db;
+  border-bottom: none;
+}
+.options ul li {
+  padding-left: 1rem;
+  line-height: 4rem;
+  font-size: 1.6rem;
+  border-bottom: 0.15rem solid #ccd5db;
+}
+/*-------------登录----------*/
+.denglu {
+  width: 32rem;
+  background: #fff;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  -position: relative;
+}
+.login {
+  font-size: 2rem;
+  color: #37474f;
+  font-weight: bold;
+  line-height: 5rem;
+  text-align: center;
+}
+.denglu span {
+  font-size: 2.5rem;
+  margin-left: 5rem;
+}
+.denglu .qq {
+  margin-left: 17.5rem;
+}
+.denglu img {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  top: -4.5rem;
+  left: 1rem;
+  display: none;
+}
+/*------弹框-----*/
+.tanbox {
+  width: 32rem;
+  background: #fff;
+  border-top: 0.15rem solid #b0b0b0;
+  padding-bottom: 0.75rem;
+}
+.tanbox p {
+  text-align: center;
+  padding-left: 10rem;
+  padding-top: 2rem;
+}
+.dengluBtn {
+  float: left;
+  width: 6rem;
+  height: 3rem;
+  background: #fff;
+  color: #67aefc;
+  line-height: 3rem;
+  text-align: center;
+  font-size: 1.8rem;
+  border: 0.1rem solid #0000ff;
+  margin-right: 0.8rem;
+}
+.zhuce {
+  float: left;
+  width: 6rem;
+  height: 3rem;
+  background: #fff;
+  color: #67aefc;
+  line-height: 3rem;
+  text-align: center;
+  font-size: 1.8rem;
+  border: 0.1rem solid #0000ff;
+  margin-right: 0.8rem;
+}
+.tanbox .active2 {
+  background: #46be8a;
+  color: #fff;
+  border: none;
+}
+.fenlei {
+  padding-top: 1.5rem;
+}
+.fenlei li {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  padding-left: 1.8rem;
+}
+.fenlei li a:hover {
+  color: blue;
+}
+.fenlei li .changpin li {
+  padding-left: 2rem;
+}
+.fenlei .active3 {
+  color: #559bda;
+  font-size: 1.5rem;
+}

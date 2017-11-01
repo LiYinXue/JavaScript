@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://m.blog.csdn.net/dongyang0311/article/details/51782726 -->
+<html style="font-size: 40px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <link rel="canonical" href="http://blog.csdn.net/dongyang0311/article/details/51782726">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes">    
+    <meta name="shenma-site-verification" content="bf32a58a3df1c3452b75fbe96c7feb42_1497604697">
+    <script type="text/javascript" async="" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/pr.js.下载"></script><script type="text/javascript" async="" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/lpjnmjnpdmhhmyojn.js.下载"></script><script src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/hm.js.下载"></script><script src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/jquery-1.9.1.min.js.下载" type="text/javascript"></script>
+    <!--link( rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css" )-->
+    <link rel="stylesheet" href="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/bootstrap.css">
+    <link rel="stylesheet" href="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/avatar.css">
+    <link rel="stylesheet" href="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/common.css">
+    <!-- [if IE 7]-->
+    <!--link( rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" )-->
+    <!-- [endif]-->
+    <link rel="stylesheet" href="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/main.css">
+    <!-- [if lt IE 9]-->
+    <script src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/html5shiv.min.js.下载"></script>
+    <!-- [endif]-->
+        <title>慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客</title>
+    
+    <script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/blog_mobile.js.下载"></script>
+
+<script src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/dm.js.下载"></script>
+
+    
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6bcd52f51e9b3dce32bec4a3997715ac";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+   
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style></head>
+<body><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/o.html" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div><link href="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/jiathis_share.css" rel="stylesheet" type="text/css"><iframe frameborder="0" style="position: absolute; display: none; opacity: 0;" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/saved_resource.html"></iframe><div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; top: 50%; left: 50%; overflow: auto;"></div><div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; overflow: auto;"></div><iframe frameborder="0" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/jiathis_utility.html" style="display: none;"></iframe><div id="MathJax_Message" style="display: none;"></div>
+    
+<!-- 广告位开始 --> 
+<ins data-revive-zoneid="202" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> 
+<!-- 广告位结束 -->
+
+
+<script language="JavaScript" type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/jquery.cookie.js.下载"></script>
+<script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/main.js.下载"></script>
+
+<script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/MathJax.js.下载"></script>
+<link rel="stylesheet" href="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/markdown_views.css">
+
+<script type="text/javascript">
+    var fileName = '51782726';
+    var commentscount = 0;
+    var islock = false;
+    var currentUserName='';
+    
+</script>
+
+<script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/digg.js.下载"></script>
+
+
+<div class="blog_main">
+      <div class="blog_top_wrap">
+        <div class="blog_top"><i id="menu_J" class="iconfont icon_l"></i>
+            <form method="get" action="http://m.blog.csdn.net/search/index" id="searchform">
+    <i id="search_J" class="iconfont icon_r"></i>
+    <div id="search_c_J" class="search">
+         <input type="text" placeholder="请输入" id="search" name="keyword" page="1" value=""><i class="iconfont icon_search"></i><i class="iconfont icon_close"></i>
+    </div>
+</form>
+<script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/search.js.下载"></script>
+
+
+
+
+          <h2 class="blog_top_t">CSDN博客</h2>
+        </div>
+      </div>
+
+ 
+
+      <div class="main_list">
+     
+
+         
+        
+          
+                  
+          <!-- 广告位：WAP端-博客详情页banner1-20:3 -->
+        <script>
+            (function() {
+                var s = "_" + Math.random().toString(36).slice(2);
+                document.write('<div id="' + s + '"></div>');
+                (window.slotbydup=window.slotbydup || []).push({
+                    id: '4777139',
+                    container: s,
+                    size: '20,3',
+                    display: 'inlay-fix'
+                });
+            })();
+        </script><div id="_mqdyerh98f"></div><script charset="utf-8" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/tcqm"></script><div id="_8vdwl4eambu" style=""><iframe width="1349" frameborder="0" height="203" scrolling="no" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/s.html"></iframe></div><script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/ytibzciuzwai.js.下载"></script>
+
+
+        <div class="blog_article">
+          <div class="blog_article_t">
+            <div class="article_l"><a href="http://m.blog.csdn.net/dongyang0311"><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/1_dongyang0311.jpg" alt="img"></a>
+                <a href="http://m.blog.csdn.net/dongyang0311" class="article_user">dongyang0311</a></div>
+            <div class="article_r">
+            </div>
+          </div>
+          <div class="blog_article_c clearfix">
+            <h3 class="article_t">慕课网：Web前端面试题目及答案汇总</h3>
+            <p class="date"><i>发表于</i><em>2016/6/29 14:44:25  &nbsp;</em><i>10865</i><span>人阅读</span></p>
+            <p class="category_p">
+            </p>
+             
+<div class="article_c">
+        <div class="markdown_views"><h2 id="htmlcss部分">HTML/CSS部分</h2>
+
+<p><strong>1、什么是盒子模型？</strong></p>
+
+<p>在网页中，一个元素占有空间的大小由几个部分构成，其中包括元素的内容（content），元素的内边距（padding），元素的边框（border），元素的外边距（margin）四个部分。这四个部分占有的空间中，有的部分可以显示相应的内容，而有的部分只用来分隔相邻的区域或区域。4个部分一起构成了css中元素的盒模型。</p>
+
+<p><strong>2、行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</strong> </p>
+
+<p>行内元素：a、b、span、img、input、strong、select、label、em、button、textarea  <br>
+  块级元素：div、ul、li、dl、dt、dd、p、h1-h6、blockquote  <br>
+  空元素：即系没有内容的HTML元素，例如：br、meta、hr、link、input、img </p>
+
+<p><strong>3、CSS实现垂直水平居中</strong> </p>
+
+<p>一道经典的问题，实现方法有很多种，以下是其中一种实现：  <br>
+  HTML结构：</p>
+
+<pre class="prettyprint" style="width: 100%; overflow: hidden;"><code class="hljs applescript has-numbering">&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"wrapper"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"content"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;</code><ul class="pre-numbering" style=""><li>1</li><li>2</li><li>3</li></ul></pre>
+
+<p>CSS： </p>
+
+
+
+<pre class="prettyprint" style="width: 100%; overflow: hidden;"><code class="hljs scss has-numbering"><span class="hljs-class">.wrapper</span>{<span class="hljs-attribute">position</span><span class="hljs-value">:relative;</span>} 
+<span class="hljs-class">.content</span>{ <span class="hljs-attribute">background-color</span><span class="hljs-value">:<span class="hljs-hexcolor">#6699FF</span>;</span> 
+<span class="hljs-attribute">width</span><span class="hljs-value">:<span class="hljs-number">200</span>px;</span> 
+<span class="hljs-attribute">height</span><span class="hljs-value">:<span class="hljs-number">200</span>px;</span> 
+<span class="hljs-attribute">position</span><span class="hljs-value">: absolute;</span> <span class="hljs-comment">//父元素需要相对定位 </span>
+<span class="hljs-attribute">top</span><span class="hljs-value">: <span class="hljs-number">50</span>%;</span> 
+<span class="hljs-attribute">left</span><span class="hljs-value">: <span class="hljs-number">50</span>%;</span> 
+<span class="hljs-attribute">margin-top</span><span class="hljs-value">:-<span class="hljs-number">100</span>px ;</span> <span class="hljs-comment">//二分之一的height，width </span>
+<span class="hljs-attribute">margin-left</span><span class="hljs-value">: -<span class="hljs-number">100</span>px;</span> } </code><ul class="pre-numbering" style=""><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul></pre>
+
+<p><strong>4、简述一下src与href的区别</strong> </p>
+
+<p>href 是指向网络资源所在位置，建立和当前元素（锚点）或当前文档（链接）之间的链接，用于超链接。 </p>
+
+<p>src是指向外部资源的位置，指向的内容将会嵌入到文档中当前标签所在位置；在请求src资源时会将其指向的资源下载并应用到文档内，例如js脚本，img图片和frame等元素。当浏览器解析到该元素时，会暂停其他资源的下载和处理，直到将该资源加载、编译、执行完毕，图片和框架等元素也如此，类似于将所指向资源嵌入当前标签内。这也是为什么将js脚本放在底部而不是头部。 </p>
+
+<p><strong>5、什么是CSS Hack?</strong> </p>
+
+<p>一般来说是针对不同的浏览器写不同的CSS,就是 CSS Hack。  <br>
+IE浏览器Hack一般又分为三种，条件Hack、属性级Hack、选择符Hack（详细参考CSS文档：css文档）。</p>
+
+<p>例如： // 1、条件Hack</p>
+
+
+
+<pre class="prettyprint" style="width: 100%; overflow: hidden;"><code class="hljs php has-numbering">&lt;!--[<span class="hljs-keyword">if</span> IE]&gt;
+&lt;style&gt;
+.test{color:red;}
+&lt;/style&gt;
+&lt;![<span class="hljs-keyword">endif</span>]&gt;</code><ul class="pre-numbering" style=""><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul></pre>
+
+<p>// 2、属性Hack</p>
+
+
+
+<pre class="prettyprint" style="width: 100%; overflow: hidden;"><code class="hljs avrasm has-numbering"><span class="hljs-preprocessor">.test</span>{ color:<span class="hljs-preprocessor">#090\9; / For IE8+ / </span>
+<span class="hljs-label">color:</span><span class="hljs-preprocessor">#f00; / For IE7 and earlier / </span>
+<span class="hljs-label">_color:</span><span class="hljs-preprocessor">#ff0; / For IE6 and earlier */ }</span></code><ul class="pre-numbering" style=""><li>1</li><li>2</li><li>3</li></ul></pre>
+
+<p>// 3、选择符Hack </p>
+
+
+
+<pre class="prettyprint" style="width: 100%; overflow: hidden;"><code class="hljs rsl has-numbering">html .test{<span class="hljs-keyword">color</span>:<span class="hljs-preprocessor">#090;} / For IE6 and earlier / </span>
+html .test{<span class="hljs-keyword">color</span>:<span class="hljs-preprocessor">#ff0;} / For IE7 / </span></code><ul class="pre-numbering" style=""><li>1</li><li>2</li></ul></pre>
+
+<p><strong>6、简述同步和异步的区别</strong> </p>
+
+<p>同步是阻塞模式，异步是非阻塞模式。  <br>
+ 同步就是指一个进程在执行某个请求的时候，若该请求需要一段时间才能返回信息，那么这个进程将会一直等待下去，直到收到返回信息才继续执行下去；  <br>
+ 异步是指进程不需要一直等下去，而是继续执行下面的操作，不管其他进程的状态。当有消息返回时系统会通知进程进行处理，这样可以提高执行的效率。 </p>
+
+<p><strong>7、px和em的区别</strong></p>
+
+<p>px和em都是长度单位，区别是，px的值是固定的，指定是多少就是多少，计算比较容易。em得值不是固定的，并且em会继承父级元素的字体大小。 浏览器的默认字体高都是16px。所以未经调整的浏览器都符合: 1em=16px。那么12px=0.75em, 10px=0.625em </p>
+
+<p><strong>8、什么叫优雅降级和渐进增强？</strong> </p>
+
+<p>渐进增强 progressive enhancement：</p>
+
+<p>针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
+
+<p>优雅降级 graceful degradation：</p>
+
+<p>一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
+
+<p>区别：  <br>
+a. 优雅降级是从复杂的现状开始，并试图减少用户体验的供给  <br>
+b. 渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要  <br>
+c. 降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带</p>
+
+<p><strong>9、浏览器的内核分别是什么?</strong></p>
+
+<p>IE: trident内核  <br>
+Firefox：gecko内核  <br>
+Safari：webkit内核  <br>
+Opera：以前是presto内核，Opera现已改用Google Chrome的Blink内核  <br>
+Chrome：Blink(基于webkit，Google与Opera Software共同开发) </p>
+
+
+
+<h2 id="javascript部分"><strong>JavaScript部分</strong></h2>
+
+<p><strong>1、怎样添加、移除、移动、复制、创建和查找节点？</strong></p>
+
+<p>1）创建新节点 </p>
+
+
+
+<pre class="prettyprint" style="width: 100%; overflow: hidden;"><code class="hljs scss has-numbering"><span class="hljs-function">createDocumentFragment()</span><span class="hljs-comment">//创建一个DOM片段 </span>
+<span class="hljs-function">createElement()</span> <span class="hljs-comment">//创建一个具体的元素</span>
+<span class="hljs-function">createTextNode()</span> <span class="hljs-comment">//创建一个文本节点 </span></code><ul class="pre-numbering" style=""><li>1</li><li>2</li><li>3</li></ul></pre>
+
+<p>2）添加、移除、替换、插入 </p>
+
+
+
+<pre class="prettyprint" style="width: 100%; overflow: hidden;"><code class="hljs scss has-numbering"><span class="hljs-function">appendChild()</span> <span class="hljs-comment">//添加 </span>
+<span class="hljs-function">removeChild()</span> <span class="hljs-comment">//移除</span>
+<span class="hljs-function">replaceChild()</span> <span class="hljs-comment">//替换</span>
+<span class="hljs-function">insertBefore()</span> <span class="hljs-comment">//插入</span></code><ul class="pre-numbering" style=""><li>1</li><li>2</li><li>3</li><li>4</li></ul></pre>
+
+<p>3）查找 </p>
+
+
+
+<pre class="prettyprint" style="width: 100%; overflow: hidden;"><code class="hljs scss has-numbering"><span class="hljs-function">getElementsByTagName()</span> <span class="hljs-comment">//通过标签名称</span>
+<span class="hljs-function">getElementsByName()</span> <span class="hljs-comment">//通过元素的Name属性的值 </span>
+<span class="hljs-function">getElementById()</span> <span class="hljs-comment">//通过元素Id，唯一性 </span></code><ul class="pre-numbering" style=""><li>1</li><li>2</li><li>3</li></ul></pre>
+
+<p><strong>2、实现一个函数clone，可以对JavaScript中的5种主要的数据类型（包括Number、String、Object、Array、Boolean）进行值复制。</strong></p>
+
+
+
+<pre class="prettyprint" style="width: 100%; overflow: hidden;"><code class="hljs scala has-numbering"><span class="hljs-javadoc">/** 
+* 对象克隆 
+* 支持基本数据类型及对象 
+* 递归方法 
+*/</span>
+function clone(obj) { 
+    <span class="hljs-keyword">var</span> o; 
+    switch (typeof obj) { 
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"undefined"</span>: 
+            <span class="hljs-keyword">break</span>; 
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"string"</span>: 
+            o = obj + <span class="hljs-string">""</span>; 
+            <span class="hljs-keyword">break</span>; 
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"number"</span>: 
+            o = obj - <span class="hljs-number">0</span>; 
+            <span class="hljs-keyword">break</span>; 
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"boolean"</span>: 
+            o = obj; 
+            <span class="hljs-keyword">break</span>; 
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"object"</span>: <span class="hljs-comment">// object 分为两种情况 对象（Object）或数组（Array） </span>
+            <span class="hljs-keyword">if</span> (obj === <span class="hljs-keyword">null</span>) {o = <span class="hljs-keyword">null</span>; } 
+            <span class="hljs-keyword">else</span> {                                 
+                <span class="hljs-keyword">if</span>(Object.prototype.toString.call(obj).slice(<span class="hljs-number">8</span>, -<span class="hljs-number">1</span>) === <span class="hljs-string">"Array"</span>) { 
+                o = []; 
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; obj.length; i++){o.push(clone(obj[i]));} 
+                }
+                <span class="hljs-keyword">else</span> { 
+                o = {}; 
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> k in obj) {o[k] = clone(obj[k]);} 
+                    } 
+                } 
+                <span class="hljs-keyword">break</span>; 
+                <span class="hljs-keyword">default</span>: 
+                o = obj; 
+                <span class="hljs-keyword">break</span>; 
+        } <span class="hljs-comment">//switch函数结束</span>
+    <span class="hljs-keyword">return</span> o; 
+}
+作者： visor_03389873 
+链接：http:<span class="hljs-comment">//www.imooc.com/article/8201</span>
+来源：慕课网</code><ul class="pre-numbering" style=""><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li><li>25</li><li>26</li><li>27</li><li>28</li><li>29</li><li>30</li><li>31</li><li>32</li><li>33</li><li>34</li><li>35</li><li>36</li><li>37</li><li>38</li><li>39</li><li>40</li><li>41</li></ul></pre>
+
+<p><strong>3、如何消除一个数组里面重复的元素？</strong></p>
+
+
+
+<pre class="prettyprint" style="width: 100%; overflow: hidden;"><code class="hljs go has-numbering"><span class="hljs-comment">// 方法一： </span>
+<span class="hljs-keyword">var</span> arr1 =<span class="hljs-number">[1</span><span class="hljs-number">,2</span><span class="hljs-number">,2</span><span class="hljs-number">,2</span><span class="hljs-number">,3</span><span class="hljs-number">,3</span><span class="hljs-number">,3</span><span class="hljs-number">,4</span><span class="hljs-number">,5</span><span class="hljs-number">,6</span>], 
+    arr2 = []; 
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i =<span class="hljs-number"> 0</span>,<span class="hljs-built_in">len</span> = arr1.length; i&lt; <span class="hljs-built_in">len</span>; i++){ 
+    <span class="hljs-keyword">if</span>(arr2.indexOf(arr1[i]) &lt;<span class="hljs-number"> 0</span>){ 
+        arr2.push(arr1[i]); 
+        } 
+    } 
+document.write(arr2); <span class="hljs-comment">// 1,2,3,4,5,6</span></code><ul class="pre-numbering" style=""><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul></pre>
+
+<p><strong>4、想实现一个对页面某个节点的拖曳？如何做？（使用原生JS）。</strong> </p>
+
+<p><strong>5、在Javascript中什么是伪数组？如何将伪数组转化为标准数组？</strong> </p>
+
+<p>伪数组（类数组）：无法直接调用数组方法或期望length属性有什么特殊的行为，但仍可以对真正数组遍历方法来遍历它们。典型的是函数的argument参数，还有像调用getElementsByTagName,document.childNodes之类的,它们都返回NodeList对象都属于伪数组。可以使用Array.prototype.slice.call(fakeArray)将数组转化为真正的Array对象。</p>
+
+<pre class="prettyprint" style="width: 100%; overflow: hidden;"><code class="hljs javascript has-numbering"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">log</span><span class="hljs-params">()</span>{</span> 
+    <span class="hljs-keyword">var</span> args = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>); <span class="hljs-comment">//为了使用unshift数组方法，将argument转化为真正的数组 </span>
+    args.unshift(<span class="hljs-string">'(app)'</span>); 
+    console.log.apply(console, args); 
+};</code><ul class="pre-numbering" style=""><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul></pre>
+
+<p><strong>6、Javascript中callee和caller的作用？</strong> </p>
+
+<p>caller是返回一个对函数的引用，该函数调用了当前函数；  <br>
+ callee是返回正在被执行的function函数，也就是所指定的function对象的正文。</p>
+
+<p><strong>7、请描述一下cookies，sessionStorage和localStorage的区别</strong> </p>
+
+<p>sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。而localStorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。 web storage和cookie的区别 Web Storage的概念和cookie相似，区别是它是为了更大容量存储设计的。Cookie的大小是受限的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽，另外cookie还需要指定作用域，不可以跨域调用。 除此之外，Web Storage拥有setItem,getItem,removeItem,clear等方法，不像cookie需要前端开发者自己封装setCookie，getCookie。但是Cookie也是不可以或缺的：Cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在 ，而Web Storage仅仅是为了在本地“存储”数据而生。 </p>
+
+<p><strong>8、手写数组快速排序</strong> </p>
+
+<p>关于快排算法的详细说明，可以参考阮一峰老师的文章快速排序  <br>
+ “快速排序”的思想很简单，整个排序过程只需要三步：  <br>
+ （1）在数据集之中，选择一个元素作为”基准”（pivot）。  <br>
+ （2）所有小于”基准”的元素，都移到”基准”的左边；所有大于”基准”的元素，都移到”基准”的右边。  <br>
+ （3）对”基准”左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。</p>
+
+<p><strong>9、统计字符串”aaaabbbccccddfgh”中字母个数或统计最多字母数。</strong></p>
+
+<pre class="prettyprint" style="width: 100%; overflow: hidden;"><code class="hljs cs has-numbering"><span class="hljs-keyword">var</span> str = <span class="hljs-string">"aaaabbbccccddfgh"</span>; 
+<span class="hljs-keyword">var</span> obj = {}; 
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;str.length;i++){
+<span class="hljs-keyword">var</span> v = str.charAt(i);
+<span class="hljs-keyword">if</span>(obj[v]&amp;&amp;obj[v].<span class="hljs-keyword">value</span>==v){
+obj[v].count=++obj[v].count;
+}<span class="hljs-keyword">else</span>{
+obj[v]={};
+obj[v].count=<span class="hljs-number">1</span>;
+obj[v].<span class="hljs-keyword">value</span>=v;
+}
+}
+<span class="hljs-keyword">for</span>(key <span class="hljs-keyword">in</span> obj){
+documemt.write(obj[key].<span class="hljs-keyword">value</span>+<span class="hljs-string">'='</span>+obj[key].count+<span class="hljs-string">''</span>);<span class="hljs-comment">//a=4 b=3 c=4 d=2 f=1 g=1 h=1</span>
+}</code><ul class="pre-numbering" style=""><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li></ul></pre>
+
+<p><strong>10、写一个function，清除字符串前后的空格。（兼容所有浏览器）</strong></p>
+
+
+
+<pre class="prettyprint" style="width: 100%; overflow: hidden;"><code class="hljs javascript has-numbering"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">trim</span><span class="hljs-params">(str)</span>{</span>
+<span class="hljs-keyword">if</span>(str&amp;&amp;<span class="hljs-keyword">typeof</span> str ====<span class="hljs-string">"string"</span>){
+<span class="hljs-keyword">return</span> str.replace(<span class="hljs-regexp">/(^\s)/</span>(ls)$/g,<span class="hljs-string">""</span>);<span class="hljs-comment">//去除前后空白符</span>
+}
+}</code><ul class="pre-numbering" style=""><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul></pre>
+
+<p>其他  <br>
+<strong>1、一次完整的HTTP事务是怎样的一个过程？</strong>  <br>
+基本流程： <br>
+ a. 域名解析  <br>
+ b. 发起TCP的3次握手 <br>
+ c. 建立TCP连接后发起http请求  <br>
+ d. 服务器端响应http请求，浏览器得到html代码 <br>
+ e. 浏览器解析html代码，并请求html代码中的资源  <br>
+ f. 浏览器对页面进行渲染呈现给用户 </p>
+
+<p><strong>2、对前端工程师这个职位你是怎么样理解的？</strong>  <br>
+a. 前端是最贴近用户的程序员，前端的能力就是能让产品从 90分进化到 100 分，甚至更好  <br>
+b. 参与项目，快速高质量完成实现效果图，精确到1px；  <br>
+c. 与团队成员，UI设计，产品经理的沟通；  <br>
+d. 做好的页面结构，页面重构和用户体验；  <br>
+e. 处理hack，兼容、写出优美的代码格式；  <br>
+f. 针对服务器的优化、拥抱最新前端技术。</p>
+
+<p>作者： visor_03389873  <br>
+链接：<a href="http://www.imooc.com/article/8201">http://www.imooc.com/article/8201</a> <br>
+来源：慕课网</p></div>
+        <script type="text/javascript">
+            $(function () {
+                $('pre.prettyprint code').each(function () {
+                    var lines = $(this).text().split('\n').length;
+                    var $numbering = $('<ul/>').addClass('pre-numbering').hide();
+                    $(this).addClass('has-numbering').parent().append($numbering);
+                    for (i = 1; i <= lines; i++) {
+                        $numbering.append($('<li/>').text(i));
+                    };
+                    $numbering.fadeIn(1700);
+                });
+            });
+        </script>
+ </div>
+
+          </div>
+
+                               
+
+             <div class="blog_handle">
+        <span id="digg" style="cursor:pointer"><i class="iconfont"></i><em>1</em></span>
+        <span id="bury" style="cursor:pointer"><i class="iconfont"></i><em>0</em></span>
+       
+    </div>
+
+
+
+              <div class="prev_next">
+                        <a href="http://m.blog.csdn.net/dongyang0311/article/details/51763180" class="prev" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_shangyipian&#39;]);">上一篇</a>                                                                       
+                        <a href="http://m.blog.csdn.net/dongyang0311/article/details/51818427" class="next" onclick="_gaq.push([&#39;_trackEvent&#39;,&#39;function&#39;, &#39;onclick&#39;, &#39;blog_articles_shangyipian&#39;])">下一篇</a>
+              </div>         
+        </div>
+        
+    
+
+          <script type="text/javascript">
+               /*csdn wap端 博客内页-20:3 创建于 2016-05-10*/
+               var cpro_id = "u2634430";
+            </script>           
+          <!-- 广告位：WAP端-博客详情页banner2-20:3 -->
+        <script>
+            (function() {
+                var s = "_" + Math.random().toString(36).slice(2);
+                document.write('<div id="' + s + '"></div>');
+                (window.slotbydup=window.slotbydup || []).push({
+                    id: '4777150',
+                    container: s,
+                    size: '20,3',
+                    display: 'inlay-fix'
+                });
+            })();
+        </script><div id="_syjggkon61c"></div><script charset="utf-8" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/tcqm(1)"></script><div id="_fvhxuu766h5" style=""><div style="cursor:auto;"><iframe width="1349" frameborder="0" height="203" scrolling="no" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/s(1).html"></iframe></div></div><script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/avkunrrnbycx.js.下载"></script>
+
+
+       
+<script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/highcode.js.下载"></script>
+<script type="text/javascript">
+    var fileName = '51782726';
+    var commentscount = 0;
+    var islock = false;
+    var currentUserName='';
+    var topSize=3;
+    var listId = ".blog_comment_list";
+</script>
+
+<div class="no_comment" style=""><i class="iconfont"></i><span>暂无评论，</span><a href="http://m.blog.csdn.net/comment/post?id=51782726">我去发表</a><em>~</em></div>
+
+ <div class="blog_comment" style="display:none">
+       <h3 class="isComment">评论<span>（0）</span></h3>
+       <dl class="blog_comment_list"></dl>
+       <div class="checkAll"></div>
+ </div>
+
+<script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/comment.js.下载"></script>
+
+
+
+       
+        <div style="display:none" id="tags">html,css,web前端,面试题,applescript,select,结构,class,标签,pre</div>
+
+   
+<script type="text/javascript">
+    /*wap端-博客内页热门文章上通栏-20:5*/
+    var cpro_id = "u2901277";
+</script>
+<!-- 广告位：WAP端-博客详情页banner3-20:5 -->
+<script>
+    (function () {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: '4777155',
+            container: s,
+            size: '20,5',
+            display: 'inlay-fix'
+        });
+    })();
+</script><div id="_3a5h5wy8h3w"></div><script charset="utf-8" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/tcqm(2)"></script><div id="_up33wt1e0q" style=""><iframe width="1349" frameborder="0" height="338" scrolling="no" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/s(2).html"></iframe></div><script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/gbqjhkqcceix.js.下载"></script>
+
+<div class="my_hot_article">
+         <h3 class="isArticle">相关博文</h3>
+
+                  <ul class="hot_article tracking-ad" id="res" data-mod="popu_36">
+                                   <li>                                      
+                                       <a href="http://blog.csdn.net/xianyu410725/article/details/46701923" title="前端解决跨域问题的8种方案（最新最全）" strategy="BlogCommendFromCsdn" target="_blank">前端解决跨域问题的8种方案（最新最全）</a>
+                                   </li>
+                                   <li>                                      
+                                       <a href="http://blog.csdn.net/kikikind/article/details/6266101" title="Etag与HTTP缓存机制" strategy="BlogCommendFromCsdn" target="_blank">Etag与HTTP缓存机制</a>
+                                   </li>
+                                   <li>                                      
+                                       <a href="http://blog.csdn.net/Joyhen/article/details/21631833" title="前端解决跨域问题的8种方案（最新最全）" strategy="BlogCommendFromCsdn" target="_blank">前端解决跨域问题的8种方案（最新最全）</a>
+                                   </li>
+                                   <li>                                      
+                                       <a href="http://blog.csdn.net/sjpz0124/article/details/47023771" title="前端知识点大全" strategy="BlogCommendFromCsdn" target="_blank">前端知识点大全</a>
+                                   </li>
+                                   <li>                                      
+                                       <a href="http://blog.csdn.net/gaoshanwudi/article/details/7355794" title="深入理解JavaScript的闭包特性 如何给循环中的对象添加事件" strategy="BlogCommendFromCsdn" target="_blank">深入理解JavaScript的闭包特性 如何给循环中的对象添加事件</a>
+                                   </li>
+                                   <li>                                      
+                                       <a href="http://blog.csdn.net/qq443068902/article/details/51549607" title="Web前端基础面试题目及答案" strategy="BlogCommendFromCsdn" target="_blank">Web前端基础面试题目及答案</a>
+                                   </li>
+                                   <li>                                      
+                                       <a href="http://blog.csdn.net/bossmango/article/details/77369805" title="web前端面试题" strategy="BlogCommendFromCsdn" target="_blank">web前端面试题</a>
+                                   </li>
+                                   <li>                                      
+                                       <a href="http://blog.csdn.net/cyyax/article/details/50607066" title="看完这个，css中position的绝对定位相对定位就懂了" strategy="BlogCommendFromCsdn" target="_blank">看完这个，css中position的绝对定位相对定位就懂了</a>
+                                   </li>
+                                   <li>                                      
+                                       <a href="http://blog.csdn.net/u013707249/article/details/62044511" title="有意思的前端面试题-附答案（一）" strategy="BlogCommendFromCsdn" target="_blank">有意思的前端面试题-附答案（一）</a>
+                                   </li>
+                                   <li>                                      
+                                       <a href="http://blog.csdn.net/u013418331/article/details/53148073" title="3-js面试题（前端面试题带答案）" strategy="BlogCommendFromCsdn" target="_blank">3-js面试题（前端面试题带答案）</a>
+                                   </li>
+                  </ul>
+        </div>
+
+      
+<script type="text/javascript">
+    /*wap端-博客内页相关博文上通栏-20:5*/
+    var cpro_id = "u2901286";
+</script>
+<!-- 广告位：WAP端-博客详情页banner4-20:5 -->
+<script>
+    (function () {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: '4777158',
+            container: s,
+            size: '20,5',
+            display: 'inlay-fix'
+        });
+    })();
+</script><div id="_wtezzfryov9"></div><script charset="utf-8" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/tcqm(3)"></script><div style="width: 100%;"><iframe width="1349" frameborder="0" height="338" scrolling="no" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/s(3).html"></iframe></div><script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/gbqjhkqdaeix.js.下载"></script>
+
+        
+    <div class="my_hot_article">
+          <h3 class="isArticle">我的热门文章</h3>
+          <ul class="hot_article">
+                <li><a href="http://m.blog.csdn.net/dongyang0311/article/details/51782726">慕课网：Web前端面试题目及答案汇总</a></li>
+                <li><a href="http://m.blog.csdn.net/dongyang0311/article/details/51732362">APP内嵌h5页面，这个H5页面如何分享到微信？</a></li>
+                <li><a href="http://m.blog.csdn.net/dongyang0311/article/details/51743406">用原生JS做input全选</a></li>
+                <li><a href="http://m.blog.csdn.net/dongyang0311/article/details/51763180">web前端面试题及答案汇总</a></li>
+                <li><a href="http://m.blog.csdn.net/dongyang0311/article/details/51818427">干货|移动端H5前端性能优化</a></li>
+          </ul>
+        </div>
+
+<script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/main.js(1).下载"></script>
+
+
+
+
+
+
+
+
+       
+      </div>
+
+        
+   <div class="leftNav">
+      
+<div class="left_top">
+        <a href="https://passport.csdn.net/account/login?from=http%3a%2f%2fm.blog.csdn.net%2fdongyang0311%2farticle%2fdetails%2f51782726"><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/1_csdn.jpg"></a>
+        <a href="https://passport.csdn.net/account/login?from=http%3a%2f%2fm.blog.csdn.net%2fdongyang0311%2farticle%2fdetails%2f51782726" class="sign">未登录</a> 
+</div>
+        
+        <ul class="nav_list">
+            <li><a href="http://m.blog.csdn.net/home/index"><i>•</i><span>首页</span><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="http://m.blog.csdn.net/Column/Column?Channel=mobile&amp;Type="><i>•</i><span>移动开发</span><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="http://m.blog.csdn.net/Column/Column?Channel=enterprise&amp;Type="><i>•</i><span>架构</span><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="http://m.blog.csdn.net/Column/Column?Channel=cloud&amp;Type="><i>•</i><span>云计算/大数据</span><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="http://m.blog.csdn.net/Column/Column?Channel=www&amp;Type="><i>•</i><span>互联网</span><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="http://m.blog.csdn.net/Column/Column?Channel=system&amp;Type="><i>•</i><span>运维</span><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="http://m.blog.csdn.net/Column/Column?Channel=database&amp;Type="><i>•</i><span>数据库</span><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="http://m.blog.csdn.net/Column/Column?Channel=web&amp;Type="><i>•</i><span>前端</span><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="http://m.blog.csdn.net/Column/Column?Channel=code&amp;Type="><i>•</i><span>编程语言</span><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="http://m.blog.csdn.net/Column/Column?Channel=software&amp;Type="><i>•</i><span>研发管理</span><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="http://m.blog.csdn.net/Column/Column?Channel=other&amp;Type="><i>•</i><span>综合</span><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+        </ul>
+   </div>
+   
+
+      <div id="mask"></div>
+    </div>
+
+
+   
+
+    <div class="backToTop" style="display: block;"><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/iconfont-fudongxiangshang.png" alt="img"></div>
+    <!--分享弹窗：-->
+    <div class="popup_cover"></div>
+    <div class="sharePopup_box">
+      <div class="sharePopup">
+        <!--JiaThis Button BEGIN-->
+        <div class="jiathis_style_32x32"><a class="jiathis_button_weixin" title="分享到微信"><span class="jiathis_txt jiathis_separator jtico jtico_weixin"><b><i class="iconfont"></i></b><em>微信分享</em></span></a><a class="jiathis_button_tsina" title="分享到微博"><span class="jiathis_txt jiathis_separator jtico jtico_tsina"><b><i class="iconfont"></i></b><em>新浪微博</em></span></a><a class="jiathis_button_cqq" title="分享到QQ好友"><span class="jiathis_txt jiathis_separator jtico jtico_cqq"><b><i class="iconfont"></i></b><em>QQ好友</em></span></a><a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jiathis_separator jtico jtico_qzone"><b><i class="iconfont"></i></b><em>QQ空间</em></span></a></div>
+        <script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/jia.js.下载" charset="utf-8"></script><script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/plugin.client.js.下载" charset="utf-8"></script>
+        <!--JiaThis Button END-->
+      </div>
+      <div class="sharePopup_cancel">取 消</div>
+    </div>
+    <script>
+      $(function(){
+        $('#share_btn').click(function(){
+          $('.popup_cover').stop().show();
+          $('.sharePopup_box').stop().slideDown();
+        });
+        $('.sharePopup_cancel').click(function(){
+          $('.popup_cover').stop().hide();
+          $('.sharePopup_box').stop().slideUp();
+        });
+      })
+    </script>
+
+
+
+
+
+
+
+   <div class="backToTop" style="z-index: 9999999; display: block;"><img src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/iconfont-fudongxiangshang.png" alt="img"></div>
+    <div class="blog_footer">©1999-2012, csdn.net, All Rights Reserved</div>
+    <script type="text/javascript" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/fontSize.js.下载"></script>
+<script type="text/javascript" charset="utf-8" src="./慕课网：Web前端面试题目及答案汇总 - dongyang0311 - CSDN博客_files/tracking.js.下载"></script>
+
+
+
+
+
+<div style="position:fixed; top:0; left:0; overflow:hidden;"><input style="position:absolute; left:-300px;" type="text" value="" id="focus_retriever" readonly="true"></div></body></html>

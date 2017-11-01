@@ -1,0 +1,235 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  height: 100%;
+  overflow: auto;
+  color: #111;
+  font-size: 1.2rem;
+  -background: yellow;
+}
+/*#box{
+	width:640/@rem;
+	overflow:hidden;
+}*/
+/*-------头部-----------*/
+.logo {
+  width: 32rem;
+  background: #fff;
+  padding-bottom: 0.75rem;
+}
+.logo h2 {
+  width: 12rem;
+  height: 4rem;
+  padding: 1.3rem 0 0 4.5rem;
+  background: url(../img/shuaxin.png) no-repeat 0.9rem 0.5rem;
+  background-size: 3.25rem 3.25rem;
+  float: left;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.logo a {
+  padding-top: 1rem;
+  width: 7rem;
+  height: 100%;
+  float: right;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  text-align: center;
+  color: #337ab7;
+}
+/*-------注册栏------------*/
+.signupBox {
+  width: 32rem;
+  background: #efefef;
+  padding: 3.5rem 1rem;
+  position: relative;
+}
+.signup {
+  width: 30rem;
+  background: #fff;
+  padding: 1.5rem 2rem;
+}
+.kuang {
+  width: 26rem;
+  height: 3.5rem;
+  border: 0.1rem solid #a7a5a5;
+  margin-bottom: 1.5rem;
+}
+.kuang1 {
+  width: 26rem;
+  height: 3.5rem;
+  border: 0.1rem solid #a7a5a5;
+  margin-bottom: 1.5rem;
+}
+.kuang2 {
+  width: 26rem;
+  height: 3.5rem;
+  border: 0.1rem solid #a7a5a5;
+  margin-bottom: 1.5rem;
+}
+.kuang input {
+  width: 22rem;
+  font-size: 1.5rem;
+  position: absolute;
+  height: 3.3rem;
+  top: -3.7rem;
+  left: 3.85rem;
+  color: #999;
+  padding-left: 1rem;
+}
+.kuang1 input {
+  width: 22rem;
+  font-size: 1.5rem;
+  position: absolute;
+  height: 3.3rem;
+  top: -3.7rem;
+  left: 3.85rem;
+  color: #999;
+  padding-left: 1rem;
+}
+.kuang2 input {
+  width: 22rem;
+  font-size: 1.5rem;
+  position: absolute;
+  height: 3.3rem;
+  top: -3.7rem;
+  left: 3.85rem;
+  color: #999;
+  padding-left: 1rem;
+}
+.kuang .personZ {
+  width: 3.8rem;
+  float: left;
+  height: 3.3rem;
+  background: #efefef;
+  color: #aaa;
+  line-height: 3.35rem;
+  font-size: 2rem;
+  text-align: center;
+}
+.kuang1 .key {
+  width: 3.8rem;
+  float: left;
+  height: 3.3rem;
+  background: #efefef;
+  color: #aaa;
+  line-height: 3.35rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+.kuang2 .key {
+  width: 3.8rem;
+  float: left;
+  height: 3.3rem;
+  background: #efefef;
+  color: #aaa;
+  line-height: 3.35rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+.yanzheng {
+  width: 13.5rem;
+  height: 3.5rem;
+  border: 0.1rem solid #a7a5a5;
+  margin-bottom: 1.5rem;
+}
+.yanzheng input {
+  width: 9.4rem;
+  font-size: 1.5rem;
+  float: left;
+  height: 3.3rem;
+  color: #999;
+  top: -3.7rem;
+  left: 3.85rem;
+  position: absolute;
+  padding-left: 1rem;
+}
+.yanzheng span {
+  width: 3.8rem;
+  float: left;
+  height: 3.3rem;
+  background: #efefef;
+  color: #aaa;
+  line-height: 3.35rem;
+  font-size: 2rem;
+  text-align: center;
+}
+.validation {
+  width: 9rem;
+  height: 3.5rem;
+  outline: none;
+  border: none;
+  right: 3.3rem;
+  top: 20rem;
+  position: absolute;
+}
+.validation img {
+  width: 9rem;
+  height: 3.5rem;
+}
+.immediately {
+  width: 26rem;
+  height: 3.5rem;
+}
+.immediately button {
+  width: 26rem;
+  font-size: 1.8rem;
+  color: #fff;
+  outline: none;
+  border: none;
+  height: 3.5rem;
+  background: #337ab7;
+}
+.existing {
+  float: right;
+  line-height: 3rem;
+}
+.existing {
+  font-size: 1.5rem;
+  color: #337ab7;
+}
+/*--------底部-------*/
+.footerD {
+  width: 26rem;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+}
+.footerD p {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  color: #777;
+}
+/*-------------登录----------*/
+.denglu {
+  width: 32rem;
+  background: #fff;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+.login {
+  font-size: 2rem;
+  color: #37474f;
+  font-weight: bold;
+  line-height: 5rem;
+  text-align: center;
+}
+.denglu span {
+  font-size: 2.5rem;
+  margin-left: 5rem;
+}
+.denglu .qq {
+  margin-left: 17.5rem;
+}
+.denglu img {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  top: -4.5rem;
+  left: 1rem;
+  display: none;
+}

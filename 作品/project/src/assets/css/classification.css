@@ -1,0 +1,121 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  height: 100%;
+  overflow: auto;
+  color: #111;
+  font-size: 1.2rem;
+}
+/*-------头部-----------*/
+.logo {
+  width: 32rem;
+  background: #fff;
+  padding-bottom: 0.75rem;
+}
+.logo h2 {
+  width: 12rem;
+  height: 4rem;
+  padding: 1.3rem 0 0 4.5rem;
+  background: url(../img/shuaxin.png) no-repeat 0.9rem 0.5rem;
+  background-size: 3.25rem 3.25rem;
+  float: left;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.logo span {
+  padding-top: 1rem;
+  width: 7rem;
+  height: 100%;
+  float: right;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+/*------------产品----------*/
+.productsBox {
+  width: 32rem;
+  margin-bottom: 2.5rem;
+}
+.changpinWrap {
+  background: #62a8ea;
+  width: 100%;
+  height: 7rem;
+  font-size: 3rem;
+  color: #fff;
+  line-height: 7rem;
+  text-align: center;
+}
+/*---------------导航--------------*/
+.navT {
+  width: 30rem;
+  height: 4.5rem;
+  overflow-y: hidden;
+  margin: 0 auto;
+}
+.navigationT {
+  width: 150%;
+  overflow-x: auto;
+  border-bottom: 0.4rem solid #b0b0b0;
+  padding: 0.5rem 0;
+}
+.navigationT a {
+  float: left;
+  padding: 0 1rem;
+  line-height: 3.5rem;
+  font-size: 1.5rem;
+  margin-right: 0.6rem;
+  background: #fff;
+}
+.nav .active {
+  background: #67aefc;
+  color: #fff;
+}
+.imgWrap {
+  width: 30rem;
+  padding-top: 2rem;
+  margin: 0 auto;
+}
+.imgWrap li {
+  float: left;
+  width: 14.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.75rem;
+  height: 17.5rem;
+  background: pink;
+}
+.imgWrap li img {
+  width: 14.5rem;
+  height: 17.5rem;
+}
+/*-------------登录----------*/
+.denglu {
+  width: 32rem;
+  background: #fff;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+.login {
+  font-size: 2rem;
+  color: #37474f;
+  font-weight: bold;
+  line-height: 5rem;
+  text-align: center;
+}
+.denglu span {
+  font-size: 2.5rem;
+  margin-left: 5rem;
+}
+.denglu .qq {
+  margin-left: 17.5rem;
+}
+.denglu img {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  top: -4.5rem;
+  left: 1rem;
+  display: none;
+}
