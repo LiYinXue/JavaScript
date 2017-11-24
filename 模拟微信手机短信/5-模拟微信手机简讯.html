@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+</head>
+<body>
+	<div class="box">
+		<div class="boxWrap">
+			<i></i>
+			<ul id="wrap">
+				<li class="right">
+					<strong class="content" style="background:rgba(88,248,88,0.8);" >说：哈？好呀，多少钱我都愿意~~</strong>
+					<em></em>
+					<img src="img/3.jpg">
+				</li>
+				<li class="left">
+					<img src="img/10.jpg">
+					<strong class="content" style="background:rgba(51,224,230,0.7);">说：这个简单，我们去妙味远程课堂就行了~~</strong>
+					<em></em>
+				</li>
+			</ul>
+			<b></b>
+			<p>
+				<img src="img/3.jpg" id="expression">
+				<input type="" placeholder="大家好，我是土豪。" id="message">
+				<button id="send">发送</button>
+			</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		let state = false //设置点击小表情的状态，初始值为false
+		//点击小图标根据状态进行判断
+		expression.onclick = function(){
+			/*
+				因为状态为false 所以点击小表情直接走else 在else里将状态设为true ,所以当再次点击的时候状态就为true走if 反之也一样
+			*/
+			if(state){
+				expression.src = 'img/3.jpg'
+				state = false
+			}else{
+				expression.src = 'img/10.jpg'
+				state = true
+			}
+		}
+		//设置自定义属性
+		let className = '' //存放class名字的
+		let srcImg = '' //存放图片名称的
+		let backgroundCol = '' //存放文字背景颜色的
+		//点击发送按钮进行判断做交互
+		send.onclick = function() {
+			let val = message.value //将text 里的value值赋给一个变量
+			//如果为空提示并return，不走代码啦
+			if( val=== ''){
+				alert("内容不能为空")
+				return
+			}
+			/*
+				判断：
+					跟着上面小图标的状态而改变，如果为true走if 如果false走else 里的代码
+			*/
+			if(state){
+				srcImg = '10';
+				className = 'left';
+				backgroundCol = 'rgba(51,224,230,0.7)'
+			}else{
+				srcImg = '3';
+				className = 'right';
+				backgroundCol = 'rgba(88,248,88,0.8)'
+			}
+			//利用innerHTML 和模板字符串自动生成一个html5结构 然后将className当前的值赋给结构上---class="${className}"，文字样式也赋给结构上---background:${backgroundCol};图片src的名字也放到结构上<img src="img/${srcImg}.png">
+			wrap.innerHTML += `
+				<li class="${className}">
+					<strong class="content" style="background:${backgroundCol};" >${message.value}</strong>
+					<em></em>
+					<img src="img/${srcImg}.jpg">
+				</li>
+			`
+			message.value = '';
+			message.placeholder = ''
+		}
+	</script>
+</body>
+</html>
