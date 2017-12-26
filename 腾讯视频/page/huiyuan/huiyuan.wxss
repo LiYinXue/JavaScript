@@ -1,0 +1,21 @@
+/* page/huiyuan/huiyuan.wxss */
+.tt{
+  height: 900rpx;
+}
+.tt image{
+  height: 900rpx;
+}
+
+.cc{
+  height: 900rpx;
+}
+.cc image{
+  height: 900rpx;
+}
+
+.bb{
+  height: 900rpx;
+}
+.bb image{
+  height: 900rpx;
+}

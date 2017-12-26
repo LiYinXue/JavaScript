@@ -1,0 +1,41 @@
+<!--page/search/search.wxml-->
+<view class='searchBox'>
+  <form>
+    <input placeholder="请输入片名、主演或导演" focus="true" class="section"/>
+    <!-- <navigator url="../../pages/home/home">    </navigator> -->
+    <button formType="reset" class='reset'>取消</button>
+  </form>
+</view>
+<view class='sousuo'>
+热门搜索
+  <view class='ll'><text class='oo' style='background:red;color:#fff;'>1</text><text>柒个我</text></view>
+  <view class='ll'><text class='oo' style='background:#f25f0e;color:#fff;'>2</text><text>羞羞的铁拳</text></view>
+  <view class='ll'><text class='oo' style='background:#ecba21;color:#fff;'>3</text><text>花谢花开花满天</text></view>
+  <view class='ll'><text class='oo'>4</text><text>极光之恋</text></view>
+  <view class='ll'><text class='oo'>5</text><text>吐槽大会 第二季</text></view>
+  <view class='ll'><text class='oo'>6</text><text>熊出没之探险日记</text></view>
+  <view class='ll'><text class='oo'>7</text><text>致我们单纯的小美好</text></view>
+  <view class='ll'><text class='oo'>8</text><text>溏心风暴3[国语版]</text></view>
+  <view class='ll'><text class='oo'>9</text><text>小猪佩奇第4季</text></view>
+  <view class='ll'><text class='oo'>10</text><text>我的！体育老师</text></view>
+  <view class='ll'><text class='oo'>11</text><text>龙日一你死定了</text></view>
+  <view class='ll'><text class='oo'>12</text><text>王者出击</text></view>
+  <view class='ll'><text class='oo'>13</text><text>快乐大本营</text></view>
+  <view class='ll'><text class='oo'>14</text><text>我的小姨</text></view>
+  <view class='ll'><text class='oo'>15</text><text>溏心风暴3[粤语版]</text></view>
+  <view class='ll'><text class='oo'>16</text><text>九州·海上牧云记</text></view>
+  <view class='ll'><text class='oo'>17</text><text>熊出没</text></view>
+  <view class='ll'><text class='oo'>18</text><text>三个院子</text></view>
+  <view class='ll'><text class='oo'>19</text><text>琅琊榜之风起长林</text></view>
+  <view class='ll'><text class='oo'>20</text><text>猎场</text></view>
+  <view class='ll'><text class='oo'>21</text><text>爱情保卫战</text></view>
+  <view class='ll'><text class='oo'>22</text><text>喜剧总动员 第2季</text></view>
+  <view class='ll'><text class='oo'>23</text><text>青春旅社 第一季</text></view>
+  <view class='ll'><text class='oo'>24</text><text>亲爱的客栈</text></view>
+  <view class='ll'><text class='oo'>25</text><text>小伶玩具</text></view>
+  <view class='ll'><text class='oo'>26</text><text>东风破</text></view>
+  <view class='ll'><text class='oo'>27</text><text>红蔷薇</text></view>
+  <view class='ll'><text class='oo'>28</text><text>战狼2</text></view>
+  <view class='ll'><text class='oo'>29</text><text>追龙</text></view>
+  <view class='ll'><text class='oo'>30</text><text>演员的诞生 第一季</text></view>
+</view>

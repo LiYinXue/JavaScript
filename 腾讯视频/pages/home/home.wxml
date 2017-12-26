@@ -1,0 +1,105 @@
+<!--pages/home/home.wxml-->
+<view class='container'>
+<!--搜索框  -->
+  <form bindsubmit="formSubmit">
+    <navigator style='background:url(../../image/sea.png);background-size:100% 100%;' class='serch' url="../../page/search/search"></navigator>
+    <navigator url="../../page/search/search"><input disabled="true" name="input" placeholder="请输入片名、主演或导演" class='mess'/></navigator>
+  </form>
+<!--轮播图  -->
+<view class='autoT'>
+  <swiper class="swiper" autoplay="true" interval="5000" duration="2000"circular="true">    
+        <swiper-item indicator-dots="false">    
+          <image src='../../image/1.jpg'></image>
+        </swiper-item>
+        <swiper-item>    
+          <image src='../../image/2.jpg'></image>
+        </swiper-item>
+        <swiper-item>       
+          <image src='../../image/3.jpg'></image>
+        </swiper-item>
+        <swiper-item>       
+          <image src='../../image/4.jpg'></image>
+        </swiper-item>    
+         <swiper-item>       
+          <image src='../../image/5.jpg'></image>
+        </swiper-item>    
+    </swiper>
+     <swiper class="swiper" autoplay="true" interval="5000" duration="2000"circular="true">    
+        <swiper-item indicator-dots="false">    
+          <text class='wenzi'>染个柒·豁出去了</text>
+        </swiper-item>
+        <swiper-item>    
+          <text class='wenzi'>来腾讯视频，先睹为快！</text>
+        </swiper-item>
+        <swiper-item>       
+          <text class='wenzi'>诺兰打造海陆空生死体验</text>
+        </swiper-item>
+        <swiper-item>       
+          <text class='wenzi'>年味有Fun</text>
+        </swiper-item>    
+         <swiper-item>       
+          <text class='wenzi'>黄轩窦骁开启九州世界</text>
+        </swiper-item>    
+    </swiper>         
+</view>
+<!--视频详情  -->
+<view class='Heavy'>
+  <view class='heavyBt'><text>重磅热播</text></view>
+  <view class='reboshipin'>
+    <block wx:for="{{item1}}">
+      <view class='t'>
+        <view class='shipin'>
+          <image src='{{item.imgUrls}}'></image>
+        </view>
+          <text class='t1'>{{item.bigTitles}}</text>
+        <text class='t2'>{{item.smallTitles}}</text>
+      </view>
+    </block>
+  </view>
+  <view class='anniu' style='background:url(../../image/huan.png) no-repeat 10rpx 20rpx;background-size:30rpx 30rpx;'>
+    <text class='aaa'>换一批</text>
+  </view>
+</view>
+<view class='Heavy'>
+  <view class='heavyBt'><text>热门综艺</text></view>
+  <view class='bigT'>
+    <image src='../../image/z1.jpg' mode=''></image>
+    <text class='t3'>爱情保卫战：涂磊气到罢录</text>
+  </view>
+  <view class='reboshipin'>
+    <block wx:for="{{item2}}">
+      <view class='t'>
+        <view class='shipin'>
+          <image src='{{item.imgUrls}}'></image>
+        </view>
+          <text class='t1'>{{item.bigTitles}}</text>
+        <text class='t2'>{{item.smallTitles}}</text>
+      </view>
+    </block>
+  </view>
+  <view class='anniu' style='background:url(../../image/huan.png) no-repeat 10rpx 20rpx;background-size:30rpx 30rpx;'>
+    <text class='aaa'>换一批</text>
+  </view>
+</view>
+<view class='Heavy'>
+  <view class='heavyBt'><text>同步剧场</text></view>
+  <view class='bigT'>
+    <image src='../../image/t1.jpg' mode=''></image>
+    <text class='t3'>最新剧情:【会员抢先看】</text>
+  </view>
+  <view class='reboshipin'>
+    <block wx:for="{{item3}}">
+      <view class='t'>
+        <view class='shipin'>
+          <image src='{{item.imgUrls}}'></image>
+        </view>
+          <text class='t1'>{{item.bigTitles}}</text>
+        <text class='t2'>{{item.smallTitles}}</text>
+      </view>
+    </block>
+  </view>
+  <view class='anniu' style='background:url(../../image/huan.png) no-repeat 10rpx 20rpx;background-size:30rpx 30rpx;'>
+    <text class='aaa'>换一批</text>
+  </view>
+</view>
+</view>

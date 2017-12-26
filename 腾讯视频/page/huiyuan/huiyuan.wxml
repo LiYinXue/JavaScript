@@ -1,0 +1,6 @@
+<!--page/huiyuan/huiyuan.wxml-->
+<view class='container'>
+  <view class='tt'><image src='../../image/b1.png'></image></view>
+  <view class='cc'><image src='../../image/b2.png'></image></view>
+  <view class='bb'><image src='../../image/b3.png'></image></view>
+</view>

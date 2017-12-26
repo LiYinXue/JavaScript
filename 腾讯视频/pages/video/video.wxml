@@ -1,0 +1,216 @@
+<!--pages/video/video.wxml-->
+<scroll-view class='nav' scroll-x="true" style='width:100%;'>
+    <view class="swiper-tab" >  
+      <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">电视剧</view>  
+      <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">综艺</view>  
+      <view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">电影</view>  
+      <view class="tab-item {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">动漫</view>   
+      <navigator url="../../page/search/search" style='background:url(../../image/seacher.png);background-size:100% 100%;'></navigator> 
+    </view> 
+</scroll-view>
+<swiper class="swiper" current="{{currentTab}}" bindchange="swiperChange" circular="true" duration="80">
+    <!--电视剧  -->
+<swiper-item>
+  <view class='babc'>
+      <view class='btn-area'>
+        <navigator url='../../page/luban/luban' hover-start-time="10" hover-stay-time ="100"  style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>全网热播</navigator>
+      </view> 
+      <view class='Heavy'>
+      <view class='reboshipin'>
+        <block wx:for="{{item1}}">
+          <view class='t'>
+            <view class='shipin'>
+              <image src='{{item.imgUrls}}'></image>
+            </view>
+            <text class='t1'>{{item.bigTitles}}</text>
+            <text class='t2'>{{item.smallTitles}}</text>
+          </view>
+        </block>
+      </view>
+    </view> 
+    <view class='btn-area'>
+      <navigator url='../../page/remen/remen' style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>高分佳片</navigator>
+    </view> 
+    <view class='Heavy'>
+      <view class='reboshipin'>
+        <block wx:for="{{item2}}">
+          <view class='t'>
+            <view class='shipin'>
+              <image src='{{item.imgUrls}}'></image>
+            </view>
+            <text class='t1'>{{item.bigTitles}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='btn-area'>
+      <navigator url='../../page/nvwa/nvwa' style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>颜值爆表</navigator>
+    </view> 
+    <view class='Heavy'>
+      <view class='reboshipin'>
+        <block wx:for="{{item3}}">
+          <view class='t'>
+            <view class='shipin'>
+              <image src='{{item.imgUrls}}'></image>
+            </view>
+            <text class='t1'>{{item.bigTitles}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view> 
+</swiper-item>  
+    <!--综艺  -->
+<swiper-item>
+  <view class='babc'>
+      <view class='btn-area'>
+        <navigator url='../../page/luban/luban' hover-start-time="10" hover-stay-time ="100"  style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>颜值爆表</navigator>
+      </view> 
+      <view class='Heavy'>
+      <view class='reboshipin'>
+        <block wx:for="{{item2}}">
+          <view class='t'>
+            <view class='shipin'>
+              <image src='{{item.imgUrls}}'></image>
+            </view>
+            <text class='t1'>{{item.bigTitles}}</text>
+            <text class='t2'>{{item.smallTitles}}</text>
+          </view>
+        </block>
+      </view>
+    </view> 
+    <view class='btn-area'>
+      <navigator url='../../page/remen/remen' style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>高分佳片</navigator>
+    </view> 
+    <view class='Heavy'>
+      <view class='reboshipin'>
+        <block wx:for="{{item1}}">
+          <view class='t'>
+            <view class='shipin'>
+              <image src='{{item.imgUrls}}'></image>
+            </view>
+            <text class='t1'>{{item.bigTitles}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='btn-area'>
+      <navigator url='../../page/nvwa/nvwa' style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>全网热播</navigator>
+    </view> 
+    <view class='Heavy'>
+      <view class='reboshipin'>
+        <block wx:for="{{item3}}">
+          <view class='t'>
+            <view class='shipin'>
+              <image src='{{item.imgUrls}}'></image>
+            </view>
+            <text class='t1'>{{item.bigTitles}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view> 
+</swiper-item>
+    <!--电影  -->
+<swiper-item>
+  <view class='babc'>
+      <view class='btn-area'>
+        <navigator url='../../page/luban/luban' hover-start-time="10" hover-stay-time ="100"  style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>高分佳片</navigator>
+      </view> 
+      <view class='Heavy'>
+      <view class='reboshipin'>
+        <block wx:for="{{item3}}">
+          <view class='t'>
+            <view class='shipin'>
+              <image src='{{item.imgUrls}}'></image>
+            </view>
+            <text class='t1'>{{item.bigTitles}}</text>
+            <text class='t2'>{{item.smallTitles}}</text>
+          </view>
+        </block>
+      </view>
+    </view> 
+    <view class='btn-area'>
+      <navigator url='../../page/remen/remen' style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>颜值爆表</navigator>
+    </view> 
+    <view class='Heavy'>
+      <view class='reboshipin'>
+        <block wx:for="{{item2}}">
+          <view class='t'>
+            <view class='shipin'>
+              <image src='{{item.imgUrls}}'></image>
+            </view>
+            <text class='t1'>{{item.bigTitles}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='btn-area'>
+      <navigator url='../../page/nvwa/nvwa' style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>全网热播</navigator>
+    </view> 
+    <view class='Heavy'>
+      <view class='reboshipin'>
+        <block wx:for="{{item1}}">
+          <view class='t'>
+            <view class='shipin'>
+              <image src='{{item.imgUrls}}'></image>
+            </view>
+            <text class='t1'>{{item.bigTitles}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view> 
+</swiper-item>
+    <!--动漫  -->
+<swiper-item>
+  <view class='babc'>
+      <view class='btn-area'>
+        <navigator url='../../page/luban/luban' hover-start-time="10" hover-stay-time ="100"  style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>内地·战斗</navigator>
+      </view> 
+      <view class='Heavy'>
+      <view class='reboshipin'>
+        <block wx:for="{{item2}}">
+          <view class='t'>
+            <view class='shipin'>
+              <image src='{{item.imgUrls}}'></image>
+            </view>
+            <text class='t1'>{{item.bigTitles}}</text>
+            <text class='t2'>{{item.smallTitles}}</text>
+          </view>
+        </block>
+      </view>
+    </view> 
+    <view class='btn-area'>
+      <navigator url='../../page/remen/remen' style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>搞笑·科幻</navigator>
+    </view> 
+    <view class='Heavy'>
+      <view class='reboshipin'>
+        <block wx:for="{{item1}}">
+          <view class='t'>
+            <view class='shipin'>
+              <image src='{{item.imgUrls}}'></image>
+            </view>
+            <text class='t1'>{{item.bigTitles}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='btn-area'>
+      <navigator url='../../page/nvwa/nvwa' style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>冒险·武侠</navigator>
+    </view> 
+    <view class='Heavy'>
+      <view class='reboshipin'>
+        <block wx:for="{{item3}}">
+          <view class='t'>
+            <view class='shipin'>
+              <image src='{{item.imgUrls}}'></image>
+            </view>
+            <text class='t1'>{{item.bigTitles}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view> 
+</swiper-item>
+</swiper>

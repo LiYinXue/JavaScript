@@ -1,0 +1,265 @@
+<!--pages/hot/hot.wxml-->
+<view class='container'>
+<!--导航部分  -->
+  <scroll-view class='nav' scroll-x="true" style='width:100%;'>
+    <view class="swiper-tab" >  
+      <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">王者荣耀</view>  
+      <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">快看</view>  
+      <view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">神剪辑</view>  
+      <view class="tab-item {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">搞笑</view>  
+      <view class="tab-item {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">新闻</view>  
+      <view class="tab-item {{currentTab==5 ? 'on' : ''}}" data-current="5" bindtap="swichNav">舞蹈</view>  
+       <view class="tab-item {{currentTab==6 ? 'on' : ''}}" data-current="6" bindtap="swichNav">健康</view>  
+      <view class="tab-item {{currentTab==7 ? 'on' : ''}}" data-current="7" bindtap="swichNav">娱乐</view>  
+      <view class="tab-item {{currentTab==8 ? 'on' : ''}}" data-current="8" bindtap="swichNav">游戏</view>  
+      <view class="tab-item {{currentTab==9 ? 'on' : ''}}" data-current="9" bindtap="swichNav">时尚</view>  
+      <view class="tab-item {{currentTab==10 ? 'on' : ''}}" data-current="10" bindtap="swichNav">英雄联盟</view>  
+      <view class="tab-item {{currentTab==11 ? 'on' : ''}}" data-current="11" bindtap="swichNav">萌宠</view>  
+      <view class="tab-item {{currentTab==12 ? 'on' : ''}}" data-current="12" bindtap="swichNav">情感</view>  
+      <view class="tab-item {{currentTab==13 ? 'on' : ''}}" data-current="13" bindtap="swichNav">汽车</view>  
+      <view class="tab-item {{currentTab==14 ? 'on' : ''}}" data-current="14" bindtap="swichNav">美食</view>   
+    </view>  
+  </scroll-view>
+  
+  <!--内容主体-->  
+  <swiper class="swiper" current="{{currentTab}}" bindchange="swiperChange" circular="true" duration="80">  
+    <!--王者荣耀  -->
+    <swiper-item>
+      <view class='babc'>
+        <view class='btn-area'>
+          <navigator url='../../page/luban/luban' hover-start-time="10" hover-stay-time ="100"  style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>鲁班七号</navigator>
+        </view> 
+        <view class='Heavy'>
+        <view class='reboshipin'>
+          <block wx:for="{{item1}}">
+            <view class='t'>
+              <view class='shipin'>
+                <image src='{{item.imgUrls}}'></image>
+              </view>
+              <text class='t1'>{{item.bigTitles}}</text>
+            </view>
+          </block>
+        </view>
+      </view> 
+      <view class='btn-area'>
+        <navigator url='../../page/remen/remen' style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>热门视频</navigator>
+      </view> 
+      <view class='Heavy'>
+        <view class='reboshipin'>
+          <block wx:for="{{item2}}">
+            <view class='t'>
+              <view class='shipin'>
+                <image src='{{item.imgUrls}}'></image>
+              </view>
+              <text class='t1'>{{item.bigTitles}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class='btn-area'>
+        <navigator url='../../page/nvwa/nvwa' style='background:url(../../image/rightQ.png) no-repeat 140rpx 0;background-size:40rpx 40rpx;'>女娲</navigator>
+      </view> 
+      <view class='Heavy'>
+        <view class='reboshipin'>
+          <block wx:for="{{item3}}">
+            <view class='t'>
+              <view class='shipin'>
+                <image src='{{item.imgUrls}}'></image>
+              </view>
+              <text class='t1'>{{item.bigTitles}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      </view> 
+    </swiper-item>  
+    <!--快看  -->
+    <swiper-item>  
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.20.124/om.tc.qq.com/AKHBQySweyweapVRlMZVv_D9Mfx474GY1aedCS1Vs_VU/w05631kfdnl.p712.1.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=0A59247C587AD1279CCE0D20BF544C76802CD77B45E7CC2B06850C8601F303092D37570AF4F176536C037C727357823F416137C31A356096C9960C46476FB3E225D3FBE62057A9D13E5CD6E7D7836962C875920FFA88FCDEAD6518FA1E5867F528B41503CAF53FFC4971B30C98D7931A7B1E2FD19E87BABD" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://101.226.156.80/vhot2.qqvideo.tc.qq.com/AJYEB3Lp384IN0xkWcg747JuzCf_ERBP87EboEgQFQVE/g0521k81v34.p702.1.mp4?sha=&sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=E3A442CCAB21F36CAFD529097322AEF2AEE43BE9E79896F696D36E0776F67B0F8164F9C0F4CB2CFFF074F52A6DD2C4CDB06F40783C6DA885F06E406FDAC6BF4B49BD0EA38D0C87492931A4C68F682CDA043BDB7768C2E7A77521EFBB11FF9F2F499912D5CF4AE674E05F70606F7BB9E116A9875F67E05AC0&ocid=3633360138" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.17.46/om.tc.qq.com/AjnQhniQcTtOBOOMtBOKlXRolspsk6D6qtGLvZy57qlg/q051644frpy.p712.1.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=540D908B9B79261F7CDA9DEE0F32066BC09FFC931C0F1EAED5C50044359C51C3A6216DA7735A1C2BA76D391C006F4C0D4A39DEDD1CDE99AE4627A9F4DD44406DAD42413183D1EA0E15B2E90AE9F229EB2BE65F92FE5E998C146916BED714DFC14CBAAADA722AA34FD8425B60E8791EF3ADC0221EF18EC1B7" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.20.17/om.tc.qq.com/AbAYuWlsZbsq6ozxB9-rp3rgwr9ju9zxf1B7qOjGzxyM/a05515h6hy7.p712.1.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=3D123AF0CB88E3CAD3F7A6AEC54475659109E289DF9623DB4BC2A7AE020A3D79133244CEEFF1E9E3C32F9AD5939845D512A8675BD87109D48EB01E3772EDBEAA7D053E891A449A9EB4F22BFD5E1F474134267EA6AF5B6593EE801D76DB91D4820119D5B8229CF23B24AE5EE0D058A4DFF4EDA91329EA0ABB" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://121.51.40.104/vlive.qqvideo.tc.qq.com/APey6W3phpPVV69wWFuOJIsUWL6Z1NhXuyBlkhxmu17c/m0200t4pvjh.p201.1.mp4?vkey=90C3910D12BDB6C023B291613A13FE3CA260FD563667C2BA0B195FD3DABF115982FE813C7CBE6AFED61519E491D8045F178A3FA0F44E5CC7261A25E834FE38D4081705603CE954638FB6E9A13BADEB49128FB4169B3BF5E0B664638861337D59C865B6FD979F5AA50A2D9C2DC92A20D0DB936DB1E2D07BF8&platform=10201&sdtfrom=&fmt=shd&level=0" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+      </view>
+    </swiper-item>  
+    <!--神剪辑  -->
+    <swiper-item>  
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.20.104/om.tc.qq.com/AOPg4XnvjtjBnNnCewfU25ZKEH2sqvSWrV31zcx8ohvE/n0522j3swhy.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=0BED7EE9992DFFCCC97E14ADCD1BFA45BFE6041B95D9BC6A48451E12AF518DC0B71C702FA91D81CE60B00578F860198DB46AE3DA0B2CF7DCA3316D2A899677CF68D8ACA6203FFC259F1FE86C6E982F73D6D2F149BD30CA80BD83962828766022253DA14E96450934D751D8C15E852B9302BC5432D90FF472" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>神剪辑的一段电影合集</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://121.51.40.13/variety.tc.qq.com/AZg2zNfZi4fXus0RNDPD13JyEjKMZRTv1m5XXi8NaUIU/e0200xo4ddx.p201.1.mp4?vkey=AE67ED07D937C1C00F7782FBE0273D93E8ED7CE425B24388713691D82F0D6E2FB67F592BBAEB940148C38960B9737E4C82DA8C4D2A9933788E3AFC02A0CF9C441CCD83E3686416FB978C38315CD658BDBA672F393C922B81B6359CED8119681772338A89115BB6B49FC332B9FF1B996A269931A86AA7DB7C&platform=10201&sdtfrom=&fmt=shd&level=0" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>超神学院之雄兵连，热血歌曲layers，神剪辑</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.17.54/vhot2.qqvideo.tc.qq.com/AFsbllkASKO-C1wjC-MMz16DHx3i4QFkcsxPsd3u9Zhg/c0522roorcw.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=16061665FA15B990465A2823CFAFA167D48CC970BE8FE5F2CCB78D8AE64C7CAF0DC9520CDD99F0ED330216C6BF6FFD459D4EEDC4CEB3C30905DF627BCAF56E91669F087C6FDBBDAEDB8C59C7C1C9BF703524898CC54977041C9B80FA295EFD17D518E1FDE28F58FCE1C073E0BAE4AEBD360F4B4E9BE29E17" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>电影MTV神剪辑 青春无限</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.20.124/om.tc.qq.com/AKHBQySweyweapVRlMZVv_D9Mfx474GY1aedCS1Vs_VU/w05631kfdnl.p712.1.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=0A59247C587AD1279CCE0D20BF544C76802CD77B45E7CC2B06850C8601F303092D37570AF4F176536C037C727357823F416137C31A356096C9960C46476FB3E225D3FBE62057A9D13E5CD6E7D7836962C875920FFA88FCDEAD6518FA1E5867F528B41503CAF53FFC4971B30C98D7931A7B1E2FD19E87BABD" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>神剪辑！憨豆版惊悚片 差点就信了 ！</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://59.37.107.113/variety.tc.qq.com/A4B7rc4pSXsoyzEITZXIohzr2dO30ZH2nmVMlKCJCiro/t0200azt1ns.p201.1.mp4?sha=41F3A9DDC5AF04CA5419C9D30AF8C61F0201F48C&vkey=2BED3BC22817D9B7611AE3C641EE4A18CB4A76140A3D5EBE6B388D845BE1E32CC4A09BC65673168E074567DD9DA28F204C7AC49B8BE57B78FE8E0B8FDD905E1B3D30370509380FE04BF7E402BD47001259BC8A71644308D2B38BABCC832501CF1460BEF618116BFCCC6C7086AF6DCE2080375537F500C155&platform=10201&sdtfrom=&fmt=shd&level=0&ocid=3784602980" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>花谢花飞花满天</text>
+      </view>
+    </swiper-item>
+    <!--搞笑  -->
+    <swiper-item>  
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.17.50/om.tc.qq.com/AazzDVtNd2TfOZlTbaVP-VsRCDTYq-l8gvfKk1FtxG40/f0567ravze9.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=3EBCD29F8BDC04310557E7C08ACD07006C0FA7133617C425CA743716EC111221391440A6B1EFF0F3DE999FD0890255C7F229147BDD090354C1305156AD76E3A2A4278A45071C07619E703ACB0168C7D13F5504B716C93582060965D12DEFCCAE46E572BE5A8EECD6DCEB323C5DED37134124DEA852E2372E" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>搞笑军事短片集锦</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://61.151.170.78/om.tc.qq.com/AaTP3ZspBHq_Ys1hKiNuO6I0c2gj23-CiaHJcC3Cg1SY/i05109g78n4.mp4?sha=&sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=39E873F03B3249BF052573C179CF4A861767547947A34BA4839A81EE449EB728E4C3C6C5BD7DDAB4997BDDFD219BB9234F4BCDA21C1E89799756851535CC9860F2E735E43E3E19B9979BAC7FA1BBA141A4298111B5A9F225F7E6A8A9CA695359AF0F5633F859C6C06662514B4748220C6D60824417DA63BE&ocid=2962271498" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>搞笑 唐僧为白素贞考状元</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.17.29/vhot2.qqvideo.tc.qq.com/As6OAHjgbqvQKfu56qFkwh8k2vX9nB_fIfuD8mGiBLWg/b01851tx090.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=438B7EF3E362D2CE186B22E24AEEC550AB1D0327F6FCF625781658720BD7DF3EADB5F112F50C9D8C68389C988C826FE0B08672CED4CF91854FB4A6D4A9CAEDF746A86824F511268B9F7610E9EC8CAD1E89F7D6E3C97C538EF0BB23C9BC23D23B3C1F6BB2E6B3E03A85269D07A3B007754B334E9B4EFD4273" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>搞笑 最牛B的作弊</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.20.104/om.tc.qq.com/AyAEKj9cQ7Ek6ww_0xRF5ABHP2pMl5zzko9fcKgmzx1E/g0523lq1gia.p712.1.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=5B8C508A8EC5E930AA344C28E72857395AE908B76178FF46798DEC5986FCE03122AAE0763FC1DDAE175A2B07D71A561D115EBCC0857BC41705C0AAAB58AF517AA130636CC75785507C780D22653F18DE6E8CCD01123334272B58AB71C8E1C817B25612371B91D4EF6753B94007CA6DA12FEA6C0FAB2096FB" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>搞笑视频：二货搞笑药店买药，太二了笑死了 </text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://61.151.170.85/om.tc.qq.com/ASJoR93nBGvV5wV7wVcaBRsfYiHsOI71utsZAD6AHYr8/b0556t7ibcu.p712.1.mp4?sha=&sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=A56FE12C6F87465C21A6822844F77570800CB721ED44762F83511D5B6F5A4445DE74B4B7A9A837ED96028DF0492504905E57051E416FD32D0C425769030ECFC4F0BC3C64FF8877E5B2E8F09544D53D92DC7DC0014B9FEEE69E4058F8D3CE038A86DE001D782DDFEC79A147D008358020D7235228154033CA&ocid=3330929674" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>搞笑小品《TF girls》</text>
+      </view> 
+    </swiper-item>  
+    <!--新闻  -->
+    <swiper-item>  
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.17.37/vhot2.qqvideo.tc.qq.com/AQXBmPumTHjl7jzXf8K0gYQGnA15PMoifb0Lswr5FfPc/w015482k9ze.p702.1.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=5CE50764EDB35DEF2BA40F9D226D97907FF07D75BACC934DB214FF35357D4AF7AD1DA32A0506C729E172DCEEA49646C1E9AF690F4482052DF1F1037B5937126FFF141E6F51D72FF7B449D266DFCABD1A94829D9DC491B7487364AB97D1CF811C5FCE447D04F998353DEB9B625FBAE60E30BCC81CC8488033" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>互联网时代即将到了 </text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.20.21/vhot2.qqvideo.tc.qq.com/AnxI1_UvhgMju1W11HRFoleTuj97RsTAKWxC-5pqXs3k/q0161hs0bgm.p702.1.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=2A6DFF219E0994584B90517B5D2664584F0D87849C344E36C472DCE9DA738A040ABBC4B73E423F01576380B2F070004DF6019007FE17349556D2C10E5F5BB20098A8C10B76F484DC1FC57485FD8058F001F1FB58A2DD19018D312240CAB72A5EA70E6F4DF5D9782FDF5C686E2E8577A55F322E3F7D60588A" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>移动互联网时代来临  </text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.20.100/vhot2.qqvideo.tc.qq.com/AVJn8WSfjhWa_KzxhqE254aQs2_m6uLDiFdCgsUNU_aY/e0179as9p9v.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=979088C882C79436E42DC928C73BEEDB6931560C86EC2E4BC5CCEB25EB97F3794B0911DAED453DC3663E1E0D097EA6F0B6B11E15682798C3B98C6248819A879610A2A0F606225313D60A5CC8DD82930FDBC1845B33885FA9963BA06061B70D72F31BFA93DA06A61131FD4B6D1DA2F5F023D4C49045571FEC" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>生活在移动互联网时代 你该怎么做   </text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.17.45/om.tc.qq.com/A_Cdm44nf3ov1pKvUSp5BohSXH9PXwXLc9Oom-48pvLs/a05224bfa8f.p712.1.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=123AB66E8528F81BB10E2638046F53174BB778A1798565C975D7A163E87DB27539F2C83545BC8FC11ED12892E1807460739E03945413B278B4B7B7446A31F1FCAE5484425D46A892D745BF20A07470DE0F619A66F0A6080AB1E9831AA2551031EF929FCAB7A369D6D201FF8DBCB3A160CAA3F561A7A70D72" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>江歌被害案：青岛人竟然这样看江歌案？太令人发指了</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.20.20/om.tc.qq.com/A3nkbGdboiopOMoO33zBnbhH1yxXbAArodhmQJyAbpys/r0522pr5jqn.p712.1.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=C117CCFDAF2E463AF04D52D321F2F9C58092D153B8CC7035B63ABEA818D2AF8B1BE69718158D2B4CC753A062ECAEDD3834FCC1680A9A6F8A942E492B2288ABB9F1EF3FB19098334BEADB2BBE24E121B8E7DF240526C9A5DDE0180A2FC85F16C26A414A25DA677CAB70BE4849B5B9E82FE0BAE86C749977EE" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>江歌案再升级：江妈妈要和刘鑫对薄公堂，会有胜算吗？  </text>
+      </view>
+    </swiper-item>
+    <!--舞蹈  -->
+    <swiper-item>  
+      <view class="section tc">
+        <video id="myVideo" src="http://61.151.170.73/om.tc.qq.com/ADJyf3_oX8ZtAVpax6dk-KT_l8TCxxnUFVKNXpke9N0Y/z05397ooep4.p712.1.mp4?sha=&sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=2504628C33FBED028B51775A9E78F4D241D9F724A058489F55621B1EEBF6FA55EDFCA9C7E97B71A6326994F07B82A6FE9314E1650A526E6673A0BC5DEEFDD345A251A21EC2E4F488DDE34EFE29A5571AC032EB343FF16AB4152DC1374A4CF8ABA662896DE6E400AD97B7ADA61CB0D5B25D740931AFC980B6&ocid=3784355082" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>Blackpink 《玩火》舞蹈视频 ，喜欢可以学</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.20.124/om.tc.qq.com/Atlv4ufksJF2wh07uhSPIHlkzTUwXoFSOdy9EnM9URqw/c052225wswb.p712.1.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=0B9759F60A51E3BC6AE3892545609E86BE3593AD2629145EC6AAA3FFCD54CE4BF93BDC7ACA7415BE8BC236AAE39FCD49121CCFA7B6CD518517B0202B81A4337F1648047C5E5F0C0567A169661BAC3D25E921DBF57613A71AC8614A90255C1BF63A0E9954D653F58658095D60A16025E1413B4D58A5CC173F" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>女生舞蹈视频《Bangbang》，大家觉得跳的怎么样</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.20.107/om.tc.qq.com/ARPq1oWIUZcrTHmQt1b2fcwMfAXjykI7q1v8E9ABlxmc/n0514paxgad.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=3CB6662EBBA39C9361D265753C148AC11DF349F408AA7993D40E4F8A435246552DC31D232DAE6FFDC1263C88E7D90055E880D12DF9ED4646549FDDD7E58EE7CA71D7B5295AF3B2C75340D6FAC66B0FC7EE6223F28D98D0B7DFFB7BA01671FE9FF43070925387BE54F861031299933A66D05F60D312534301" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>张碧晨《It's Love》舞蹈视频，碧晨现在好瘦啊</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.20.16/om.tc.qq.com/A5HOlPNh-7EpUUgGhnb9HgG1u4sG3-G4njDdUiGeoNmQ/v05588dibv5.p712.1.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=E3503BC519F2DD52404B19810C6465A8FA575DB1944FE986E3162582EEBB6DA429507BC44223D36AAAA239A663A9FD7B59A17B6DCA2A74945AE845928959E6C7A40818D21227178BFDA1C02EFDAB57A4F548CAADA1B023315B5484D82B7AED917264124CE9BF18EDDF9A7E1D0C9ED00041F4DEF47C628E1A" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>最火热的《panama》《C哩C哩》舞蹈视频</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.17.39/om.tc.qq.com/ACxuxEESkinw1vJuSttFom9mwZp0EtGAfWsZlrpaK6Kg/s0536jvfxko.p712.1.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=A9FAC28FED6B55E495A25615C13C794BFA0584782F6A3A12B94E0E65EDFCB34200341C3E61D6A55D9007FD631843FFEADE63702197B867AC385D2E97A83EEF73D819A5D5B6527FF0EBCCEAC2D7FF988F8A786C8E28E020C1F72AFDEDFD89660615C89287D2C46079596C591989F89DB99D9B83FCDA94416F" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>最火电音舞《Samsara 》舞蹈工作室舞蹈视频 </text>
+      </view>
+    </swiper-item> 
+    <swiper-item>  
+      <view>健康</view>  
+    </swiper-item>  
+    <swiper-item>  
+      <view>娱乐</view>  
+    </swiper-item>  
+    <swiper-item>  
+      <view>游戏</view>  
+    </swiper-item>
+    <swiper-item>  
+      <view>时尚</view>  
+    </swiper-item>
+    <!--英雄联盟  -->
+    <swiper-item>  
+      <view class="section tc">
+        <video id="myVideo" src="http://61.151.170.73/om.tc.qq.com/AVQJumGw-cr4e8lpLDfAqcHzNZciS43CZJsyU47AiE48/w0559esdw3g.p712.1.mp4?sha=C2D17780741239EEC12D3F49E45FB17A7CA63913&sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=E824C931ACC76594387F02C53F7A41A06B4144603B33766A23AAFDF07B6A8244C298899554773C8EAA4E6B1B274A88005AA929631E2F347D65E7E7F81806F21BE78E01F72E47C70D6882EC34C4C973B9CB8E11EEE31815B8231460DDA97C19436BB70E3CB2AF973DF9F9D056FB1A97B1F9BF779CEDFA38F0&ocid=3062934794" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>英雄联盟精彩时刻集锦</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.17.27/om.tc.qq.com/ADQkXpnkG7PVAPGsuINQtUAniFAye_heimIhouCgljE4/w0383rnykot.p712.1.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=51A3D709800D01368CA6A4C0637B43BA89002743247CF750B05B53A50C4DFB1F68C1D08287D8EDF61C13EDEBA4925EBFDF006CFC5679386463F5754D72DC64B5D2B0EAE5F7C0922583CABDCE94C7585DBE50BD92098E36E209223046038E4E5CDDD9D309E3C08DA261C1CDE62E0DF80CCA68F2D7EB2A3A5A" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>LOL：盲僧瞎踢一脚就踢死了酒桶，真是瞎猫碰上死耗子</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.17.21/om.tc.qq.com/AJAuzjBLKSwwy9Kj3ssHJvAduQDm3oGQuxrnaToDHoxo/b05646w4j0g.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=D5E06A968D280BCCA09A892D34D67EFC40DDEA9867324DC02536A52BC04446905D43E5C6756DC75A5AD25D4B20860F27734263527BD1A5F049ABC11ED05681423BFFA42984CD571F537D6407BAC4550DD8527B8C47D4C357E4E123113494E552F5883824E000527313C4470D9303056CD727D1A67CC8F219" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>危险人物191期：这个伪装术只有沙皇能用 原创
+</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://61.151.226.97/om.tc.qq.com/AbUgKWLNxqIyiUM9OZ4Tzk4kOXpEXRihZ6sSO224-3fY/t0521dw2yju.p712.1.mp4?sha=3871B24FED92F5B7B34AC38CFC42128B223EFBCC&sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=E7E778032D8D41C656D457B15E31E130462BF3C85EFEF8E2F0D60C87A8E5A25D45ECDFA631847243F6D2FAD523E953437EF8DF105DC08C1C086B50D99AF5730F8D04FA5BA31E845F5C455F52DB2A1FD9D2F6D1BD70ED206E15A267F3C156A8D121B97215A382829122A4149C446AFAC464C5DA0D2DF030CC&ocid=2307519498" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>英雄联盟集锦，一次看个够</text>
+      </view>
+      <view class="section tc">
+        <video id="myVideo" src="http://182.254.17.25/om.tc.qq.com/AWnuf6dZswONToYvBBJemYURfS7Ip17C7hEwOxK5TqfU/d0522wjgh8u.p712.1.mp4?sdtfrom=v1010&guid=57687178933c03f5c447227afddd970d&vkey=5288DCDDC92391A7450163EB16E2A907C0900A5B16C89FCC71F074592E09609AED2F094188B9010D85C19A1981E192C1EEA2C5B21E1B4D2262D24053E74FA5BEE981B96C7751748CECDF3C97FA895CF07168EFEE4C790F3DC7210D64263D7AC059877C996A94BAD4AA6A068A02835C56AE585ECF37AC03F7" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls>
+        </video>
+        <text class='c'>LOL小炮逆风局翻盘 </text>
+      </view>
+    </swiper-item>
+    <swiper-item>  
+      <view>萌宠</view>  
+    </swiper-item>
+    <swiper-item>  
+      <view>情感</view>  
+    </swiper-item>  
+    <swiper-item>  
+      <view>汽车</view>  
+    </swiper-item>
+    <swiper-item>  
+      <view>美食</view>  
+    </swiper-item>
+  </swiper>   
+</view>

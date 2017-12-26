@@ -1,0 +1,52 @@
+/* page/history/history.wxss */
+button{
+  width: 100%;
+  height: 100rpx;
+  border: none;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  font-size: 30rpx;
+  line-height: 100rpx;
+}
+button[plain]{
+  border: none;
+  border-top:2rpx solid #cdcdcd; 
+  border-radius: 0;
+}
+.yyy{
+  height: 1080rpx;
+}
+.tI{
+  width: 340rpx;
+  height: 200rpx;
+  float: left;
+  padding-left: 100rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.tI image{
+  width: 300rpx;
+  height:200rpx;
+}
+.tZ{
+  float: left;
+  font-size: 30rpx;
+  line-height: 100rpx;
+}
+checkbox .wx-checkbox-input{
+  position: absolute;
+  left: 20rpx;
+  top:50rpx;
+  border-radius: 30rpx;
+}
+.my-sel{
+  width: 200rpx;
+  height: 200rpx;
+}
+.bindSelectAll checkbox .wx-checkbox-input{
+  position: absolute;
+  left: 30rpx;
+  bottom: 100rpx;
+}

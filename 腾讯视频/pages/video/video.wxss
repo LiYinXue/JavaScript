@@ -1,0 +1,154 @@
+/* pages/video/video.wxss */
+.nav{
+  height: 100rpx;
+  white-space:nowrap;
+  width: 100%;
+  border-bottom: 2rpx solid #e0e7e2; 
+  box-sizing: border-box;
+}
+ .swiper-tab {  
+  width:100%;
+  line-height: 80rpx;  
+}  
+.dd{
+  position: absolute;
+  left: 20rpx;
+  top:0rpx;
+  z-index: 999;
+}
+.dd button{
+  width: 160rpx;
+  height: 60rpx;
+  color: #999;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.tab-item {  
+  width: 20%;  
+  text-align: center;  
+  font-size: 15px;  
+  color: #777;  
+  display:inline-block;
+}  
+  
+.swiper {  
+  padding-top: 30rpx; 
+  height: 2150rpx;
+  position: relative;
+}  
+.on {  
+  color: #fc7000;  
+  border-bottom: 5rpx solid #fc7000;  
+}  
+.nav navigator{
+  width: 50rpx;
+  height: 50rpx;
+  float: right;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+}
+.btn-area{
+  margin-bottom: 30rpx;
+}
+.btn-area navigator{
+  font-size: 32rpx;
+}
+.t{
+  width: 100%;
+  height: 100%;
+}
+.wenzi{
+  font-size: 30rpx;
+  color: #040613;
+  line-height: 100rpx;
+}
+.Heavy{
+  width: 100%;
+  /* padding-top: 30rpx; */
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #a2a7a3; 
+  margin-bottom: 30rpx; 
+}
+.reboshipin{
+  overflow: hidden;
+}
+.t{
+  float: left;
+  width: 340rpx;
+  padding-bottom: 30rpx;
+  margin-right: 20rpx;
+}
+.shipin{
+  height: 220rpx;
+  width: 340rpx;
+  margin-bottom: 10rpx;
+}
+.shipin image{
+  display: initial;
+}
+.t1{
+  font-size: 30rpx;
+  color: #000;
+  line-height: 40rpx;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.t2{
+  font-size: 26rpx;
+  color: #9a9aa2;
+}
+.anniu{
+  width: 200rpx;
+  height: 50rpx;
+  padding-left: 30rpx;
+  margin: 0 auto;
+  margin-bottom: 30rpx;
+}
+.anniu button{
+  font-size: 26rpx;
+  color: #b2b3b7;
+  border: none;
+  background: none;
+  position: initial;
+  text-align: initial;
+}
+.bigT{
+  width: 94%;
+  height: 400rpx;
+  margin-bottom: 80rpx;
+}
+.bigT image{
+  display: initial;
+}
+.t3{
+  font-size: 30rpx;
+  color: #000;
+  line-height: 80rpx;
+  display: block;
+}
+/*-----快看----  */
+.section{
+  width: 100%;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+#myVideo{
+  width: 100%;
+  height: 400rpx;
+}
+.babc{
+  width: 96%;
+  margin:  0 auto;
+  padding-left: 20rpx;
+}
+.c{
+  font-size: 30rpx;
+  color: #fff;
+  position: absolute;
+  left: 40rpx;
+  top:20rpx;
+}

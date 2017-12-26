@@ -1,0 +1,46 @@
+/* page/search/search.wxss */
+.searchBox{
+  padding-bottom: 20rpx;
+}
+.section{
+  width: 500rpx;
+  height: 60rpx;
+  background: #f3f6f4;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+  float: left;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.reset{
+  color: #f9a058;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  background: none;
+}
+button::after {
+  border: 0 none;
+}
+/*----热门搜索----  */
+.sousuo{
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  color: #becbc2;
+}
+.ll{
+  border-bottom: 2rpx solid #e0dfe4;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #000;
+}
+.oo{
+  width: 50rpx;
+  height: 50rpx;
+  background: #dae2dc;
+  display: inline-block;
+  line-height: 50rpx;
+  margin-right: 30rpx;
+  text-align: center;
+  border-radius:10rpx; 
+}

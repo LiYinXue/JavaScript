@@ -1,0 +1,105 @@
+/* pages/home/home.wxss */
+.serch{
+  width: 50rpx;
+  height: 50rpx;
+  float: left;
+  margin-left: 30rpx;
+}
+.mess{
+  padding-left: 20rpx;
+  color: #707070;
+  font-size: 30rpx;
+  line-height: 100rpx;
+}
+.autoT{
+  width: 100%;
+  background: #f5f6f8;
+  padding-top: 30rpx;
+  height: 500rpx;
+  margin-top: 15rpx;
+  overflow: hidden;
+}
+swiper{
+  width: 94%;
+  margin: 0 auto;
+  height: 400rpx;
+}
+.t{
+  width: 100%;
+  height: 100%;
+}
+.wenzi{
+  font-size: 30rpx;
+  color: #040613;
+  line-height: 100rpx;
+}
+.Heavy{
+  width: 100%;
+  padding-left: 20rpx;
+}
+.heavyBt{
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #000;
+  line-height: 100rpx;
+}
+.reboshipin{
+  overflow: hidden;
+}
+.t{
+  float: left;
+  width: 340rpx;
+  padding-bottom: 30rpx;
+  margin-right: 30rpx;
+}
+.shipin{
+  height: 220rpx;
+  width: 340rpx;
+  margin-bottom: 10rpx;
+}
+.shipin image{
+  display: initial;
+}
+.t1{
+  font-size: 30rpx;
+  color: #000;
+  line-height: 40rpx;
+  display: block;
+}
+.t2{
+  font-size: 26rpx;
+  color: #9a9aa2;
+}
+.anniu{
+  width: 200rpx;
+  height: 50rpx;
+  padding-left: 60rpx;
+  margin: 0 auto;
+  margin-bottom: 30rpx;
+}
+.aaa{
+  font-size: 26rpx;
+  color: #b2b3b7;
+  border-color: #fff;
+  background: none; 
+  text-align: initial;
+}
+.bigT{
+  width: 94%;
+  height: 400rpx;
+  margin-bottom: 80rpx;
+}
+.bigT image{
+  display: initial;
+}
+.t3{
+  font-size: 30rpx;
+  color: #000;
+  line-height: 80rpx;
+  display: block;
+}
+/** 自定义其他点击态样式类 **/
+.navigator-hover {
+background-color:rgba(255, 255, 255, 1);
+opacity: 1;
+}

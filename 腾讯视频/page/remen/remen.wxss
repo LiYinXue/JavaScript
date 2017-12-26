@@ -1,0 +1,29 @@
+/* page/remen/remen.wxss */
+.Heavy{
+  width: 96%;
+  height: 500rpx;
+  margin: 0 auto;
+}
+.t{
+  float: left;
+  width: 340rpx;
+  padding-bottom: 30rpx;
+  margin-right: 20rpx;
+}
+.shipin{
+  height: 220rpx;
+  width: 340rpx;
+  margin-bottom: 10rpx;
+}
+.shipin image{
+  display: initial;
+}
+.t1{
+  font-size: 30rpx;
+  color: #000;
+  line-height: 40rpx;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,15 @@
+<!--page/history/history.wxml-->
+<view class='container'>
+  <view class='bianjiBox'><button plain="true" class='bor' bindtap="insert">编辑</button></view>
+  <scroll-view scroll-y="true" class='yyy'>
+    <block wx:for="{{imgs}}">
+      <view class='tI'>
+        <checkbox checked=""></checkbox>
+        <image src='{{item.imgUrls}}'></image>
+      </view>
+      <view class='tZ'>
+        <text>{{item.title}}</text>
+      </view>
+    </block>
+  </scroll-view>
+</view>

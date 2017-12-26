@@ -1,0 +1,6 @@
+<!--page/shezhi/shezhi.wxml-->
+<view class='shezhi'>
+  <view class='top'><text class='topZ'>自动跳过片头片尾</text><switch color='orange' checked="true"></switch></view>
+  <view class='center'><text class='topZ'>清除缓存</text><text class='centerZ'>0 KB</text></view>
+  <view class='bottom'><text class='topZ'>意见反馈</text><view class='bottomZ' style='background:url(../../image/xinxi.png);background-size:100% 100%;'></view></view>
+</view>

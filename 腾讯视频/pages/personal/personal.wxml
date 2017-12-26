@@ -1,0 +1,44 @@
+<!--pages/personal/personal.wxml-->
+<view class="container">
+<!--获取信息  -->
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <!--开通Vip  -->
+  <view class="btn-area">
+    <navigator url="../../page/huiyuan/huiyuan" hover-class="navigator-hover" style='background:url(../../image/VIP.png) 30rpx 20rpx no-repeat;' class='avv'>开通VIP会员</navigator>
+    <navigator url="../../page/huiyuan/huiyuan" hover-class="navigator-hover" class='avv2'><image  class="hh" src='../../image/rightQ.png'></image></navigator>
+  </view>
+  <!--历史记录  -->
+  <view class='history'>
+    <view class='historyWrap'>
+      <navigator url="../../page/history/history" hover-class="navigator-hover"  class='zi'>观看历史                 </navigator>
+      <navigator url="../../page/history/history" hover-class="navigator-hover"><image src='../../image/rightQ.png'></image>
+      </navigator>
+    </view>
+    <scroll-view scroll-x="true" class='historyImg'>
+        <block wx:for="{{imgs}}">
+          <view class='tIMG'>
+            <image src='{{item}}'></image>
+          </view>
+        </block>
+    </scroll-view>
+  </view>
+  <!--我的看单  -->
+  <view class="btn-area">
+     <navigator url="../../page/look/look" hover-class="navigator-hover"  class='zi' style='margin-left:30rpx;'>我的看单              </navigator>
+     <navigator url="../../page/look/look" hover-class="navigator-hover" class='avv2'><image  class="hh" src='../../image/rightQ.png'></image></navigator>
+  </view>
+  <!--设置  -->
+  <view class='shezhi'>
+    <view class='historyWrap'>
+      <navigator url="../../page/shezhi/shezhi" hover-class="navigator-hover"  class='zi'>设置                     </navigator>
+      <navigator url="../../page/shezhi/shezhi" hover-class="navigator-hover"><image src='../../image/rightQ.png'></image>
+      </navigator>
+    </view>
+  </view>
+</view>

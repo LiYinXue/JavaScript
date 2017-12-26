@@ -1,0 +1,39 @@
+<!--page/remen/remen.wxml-->
+<view class='container'>
+  <view class='Heavy'>
+    <view class='reboshipin'>
+      <block wx:for="{{item3}}">
+        <view class='t'>
+          <view class='shipin'>
+            <image src='{{item.imgUrls}}'></image>
+          </view>
+          <text class='t1'>{{item.bigTitles}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='Heavy'>
+    <view class='reboshipin'>
+      <block wx:for="{{item1}}">
+        <view class='t'>
+          <view class='shipin'>
+            <image src='{{item.imgUrls}}'></image>
+          </view>
+          <text class='t1'>{{item.bigTitles}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='Heavy'>
+    <view class='reboshipin'>
+      <block wx:for="{{item2}}">
+        <view class='t'>
+          <view class='shipin'>
+            <image src='{{item.imgUrls}}'></image>
+          </view>
+          <text class='t1'>{{item.bigTitles}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
